@@ -6,30 +6,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'NODES.',
+	title: 'F5 NODES WIKI',
 	tagline: 'f5nodes wiki.',
-	favicon: 'img/favicon.ico',
-
-	// Set the production url of your site here
-	url: 'https://your-docusaurus-test-site.com',
-	// Set the /<baseUrl>/ pathname under which your site is served
-	// For GitHub pages deployment, it is often '/<projectName>/'
+	favicon: 'img/favicon.svg',
+	url: 'https://wiki.f5nodes.com',
 	baseUrl: '/',
-
-	// GitHub pages deployment config.
-	// If you aren't using GitHub pages, you don't need these.
-	organizationName: 'facebook', // Usually your GitHub org/user name.
-	projectName: 'docusaurus', // Usually your repo name.
-
+	organizationName: 'f5nodes',
+	projectName: 'wiki',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
-
-	// Even if you don't use internalization, you can use this field to set useful
-	// metadata like html lang. For example, if your site is Chinese, you may want
-	// to replace "en" with "zh-Hans".
 	i18n: {
 		defaultLocale: 'en',
-		locales: ['en'],
+		locales: ['en', 'uk'],
 	},
 
 	presets: [
@@ -39,9 +27,8 @@ const config = {
 			({
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
-					// Please change this to your repo.
-					// Remove this to remove the "edit this page" links.
-					editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+					editUrl: 'https://github.com/f5nodes/wiki/tree/main/',
+					routeBasePath: '/',
 				},
 				blog: false,
 				theme: {
@@ -56,11 +43,23 @@ const config = {
 		({
 			// Replace with your project's social card
 			image: 'img/docusaurus-social-card.jpg',
+			colorMode: {
+				defaultMode: 'dark',
+			},
+			// announcementBar: {
+			// 	id: 'lets_contribute',
+			// 	content:
+			// 		'All contributions are welcome! Check our <a target="_blank" rel="noopener noreferrer" href="https://github.com/f5nodes/wiki">github</a>.',
+			// 	backgroundColor: 'white',
+			// 	textColor: 'black',
+			// 	isCloseable: true,
+			// },
 			navbar: {
-				title: 'My Site',
+				title: 'NODES WIKI',
 				logo: {
-					alt: 'My Site Logo',
-					src: 'img/logo.svg',
+					alt: 'F5 Nodes Wiki',
+					src: 'img/logo-light.svg',
+					srcDark: 'img/logo-dark.svg',
 				},
 				items: [
 					{
@@ -69,16 +68,19 @@ const config = {
 						position: 'left',
 						label: 'Tutorial',
 					},
-					{ to: '/blog', label: 'Blog', position: 'left' },
 					{
-						href: 'https://github.com/facebook/docusaurus',
+						href: 'https://github.com/f5nodes/wiki',
 						label: 'GitHub',
+						position: 'right',
+					},
+					{
+						type: 'localeDropdown',
 						position: 'right',
 					},
 				],
 			},
 			footer: {
-				style: 'dark',
+				style: 'light',
 				links: [
 					{
 						title: 'Docs',
@@ -93,16 +95,12 @@ const config = {
 						title: 'Community',
 						items: [
 							{
-								label: 'Stack Overflow',
-								href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-							},
-							{
-								label: 'Discord',
-								href: 'https://discordapp.com/invite/docusaurus',
+								label: 'Telegram',
+								href: 'https://t.me/f5nodes',
 							},
 							{
 								label: 'Twitter',
-								href: 'https://twitter.com/docusaurus',
+								href: 'https://twitter.com/f5nodes',
 							},
 						],
 					},
@@ -110,17 +108,21 @@ const config = {
 						title: 'More',
 						items: [
 							{
-								label: 'Blog',
-								to: '/blog',
+								label: 'F5 Nodes',
+								href: 'https://f5nodes.com',
+							},
+							{
+								label: 'F5 Checker',
+								href: 'https://github.com/f5nodes/f5checker',
 							},
 							{
 								label: 'GitHub',
-								href: 'https://github.com/facebook/docusaurus',
+								href: 'https://github.com/f5nodes/wiki',
 							},
 						],
 					},
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+				copyright: `Copyright © ${new Date().getFullYear()} F5 NODES, Inc.`,
 			},
 			prism: {
 				theme: lightCodeTheme,
