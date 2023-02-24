@@ -80,14 +80,13 @@ const config = {
 				],
 			},
 			footer: {
-				style: 'light',
 				links: [
 					{
 						title: 'Docs',
 						items: [
 							{
 								label: 'Tutorial',
-								to: '/docs/intro',
+								to: '/intro',
 							},
 						],
 					},
