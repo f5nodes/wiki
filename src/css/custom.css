@@ -17,7 +17,8 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: "RuberoidBold";
-  --ifm-color-primary: #427ae7;
+  --ifm-color-primary: #000;
+  /* --ifm-color-primary: #427ae7; */
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -35,7 +36,8 @@ p, li {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #427ae7;
+  --ifm-color-primary: #000;
+  /* --ifm-color-primary: #427ae7; */
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
