@@ -17,7 +17,8 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: "RuberoidBold";
-  --ifm-color-primary: #427ae7;
+  /* --ifm-color-primary: #427ae7; */
+  --ifm-color-primary: #ff00ff;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
