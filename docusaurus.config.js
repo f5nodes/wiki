@@ -41,7 +41,6 @@ const config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
-			// Replace with your project's social card
 			image: 'img/docusaurus-social-card.jpg',
 			colorMode: {
 				defaultMode: 'dark',
@@ -55,7 +54,6 @@ const config = {
 			// 	isCloseable: true,
 			// },
 			navbar: {
-				title: 'NODES WIKI',
 				logo: {
 					alt: 'F5 Nodes Wiki',
 					src: 'img/logo-light.svg',
@@ -66,7 +64,7 @@ const config = {
 						type: 'doc',
 						docId: 'intro',
 						position: 'left',
-						label: 'Tutorial',
+						label: 'Intro',
 					},
 					{
 						href: 'https://github.com/f5nodes/wiki',
@@ -85,7 +83,7 @@ const config = {
 						title: 'Docs',
 						items: [
 							{
-								label: 'Tutorial',
+								label: 'Intro',
 								to: '/intro',
 							},
 						],
