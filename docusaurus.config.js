@@ -53,6 +53,13 @@ const config = {
 			// 	textColor: 'black',
 			// 	isCloseable: true,
 			// },
+			algolia: {
+				appId: 'CUEVS66Y1G',
+				apiKey: 'b2dc4ae3199ebaaeedc032742c9d1589',
+				indexName: 'f5nodes',
+				contextualSearch: true,
+				debug: false,
+			},
 			navbar: {
 				logo: {
 					alt: 'F5 Nodes Wiki',
