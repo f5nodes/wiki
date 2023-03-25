@@ -1,6 +1,6 @@
 {
-  "name": "f-5-wiki",
-  "version": "0.0.0",
+  "name": "f5wiki",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

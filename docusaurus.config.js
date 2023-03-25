@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'F5 NODES WIKI',
-	tagline: 'f5nodes wiki.',
+	title: 'F5 NODES – WIKI',
+	tagline: 'your nodes troubleshooter.',
 	favicon: 'img/favicon.svg',
 	url: 'https://wiki.f5nodes.com',
 	baseUrl: '/',
@@ -41,7 +41,7 @@ const config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
-			image: 'img/docusaurus-social-card.jpg',
+			image: 'img/social-card.png',
 			colorMode: {
 				defaultMode: 'dark',
 			},

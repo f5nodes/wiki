@@ -17,7 +17,6 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-font-family-base: "RuberoidBold";
-  /* --ifm-color-primary: #427ae7; */
   --ifm-color-primary: #427ae7;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -28,6 +27,9 @@
   --ifm-code-font-size: 95%;
 
   --docusaurus-highlighted-code-line-bg: rgba(0,0,0,.1);
+
+  --hero-background: url("../../static/img/back-light.png");
+  --hero-text-color: black;
 }
 
 p, li {
@@ -45,8 +47,17 @@ p, li {
   --ifm-color-primary-lightest: #4fddbf;
   
   --docusaurus-highlighted-code-line-bg: rgba(66,66,66,.35);
+
+  --hero-background: url("../../static/img/back-dark.png");
+  --hero-text-color: white;
 }
 
 p, li {
   font-family: "RuberoidRegular";
+}
+
+.hero {
+  color: var(--hero-text-color);
+  background-image: var(--hero-background);
+  background-size: cover;
 }
