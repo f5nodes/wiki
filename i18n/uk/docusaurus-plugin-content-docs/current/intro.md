@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
 ---
-
-# intro ukraine
+# Introduction
 
 тут українською
 

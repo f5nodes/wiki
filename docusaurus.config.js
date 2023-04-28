@@ -93,6 +93,10 @@ const config = {
 								label: 'Intro',
 								to: '/intro',
 							},
+							{
+								label: 'Celestia',
+								to: '/celestia',
+							},
 						],
 					},
 					{
