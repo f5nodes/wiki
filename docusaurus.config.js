@@ -95,7 +95,7 @@ const config = {
 							},
 							{
 								label: 'Celestia',
-								to: '/celestia',
+								to: '/category/celestia',
 							},
 						],
 					},
