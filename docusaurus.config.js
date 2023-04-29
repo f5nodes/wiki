@@ -29,6 +29,7 @@ const config = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/f5nodes/wiki/tree/main/',
 					routeBasePath: '/',
+					showLastUpdateTime: true,
 				},
 				blog: false,
 				theme: {
