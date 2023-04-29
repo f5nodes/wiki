@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
         Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
         description: (
             <>
-                F5 Wiki provides a constantly-updated source of information on blockchain nodes. Our community-driven
+                F5 Wiki provides an up-to-date information on blockchain nodes. Our community-driven
                 platform allows anyone to contribute by adding their own bugs and solutions, ensuring that the platform
                 remains comprehensive and relevant.
             </>
@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
         Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
         description: (
             <>
-                F5 Wiki is designed to be user-friendly and easy to navigate, with simple scripts that make it easy for
+                F5 Wiki is user-friendly and easy to navigate, with simple scripts that make it easy for
                 users of all skill levels to find the information they need, including scripts for installing and
                 updating nodes, downloading snapshots, adding live peers, and finding public endpoints.
             </>
