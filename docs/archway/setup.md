@@ -3,6 +3,8 @@ sidebar_position: 1
 description: Setting up Archway Validator node
 ---
 
+# Setup
+
 ## Hardware requirements
 
 - Memory: **16 GB RAM**
@@ -141,12 +143,12 @@ sudo journalctl -u archwayd -f -o cat
 ```bash 
 archwayd status 2>&1 | jq .SyncInfo
 ```
+:::info
+If the value is `false`, you can proceed to the next step.
+:::
 
 ![archway-9](./img/archway-9.png)
 
-:::note
-If the value is `false`, you can proceed to the next step.
-:::
 
 ### Create a validator
 
