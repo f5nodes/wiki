@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-description: Setting ip Archway Validator node
+sidebar_position: 1
+description: Setting up Archway Validator node
 ---
 
 ## Hardware requirements
@@ -32,7 +32,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 ```
 
-### Check Go version
+Check Go version
 
 ```bash
 go version
@@ -136,7 +136,7 @@ sudo journalctl -u archwayd -f -o cat
 !faucet <archway155sz8......>
 ```
 
-### Check the synchronization
+### Check synchronization
 
 ```bash 
 archwayd status 2>&1 | jq .SyncInfo
@@ -150,21 +150,22 @@ If the value is `false`, you can proceed to the next step.
 
 ### Create a validator
 
+:::note
+Change `f5nodes` to yours one.
+:::
+
 ```bash
 archwayd tx staking create-validator \
   --amount=1000000uconst \
   --pubkey=$(archwayd tendermint show-validator) \
-  --moniker=$MONIKER \
+  --moniker=f5nodes \
   --chain-id=constantine-2 \
   --commission-rate="0.10" \
   --commission-max-rate="0.20" \
   --commission-max-change-rate="0.01" \
   --min-self-delegation=1000000 \
   --fees=200uconst \
-  --from=$WALLET \
-  --identity=$IDENTITY \
-  --website=$WEBSITE \
-  --details=$DETAILS \
+  --from=f5nodes 
   -y
 ```
 
