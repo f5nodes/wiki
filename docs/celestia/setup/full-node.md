@@ -95,7 +95,7 @@ Then we can go to [#faucet](https://discord.com/invite/YsnTPcSfWQ) channel for â
 $request <celestia1ux3y......> 
 ```
 
-### Initialize Full node
+### Initialize Full Node
 
 :::note
 Change `f5nodes` to your moniker 
@@ -185,8 +185,3 @@ rm -f $(which celestia-full)
 rm -rf $HOME/.celestia-full
 rm -rf $HOME/celestia-full
 ```
-
-
-
-
-
