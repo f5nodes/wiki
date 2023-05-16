@@ -167,14 +167,12 @@ Change `f5nodes` to your moniker
 :::
 - Create a new key
 ```bash
-./cel-key add f5nodes --keyring-backend test --node.type full --p2p.network blockspacerace
+./cel-key add f5nodes --keyring-backend test --node.type bridge --p2p.network blockspacerace
 ```
-
-![full-6](./img/full-6.png)
 
 - Restore an existing key using a mnemonic (optional)
 ```bash
-./cel-key add f5nodes --keyring-backend test --node.type full --p2p.network blockspacerace --recover
+./cel-key add f5nodes --keyring-backend test --node.type bridge --p2p.network blockspacerace --recover
 ```
 
 Then we can go to [#faucet](https://discord.com/invite/YsnTPcSfWQ) channel for “Blockspace Race” and request test tokens in format: 
