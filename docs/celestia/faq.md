@@ -8,7 +8,7 @@ description: Celestia Nodes FAQ
 ### Will there be any rewards for running a node?
 Rewards will be only for selected operators to Blockspace Race (1.000 operators). They were already selected and have itn role in Discord. Applications have been closed and there's no way to apply for now.
 
-### Is it possible to run the node in Blockspace Race if I wasn’t selected?
+### Is it possible to run the node in Blockspace Race if I wasn't selected?
 Yes, anyone can run node in Blockspace chain, as the network is permissionless. 
 
 ### What are the difference between Mocha/Arabica/Brockspace race testnets?
@@ -26,37 +26,37 @@ cd celestia-node
 ```
 
 :::note
-Change <key-name> and <node-type>  to yours one.
+Change *key-name* and *node-type* to yours one.
 :::
 
 ### How to transfer node to another server?
-Save the keys. Keys are located in the *~/.celestia-<node-type>-blockspacerace-0/keys* directory (assuming you use the default node store path).
+Save the keys. Keys are located in the *~/.celestia-node-type-blockspacerace-0/keys* directory (assuming you use the default node store path).
 Install node on new server & wait for synchronization.
 Stop the old node: `sudo systemctl stop celestia-<node-type>` (for systemd).
-On new server, using any FTP client or cmd add previously saved keys in the same path *~/.celestia-<node-type>-blockspacerace-0/keys*.
+On new server, using any FTP client or cmd add previously saved keys in the same path *~/.celestia-node-type-blockspacerace-0/keys*.
 Restart the new node: `sudo systemctl restart celestia-<node-type>` (for systemd).
 
 :::note
-Change <node-type>  to yours one.
+Change *node-type* to yours one.
 :::
 
-### How to check the disk usage of the .celestia-<node-type>-blockspacerace-0 directory?
-Run this command:
+### How to check the disk usage of the blockspacerace-0 directory?
+
 ```bash
-du -h ~/.celestia-<node-type>-blockspacerace-0
+du -h ~/.celestia-node-type-blockspacerace-0
 ```
 
 :::note
-Change <node-type>  to yours one.
+Change *node-type* to yours one.
 :::
 
 ### How to edit service file?
 
 ```bash
-nano /etc/systemd/system/celestia-<node-type>.service
+nano /etc/systemd/system/celestia-node-type.service
 ```
 
-`Ctrl+X —> Y —> Enter` to exit editing mode.
+`Ctrl+X –> Y –> Enter` to exit editing mode.
 
 ### Can I add my wallet to Keplr? 
 For now you can add Mocha and Blockspace Race chains. Mamaki testnet has been eliminated and there's no way to add it. For more information and tutorial check Keplr [documentation](https://docs.celestia.org/developers/keplr/)
