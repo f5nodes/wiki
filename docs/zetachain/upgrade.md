@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
-description: Update ZetaChain Validator node
+description: Upgrade ZetaChain Validator node
 ---
 
-# Update
+# Upgrade
 
-## Update the node
+## Upgrade the node
+
+### Stop the node
+```bash
+command
+```
