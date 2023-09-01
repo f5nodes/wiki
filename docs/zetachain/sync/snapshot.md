@@ -5,9 +5,21 @@ description: Snapshot
 
 # Snapshot
 
-## height: 1,243,492 (1m ago); size: XXX GB; pruning: custom/100/0/10; indexer: null
+> ### When a new node joins a network, it can use a snapshot — a compressed backup of the chain's data — to quickly synchronize with the current state. Snapshots expedite the process, reducing the need to download and verify every transaction from the beginning.
 
-### Stop the node
-```bash
-command
-```
+### Find the snapshots below:
+
+<details>
+  <summary>F5 Nodes</summary>
+  <div>
+    <div>Stop the node</div>
+    
+    sudo systemctl stop zetacored
+
+  <div>Stop the node</div>
+  
+      ```bash 
+      sudo systemctl stop zetacored
+      ```
+  </div>
+</details>
