@@ -13,13 +13,8 @@ description: Snapshot
   <summary>F5 Nodes</summary>
   <div>
     <div>Stop the node</div>
-    
-    sudo systemctl stop zetacored
-
-  <div>Stop the node</div>
-  
-      ```bash 
-      sudo systemctl stop zetacored
-      ```
+    <code>sudo systemctl stop zetacored</code>
+    <div>Stop the node</div>
+    <code>sudo systemctl stop zetacored</code>
   </div>
 </details>
