@@ -7,4 +7,3 @@ description: Checkers
 
 ### Node checker by F5 Nodes 
 
-### Chain chacker by Pops.one 
