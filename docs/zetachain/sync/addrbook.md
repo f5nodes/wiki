@@ -5,9 +5,24 @@ description: AddrBook
 
 # AddrBook
 
-## updates every: 1h
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
 
-### Stop the node 
+Run the command and restart the node
+
+:::note
+Change `addrbook_url` to the one you choose from list above.
+:::
+
 ```bash
-command
+curl -s addrbook_url > $HOME/.zetacored/config/addrbook.json
+
+sudo systemctl restart zetacored
 ```
+
+<details>
+  <summary>F5 Nodes</summary>
+  <div>
+
+    url here
+  </div>
+</details>
