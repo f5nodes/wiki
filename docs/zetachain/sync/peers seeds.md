@@ -13,7 +13,7 @@ List of active peers:
 ```
 
 :::info
-You can manually add them to your `config.toml` or run the commands below: 
+You can add them manually to your `config.toml` or run the commands below.
 :::
 ```bash
 # create variable PEERS 
