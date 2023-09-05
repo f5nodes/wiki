@@ -7,43 +7,6 @@ description: Live Peers / Seeds
 
 > When you start a node, you often need to connect to the network. This requires you to connect to one or more peers to start downloading the blockchain and receiving new blocks and transactions. Seeding nodes or bootstrap nodes help in this initial connection process.
 
-````mdx-code-block
-import { useEffect, useState } from 'react';
-
-function ApiData() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const apiUrl = 'https://zetachain-rpc.f5nodes.com/net_info';
-
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((result) => {
-        setData(result);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-      });
-  }, []);
-
-  return (
-    <div>
-      {loading ? (
-        <p>Loading data...</p>
-      ) : (
-        <div>
-          <h2>API Data</h2>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </div>
-      )}
-    </div>
-  );
-}
-````
-
 #### List of active peers:
 ```bash
 123
@@ -62,3 +25,6 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacore
 # restart the node
 sudo systemctl restart zetacored
 ```
+
+import LivePeers from '@site/src/components/LivePeers';
+<LivePeers />
