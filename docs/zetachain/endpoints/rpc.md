@@ -10,6 +10,7 @@ description: RPC
 #### A list of RPC endpoints you can use:
 - https://zetachain-rpc.f5nodes.com
 - https://zetachain-testnet-rpc.polkachu.com
+- https://rpc.ankr.com/http/zetachain_athens_testnet
 - https://zetachain-testnet.nodejumper.io:443
 - https://rpc-t.zeta.nodestake.top
 - https://zetachain-testnet.rpc.kjnodes.com
