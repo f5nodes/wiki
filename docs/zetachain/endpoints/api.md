@@ -10,5 +10,8 @@ description: API
 #### A list of API endpoints you can use:
 - https://zetachain-testnet-api.f5nodes.com
 - https://zetachain-testnet-api.polkachu.com
+- https://zetachain-testnet.nodejumper.io:1317
+- https://api-t.zeta.nodestake.top
+- https://zetachain-testnet.api.kjnodes.com
 - https://zetachain-testnet-api.itrocket.net:443
 - https://zeta-testnet-api.synergynodes.com
