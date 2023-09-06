@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PartialExample from "./_live-peers.mdx";
 
 type Peer = {
 	id: string;
@@ -12,7 +11,7 @@ interface LivePeersProps {
 }
 
 const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
-	const [peers, setPeers] = useState<Peer[]>([]);
+	const [peers, setPeers] = useState<string>("");
 
 	useEffect(() => {
 		const fetchLivePeers = async () => {
@@ -22,16 +21,12 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 
 				const extractedPeers = data.result.peers.map((peer: any) => {
 					const port = peer.node_info.listen_addr.split(":").pop();
-					return {
-						id: peer.node_info.id,
-						ip: peer.remote_ip,
-						port: port,
-					};
+					return `${peer.node_info.id}@${peer.remote_ip}:${port}`;
 				});
 
-				setPeers(extractedPeers);
+				setPeers(extractedPeers.join(", "));
 			} catch (error) {
-				console.error("Failed to fetch peers info:", error);
+				console.error(`Failed to fetch peers info for RPC ${rpc}:`, error);
 			}
 		};
 
@@ -40,18 +35,10 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 
 	return (
 		<div>
-			<PartialExample name="TestName" />
-			<h2>Peers Information</h2>
 			<h4>
-				All peers: <span>{peers.length}</span>
+				Live peers: <span>{peers.split(", ").length}</span>
 			</h4>
-			<ul>
-				{peers.map((peer) => (
-					<li key={peer.id}>
-						ID: {peer.id}, IP: {peer.ip}, Port: {peer.port}
-					</li>
-				))}
-			</ul>
+			<CodeBlock language="bash">{`PEERS="${peers}"`}</CodeBlock>
 		</div>
 	);
 };
