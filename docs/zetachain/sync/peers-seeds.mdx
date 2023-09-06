@@ -3,28 +3,6 @@ sidebar_position: 3
 description: Live Peers / Seeds
 ---
 
-# Live Peers / Seeds
+import Highlight from '@site/src/components/Highlight';
 
-> When you start a node, you often need to connect to the network. This requires you to connect to one or more peers to start downloading the blockchain and receiving new blocks and transactions. Seeding nodes or bootstrap nodes help in this initial connection process.
-
-#### List of active peers:
-```bash
-123
-```
-
-:::info
-You can add them manually to your `config.toml` or run the commands below.
-:::
-```bash
-# create variable PEERS
-PEERS="123"
-
-# add peers to config.toml
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacored/config/config.toml
-
-# restart the node
-sudo systemctl restart zetacored
-```
-
-import LivePeers from '@site/src/components/LivePeers';
-<LivePeers />
+<Highlight color="#25c2a0">Docusaurus green</Highlight>
