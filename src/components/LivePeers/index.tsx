@@ -6,13 +6,17 @@ type Peer = {
 	port: string;
 };
 
-const LivePeers: React.FC = () => {
+interface LivePeersProps {
+	rpc: string;
+}
+
+const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 	const [peers, setPeers] = useState<Peer[]>([]);
 
 	useEffect(() => {
 		const fetchLivePeers = async () => {
 			try {
-				const response = await fetch("https://zetachain-rpc.f5nodes.com/net_info");
+				const response = await fetch(rpc);
 				const data = await response.json();
 
 				const extractedPeers = data.result.peers.map((peer: any) => {
@@ -36,6 +40,9 @@ const LivePeers: React.FC = () => {
 	return (
 		<div>
 			<h2>Peers Information</h2>
+			<h4>
+				All peers: <span>{peers.length}</span>
+			</h4>
 			<ul>
 				{peers.map((peer) => (
 					<li key={peer.id}>
