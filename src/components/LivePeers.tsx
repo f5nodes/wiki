@@ -6,11 +6,11 @@ type Peer = {
 	port: string;
 };
 
-const PeersInfo: React.FC = () => {
+const LivePeers: React.FC = () => {
 	const [peers, setPeers] = useState<Peer[]>([]);
 
 	useEffect(() => {
-		const fetchPeersInfo = async () => {
+		const fetchLivePeers = async () => {
 			try {
 				const response = await fetch("https://zetachain-rpc.f5nodes.com/net_info");
 				const data = await response.json();
@@ -47,4 +47,4 @@ const PeersInfo: React.FC = () => {
 	);
 };
 
-export default PeersInfo;
+export default LivePeers;
