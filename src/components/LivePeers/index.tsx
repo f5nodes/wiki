@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PartialExample from "./_live-peers.mdx";
 
 type Peer = {
 	id: string;
@@ -39,6 +40,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 
 	return (
 		<div>
+			<PartialExample name="TestName" />
 			<h2>Peers Information</h2>
 			<h4>
 				All peers: <span>{peers.length}</span>
