@@ -12,6 +12,7 @@ interface LivePeersProps {
 
 const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 	const [peers, setPeers] = useState<string>("");
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		const fetchLivePeers = async () => {
@@ -25,21 +26,27 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 				});
 
 				setPeers(extractedPeers.join(", "));
+				setIsLoading(false);
 			} catch (error) {
 				console.error(`Failed to fetch peers info for RPC ${rpc}:`, error);
+				setIsLoading(false);
 			}
 		};
 
 		fetchLivePeers();
-	}, []);
+	}, [rpc]);
 
 	return (
-		<div>
-			<h4>
-				Live peers: <span>{peers.split(", ").length}</span>
-			</h4>
-			<CodeBlock language="bash">{`PEERS="${peers}"`}</CodeBlock>
-		</div>
+		<>
+			{isLoading ? (
+				<p>Loading live peers...</p>
+			) : (
+				<>
+					<h4>Live peers: {peers.split(", ").length}</h4>
+					<CodeBlock language="bash">{`PEERS="${peers}"`}</CodeBlock>
+				</>
+			)}
+		</>
 	);
 };
 
