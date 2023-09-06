@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CodeBlock from "@theme/CodeBlock";
 
 type Peer = {
 	id: string;
