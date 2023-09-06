@@ -18,7 +18,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 	useEffect(() => {
 		const fetchLivePeers = async () => {
 			try {
-				const response = await fetch(rpc);
+				const response = await fetch(`${rpc}/net_info`);
 				const data = await response.json();
 
 				const extractedPeers = data.result.peers.map((peer: any) => {
