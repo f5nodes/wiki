@@ -9,7 +9,7 @@ description: AddrBook
 
 Run the command and restart the node:
 
-:::tip
+:::info
 Change `addrbook_url` to the one you choose from the list above.
 :::
 
