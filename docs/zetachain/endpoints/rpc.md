@@ -9,7 +9,7 @@ description: RPC
 
 A list of RPC endpoints you can use:
 
-- F5 Nodes
+* F5 Nodes
 ```bash
 https://zetachain-rpc.f5nodes.com
 ```
