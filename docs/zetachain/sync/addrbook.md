@@ -14,7 +14,7 @@ Change `addrbook_url` to the one you choose from the list above.
 Run the command and restart the node:
 
 ```bash
-curl -s addrbook_url > $HOME/.zetacored/config/addrbook.json
+curl -s <addrbook_url> > $HOME/.zetacored/config/addrbook.json
 
 sudo systemctl restart zetacored
 ```
