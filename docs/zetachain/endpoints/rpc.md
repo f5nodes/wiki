@@ -7,9 +7,9 @@ description: RPC
 
 > The RPC endpoint enables users to interact with ZetaChain's nodes, querying the node's state and transmitting transactions within the ZetaChain network.
 
-#### A list of RPC endpoints you can use:
+A list of RPC endpoints you can use:
 
-* F5 Nodes
+- F5 Nodes
 ```bash
 https://zetachain-rpc.f5nodes.com
 ```
