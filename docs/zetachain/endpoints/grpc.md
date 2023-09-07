@@ -7,7 +7,7 @@ description: gRPC
 
 > The gRPC endpoint enables user interactions with a ZetaChain Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
 
-### A list of gRPC endpoints you can use:
+A list of gRPC endpoints you can use:
 
 * F5 Nodes
 ```bash

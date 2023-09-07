@@ -7,7 +7,7 @@ description: API
 
 > In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
 
-#### A list of API endpoints you can use:
+A list of API endpoints you can use:
 
 * F5 Nodes
 ```bash

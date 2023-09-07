@@ -7,14 +7,14 @@ description: AddrBook
 
 > Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
 
-Run the command and restart the node:
-
 :::info
 Change `addrbook_url` to the one you choose from the list above.
 :::
 
+Run the command and restart the node:
+
 ```bash
-curl -s addrbook_url > $HOME/.zetacored/config/addrbook.json
+curl -s <addrbook_url> > $HOME/.zetacored/config/addrbook.json
 
 sudo systemctl restart zetacored
 ```
