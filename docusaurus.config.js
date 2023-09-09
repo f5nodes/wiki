@@ -74,7 +74,7 @@ const config = {
 						type: "doc",
 						docId: "intro",
 						position: "left",
-						label: "Intro",
+						label: "Introduction",
 					},
 					{
 						href: "https://github.com/f5nodes/wiki",
@@ -93,12 +93,16 @@ const config = {
 						title: "Docs",
 						items: [
 							{
-								label: "Intro",
+								label: "Introduction",
 								to: "/intro",
 							},
 							{
 								label: "Celestia",
 								to: "/category/celestia",
+							},
+							{
+								label: "ZetaChain",
+								to: "/category/zetachain",
 							},
 						],
 					},
@@ -119,7 +123,7 @@ const config = {
 						title: "More",
 						items: [
 							{
-								label: "F5 Nodes",
+								label: "F5 Nodes Website",
 								href: "https://f5nodes.com",
 							},
 							{
