@@ -33,8 +33,9 @@ const MainpageMetrics: React.FC<MainpageMetricsProps> = ({ rpc, binary }) => {
 				<p>Loading metrics info...</p>
 			) : (
 				<>
-					<h4>Network: {network}</h4>
-					<p>Binary Value: {binary}</p>
+					<h4>
+						🌐 Network: {network} | 📟 Binary Name: {binary}
+					</h4>
 				</>
 			)}
 		</>

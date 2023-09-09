@@ -12,7 +12,7 @@ interface LivePeersProps {
 }
 
 const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
-	const [peers, setPeers] = useState<string>("");
+	const [peers, setPeers] = useState<string>("LOADING...");
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
@@ -39,14 +39,10 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 
 	return (
 		<>
-			{isLoading ? (
-				<p>Loading live peers...</p>
-			) : (
-				<>
-					<h4>Live peers: {peers.split(", ").length}</h4>
-					<CodeBlock language="bash">{`PEERS="${peers}"`}</CodeBlock>
-				</>
-			)}
+			{isLoading ? <p>Loading live peers...</p> : <h4>Live peers: {peers.split(", ").length}</h4>}
+			<CodeBlock language="bash">{`PEERS="${peers}"
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacored/config/config.toml
+sudo systemctl restart zetacored`}</CodeBlock>
 		</>
 	);
 };

@@ -14,11 +14,3 @@ Copy and run the commands below to add your peers into `config.toml`.
 import LivePeers from '@site/src/components/LivePeers';
 
 <LivePeers rpc="https://zetachain-rpc.f5nodes.com" />
-
-```bash
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacored/config/config.toml
-```
-
-```bash
-sudo systemctl restart zetacored
-```
