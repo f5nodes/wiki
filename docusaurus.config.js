@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: "NODES WIKI",
-	tagline: "your nodes troubleshooter.",
+	tagline: "your nodes assistant.",
 	favicon: "img/favicon.svg",
 	url: "https://wiki.f5nodes.com",
 	baseUrl: "/",
@@ -74,7 +74,7 @@ const config = {
 						type: "doc",
 						docId: "intro",
 						position: "left",
-						label: "Intro",
+						label: "Introduction",
 					},
 					{
 						href: "https://github.com/f5nodes/wiki",
@@ -93,12 +93,16 @@ const config = {
 						title: "Docs",
 						items: [
 							{
-								label: "Intro",
+								label: "Introduction",
 								to: "/intro",
 							},
 							{
 								label: "Celestia",
 								to: "/category/celestia",
+							},
+							{
+								label: "ZetaChain",
+								to: "/zetachain",
 							},
 						],
 					},
