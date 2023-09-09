@@ -1,0 +1,23 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+explore let rpc = [
+	'https://rpc1.node1111.test9999999.com',
+	'https://rpc2.node2222.test9999999.com',
+	'https://rpc3.node3333.test9999999.com',
+	'https://rpc4.node4444.test9999999.com',
+	'https://rpc5.node5555.test9999999.com',
+	'https://rpc6.node6666.test9999999.com',
+	'https://rpc7.node7777.test9999999.com',
+	'https://rpc8.node8888.test9999999.com',
+];
+
+<SelectPaste rpc={rpc} />
