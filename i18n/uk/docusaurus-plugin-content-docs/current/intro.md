@@ -2,26 +2,3 @@
 sidebar_position: 1
 ---
 # Introduction
-
-тут українською
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-мовою
-
-```bash
-cd my-website
-npm run start
-```
-
-траляляля
-
-```bash
-test
-```
-
-```jsxhellou
-test1
-```
