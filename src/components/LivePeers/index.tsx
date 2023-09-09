@@ -39,7 +39,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 
 	return (
 		<>
-			{isLoading ? <p>Loading live peers...</p> : <h4>Live peers: {peers.split(", ").length}</h4>}
+			{isLoading ? <h4>Loading live peers...</h4> : <h4>Live peers: {peers.split(", ").length}</h4>}
 			<CodeBlock language="bash">{`PEERS="${peers}"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacored/config/config.toml
 sudo systemctl restart zetacored`}</CodeBlock>

@@ -22,7 +22,7 @@ const SelectPaste: React.FC<SelectPasteProps> = ({ endpoints, codeTemplate, tip 
 			)}
 			<div className="button-group card">
 				{endpoints.map((item, index) => (
-					<button className="button button--info" key={index} onClick={() => setSelectedEndpoint(item)}>
+					<button className="button button--primary" key={index} onClick={() => setSelectedEndpoint(item)}>
 						{item}
 					</button>
 				))}

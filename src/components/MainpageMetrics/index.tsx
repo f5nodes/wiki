@@ -30,7 +30,7 @@ const MainpageMetrics: React.FC<MainpageMetricsProps> = ({ rpc, binary }) => {
 	return (
 		<>
 			{isLoading ? (
-				<p>Loading metrics info...</p>
+				<h4>Loading metrics info...</h4>
 			) : (
 				<>
 					<h4>
