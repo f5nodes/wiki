@@ -9,6 +9,8 @@ description: State Sync
 
 import SelectPaste from '@site/src/components/SelectPaste';
 
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
 export let rpc = [
 	'https://rpc1.node1111.test9999999.com',
 	'https://rpc2.node2222.test9999999.com',
@@ -20,4 +22,4 @@ export let rpc = [
 	'https://rpc8.node8888.test9999999.com',
 ];
 
-<SelectPaste rpc={rpc} />
+<SelectPaste rpc={rpc} codeTemplate={stateSync} />
