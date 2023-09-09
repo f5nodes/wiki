@@ -3,32 +3,33 @@ import CodeBlock from "@theme/CodeBlock";
 import Admonition from "@theme/Admonition";
 
 interface SelectPasteProps {
-	rpc: string[];
+	endpoints: string[];
 	codeTemplate: string;
+	tip?: string;
 }
 
-const SelectPaste: React.FC<SelectPasteProps> = ({ rpc, codeTemplate }) => {
-	const [selectedRpc, setSelectedRpc] = useState<string>(rpc[0]);
+const SelectPaste: React.FC<SelectPasteProps> = ({ endpoints, codeTemplate, tip }) => {
+	const [selectedEndpoint, setSelectedEndpoint] = useState<string>(endpoints[0]);
 
-	const renderedCode = codeTemplate.replace("{{selectedRpc}}", selectedRpc);
+	const renderedCode = codeTemplate.replace("{{endpoint}}", selectedEndpoint);
 
 	return (
 		<div>
-			<Admonition type="tip" icon="📘" title="How to Use">
-				<p>Click on any RPC to paste it into the code block.</p>
-			</Admonition>
-
-			<CodeBlock language="bash" showLineNumbers>
-				{renderedCode}
-			</CodeBlock>
-
+			{tip && (
+				<Admonition type="tip" icon="📘" title="How to Use">
+					<p>{tip}</p>
+				</Admonition>
+			)}
 			<div className="button-group card">
-				{rpc.map((item, index) => (
-					<button className="button button--secondary" key={index} onClick={() => setSelectedRpc(item)}>
+				{endpoints.map((item, index) => (
+					<button className="button button--info" key={index} onClick={() => setSelectedEndpoint(item)}>
 						{item}
 					</button>
 				))}
 			</div>
+			<CodeBlock language="bash" showLineNumbers>
+				{renderedCode}
+			</CodeBlock>
 		</div>
 	);
 };

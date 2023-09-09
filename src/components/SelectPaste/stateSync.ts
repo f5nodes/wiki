@@ -3,7 +3,7 @@ export const stateSync = `sudo systemctl stop zetacored
 cp $HOME/.zetacored/data/priv_validator_state.json $HOME/.zetacored/priv_validator_state.json.backup
 zetacored tendermint unsafe-reset-all --home $HOME/.zetacored --keep-addr-book
 
-CUSTOM_RPC="{{selectedRpc}}"
+CUSTOM_RPC="{{endpoint}}"
 
 LATEST_HEIGHT=$(curl -s $CUSTOM_RPC/block | jq -r .result.block.header.height)
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1500))

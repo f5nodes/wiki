@@ -1,0 +1,24 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+	'https://f5nodes.com',
+	'https://snapshots.polkachu.com/testnet-addrbook/zetachain/addrbook.json',
+	'https://snapshots-testnet.nodejumper.io/zetachain-testnet/addrbook.json',
+	'https://ss-t.zeta.nodestake.top/addrbook.json',
+	'https://snapshots.kjnodes.com/zetachain-testnet/addrbook.json',
+	'https://testnet-files.itrocket.net/zetachain/addrbook.json',
+	'https://snapshots.synergynodes.com/addrbook/zetachain_testnet/addrbook.json',
+];
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} tip="Click on any endpoint to paste it into the code block." />

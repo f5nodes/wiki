@@ -11,15 +11,14 @@ import SelectPaste from '@site/src/components/SelectPaste';
 
 import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
 
-export let rpc = [
-	'https://rpc1.node1111.test9999999.com',
-	'https://rpc2.node2222.test9999999.com',
-	'https://rpc3.node3333.test9999999.com',
-	'https://rpc4.node4444.test9999999.com',
-	'https://rpc5.node5555.test9999999.com',
-	'https://rpc6.node6666.test9999999.com',
-	'https://rpc7.node7777.test9999999.com',
-	'https://rpc8.node8888.test9999999.com',
+export let endpoints = [
+	'https://zetachain-rpc.f5nodes.com',
+	'https://zetachain-testnet-rpc.polkachu.com',
+	'https://zetachain-testnet.nodejumper.io:443',
+	'https://rpc-t.zeta.nodestake.top',
+	'https://zetachain-testnet.rpc.kjnodes.com',
+	'https://zetachain-testnet-rpc.itrocket.net:443',
+	'https://zeta-testnet-rpc.synergynodes.com',
 ];
 
-<SelectPaste rpc={rpc} codeTemplate={stateSync} />
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} tip="Click on any RPC to paste it into the code block." />
