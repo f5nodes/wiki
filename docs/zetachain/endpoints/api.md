@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 description: API
 ---
 
@@ -9,38 +9,37 @@ description: API
 
 A list of API endpoints you can use:
 
-* F5 Nodes
+F5 Nodes:
 ```bash
 https://zetachain-api.f5nodes.com
 ```
 
-* Polkachu
+Polkachu:
 ```bash
 https://zetachain-testnet-api.polkachu.com
 ```
 
-* NodeJumper
+NodeJumper:
 ```bash
 https://zetachain-testnet.nodejumper.io:1317
 ```
 
-* NodeStake
+NodeStake:
 ```bash
 https://api-t.zeta.nodestake.top
 ```
 
-* kjnodes
+kjnodes:
 ```bash
 https://zetachain-testnet.api.kjnodes.com
 ```
 
-* ITRocket
+ITRocket:
 ```bash
 https://zetachain-testnet-api.itrocket.net:443
 ```
 
-* Synergy Nodes
+Synergy Nodes:
 ```bash
 https://zeta-testnet-api.synergynodes.com
 ```
-

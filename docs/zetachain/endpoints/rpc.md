@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 description: RPC
 ---
 
@@ -9,37 +9,37 @@ description: RPC
 
 A list of RPC endpoints you can use:
 
-* F5 Nodes
+F5 Nodes:
 ```bash
 https://zetachain-rpc.f5nodes.com
 ```
 
-* Polkachu
+Polkachu:
 ```bash
 https://zetachain-testnet-rpc.polkachu.com
 ```
 
-* NodeJumper
+NodeJumper:
 ```bash
 https://zetachain-testnet.nodejumper.io:443
 ```
 
-* NodeStake
+NodeStake:
 ```bash
 https://rpc-t.zeta.nodestake.top
 ```
 
-* kjnodes
+kjnodes:
 ```bash
 https://zetachain-testnet.rpc.kjnodes.com
 ```
 
-* ITRocket
+ITRocket:
 ```bash
 https://zetachain-testnet-rpc.itrocket.net:443
 ```
 
-* Synergy Nodes
+Synergy Nodes:
 ```bash
 https://zeta-testnet-rpc.synergynodes.com
 ```

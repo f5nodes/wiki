@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 description: gRPC
 ---
 
@@ -9,33 +9,32 @@ description: gRPC
 
 A list of gRPC endpoints you can use:
 
-* F5 Nodes
+F5 Nodes:
 ```bash
 zetachain-grpc.f5nodes.com
 ```
 
-* Polkachu
+Polkachu:
 ```bash
 polkachu.com/testnet_public_grpc
 ```
 
-* NodeJumper
+NodeJumper:
 ```bash
 zetachain-testnet.nodejumper.io:9090
 ```
 
-* NodeStake
+NodeStake:
 ```bash
 grpc-t.zeta.nodestake.top:443
 ```
 
-* kjnodes
+kjnodes:
 ```bash
 zetachain-testnet.grpc.kjnodes.com:443
 ```
 
-* ITRocket
+ITRocket:
 ```bash
 zetachain-testnet-grpc.itrocket.net:16090
 ```
-
