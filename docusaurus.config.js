@@ -102,7 +102,7 @@ const config = {
 							},
 							{
 								label: "ZetaChain",
-								to: "/category/zetachain",
+								to: "/zetachain",
 							},
 						],
 					},
@@ -123,7 +123,7 @@ const config = {
 						title: "More",
 						items: [
 							{
-								label: "F5 Nodes Website",
+								label: "F5 Nodes",
 								href: "https://f5nodes.com",
 							},
 							{
