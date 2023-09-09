@@ -29,65 +29,33 @@ sudo systemctl restart zetacored && sudo journalctl -u zetacored -f
 
 A list of Snapshots you can use:
 
-<details>
-  <summary>F5 Nodes</summary>
-  <div>
-
-    url here
-  </div>
-</details>
+F5 Nodes
+```md
+url here
+```
 
 
-<details>
-  <summary>Polkachu</summary>
-  <div>
-
-    https://snapshots.polkachu.com/testnet-snapshots/zetachain/zetachain_1514635.tar.lz4
-  </div>
-</details>
+NodeJumper
+```md
+https://snapshots-testnet.nodejumper.io/zetachain-testnet
+```
 
 
-<details>
-  <summary>NodeJumper</summary>
-  <div>
-
-    https://snapshots-testnet.nodejumper.io/zetachain-testnet/athens_7001-1_2023-09-07.tar.lz4
-  </div>
-</details>
+NodeStake
+```md
+https://ss-t.zeta.nodestake.top
+```
 
 
-<details>
-  <summary>NodeStake</summary>
-  <div>
-
-    https://ss-t.zeta.nodestake.top/2023-09-04_zeta_1474991.tar.lz4
-  </div>
-</details>
+kjnodes
+```md
+https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
+```
 
 
-<details>
-  <summary>kjnodes</summary>
-  <div>
+ITRocket
+```md
+https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
+```
 
-    https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
-  </div>
-</details>
-
-
-<details>
-  <summary>ITRocket</summary>
-  <div>
-
-    https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
-  </div>
-</details>
-
-
-<details>
-  <summary>Synergy Nodes</summary>
-  <div>
-
-    http://snapshots.synergynodes.com/zetachain_testnet/zetachain_testnet_1512989.tar.lz4
-  </div>
-</details>
 
