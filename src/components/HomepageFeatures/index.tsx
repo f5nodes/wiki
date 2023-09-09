@@ -10,34 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
 	{
-		title: "Always relevant Info",
+		title: "Open-Source Knowledge",
 		Svg: require("@site/static/img/undraw1.svg").default,
 		description: (
 			<>
-				Nodes Wiki provides an up-to-date information on blockchain nodes. Our community-driven platform allows
-				anyone to contribute by adding their own info, ensuring that the platform remains comprehensive and
-				relevant.
+				Being open-source, Nodes Wiki invites contributions from across the globe, ensuring a rich and dynamic repository of content that benefits everyone.
 			</>
 		),
 	},
 	{
-		title: "What for?",
+		title: "Up-to-date Information",
 		Svg: require("@site/static/img/undraw2.svg").default,
 		description: (
 			<>
-				If you're experiencing issues with your nodes, Nodes Wiki is here to help. The platform provides a variety
-				of solutions to all types of problems.
+				Nodes Wiki is committed to keeping you at the forefront, with timely updates reflecting the latest developments and useful resources.
 			</>
 		),
 	},
 	{
-		title: "Easy to Use",
+		title: "Validator-Driven Content",
 		Svg: require("@site/static/img/undraw3.svg").default,
 		description: (
 			<>
-				Nodes Wiki is user-friendly and easy to navigate, with simple scripts that make it easy for users of all
-				skill levels to find the information they need, including scripts for installing and updating nodes,
-				downloading snapshots, adding live peers, and finding public endpoints.
+				With content sourced and scrutinized by some of the most active validators in the blockchain world, Nodes Wiki stands as a beacon of reliable and expert-backed information.
 			</>
 		),
 	},
@@ -50,7 +45,7 @@ function Feature({ title, Svg, description }: FeatureItem) {
 				<Svg className={styles.featureSvg} role="img" />
 			</div>
 			<div className="text--center padding-horiz--md">
-				<h3>{title}</h3>
+				<h3><b>{title}</b></h3>
 				<p>{description}</p>
 			</div>
 		</div>
