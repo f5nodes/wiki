@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
 	title: "NODES WIKI",
-	tagline: "your nodes troubleshooter.",
+	tagline: "your nodes assistant.",
 	favicon: "img/favicon.svg",
 	url: "https://wiki.f5nodes.com",
 	baseUrl: "/",
