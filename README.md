@@ -1,6 +1,6 @@
-# Welcome to F5 Wiki
+# Welcome to Nodes Wiki
 
-F5 Wiki is an open-source documentation platform for blockchain projects and their nodes. It is designed to provide always-relevant information to help users solve node-related problems and issues.
+Nodes Wiki is an open-source documentation platform for blockchain projects and their nodes. It is designed to provide always-relevant information to help users solve node-related problems and issues.
 
 ## Getting Started
 

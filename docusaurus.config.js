@@ -51,8 +51,8 @@ const config = {
 				id: "lets_contribute",
 				content:
 					'Let\'s build something great together! Check out the <a target="_blank" rel="noopener noreferrer" href="https://github.com/f5nodes/wiki">github</a> page for ways to contribute.',
-				backgroundColor: "white",
-				textColor: "black",
+				backgroundColor: "var(--ifm-color-emphasis-300)",
+				textColor: "white",
 				isCloseable: true,
 			},
 
