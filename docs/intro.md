@@ -19,7 +19,7 @@ To make a meaningful contribution:
 Nodes Wiki thrives on community participation. Whether you're a seasoned developer or just starting, your expertise and insights will only enhance the platform's richness.
 :::
 
-If you need assistance with using Nodes Wiki or have any questions, please don't hesitate to [reach out to us](core@f5nodes.com).
+If you need assistance with using Nodes Wiki or have any questions, please don't hesitate to [reach out to us](mailto:core@f5nodes.com).
 
 ---
 Stay empowered, 
