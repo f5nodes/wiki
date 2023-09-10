@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## What is Nodes Wiki?
 
-Nodes Wiki — is an open-source documentation platform with a focus on providing a full range of validators' resources and useful tools that will help you in the development and node operations.
+Nodes Wiki — is an open-source documentation platform with a focus on providing a full range of validators' services and useful tools that will help you in the development and node operations.
 
 Nodes Wiki is an open-source documentation platform that focuses on providing up-to-date resources and useful tools which help you in your development or node operation. It is a community-driven project that encourages contributions from users around the world, which means that anyone can contribute by adding their own bugs and errors, as well as the solutions they have discovered. The platform is designed to be user-friendly and easy to navigate. Nodes Wiki aims to provide always-relevant information to help users solve their node issues quickly and efficiently.
 
