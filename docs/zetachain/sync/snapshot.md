@@ -15,7 +15,7 @@ Choose a snapshot from the list and run the commands below. Don't forget to chan
 sudo systemctl stop zetacored
 
 # make a backup
-cp $HOME/.zetacored/data/priv_validator_state.json $HOME/.zetacored/priv_validator_state.json.backup 
+cp $HOME/.zetacored/data/priv_validator_state.json $HOME/.zetacored/priv_validator_state.json.backup
 
 # reset your node and download a snapshot
 zetacored tendermint unsafe-reset-all --home $HOME/.zetacored --keep-addr-book
@@ -29,33 +29,22 @@ sudo systemctl restart zetacored && sudo journalctl -u zetacored -f
 
 A list of Snapshots you can use:
 
-F5 Nodes
-```md
-url here
-```
-
-
-NodeJumper
-```md
+#### NodeJumper
+```bash
 https://snapshots-testnet.nodejumper.io/zetachain-testnet
 ```
 
-
-NodeStake
-```md
+#### NodeStake
+```bash
 https://ss-t.zeta.nodestake.top
 ```
 
-
-kjnodes
-```md
+#### kjnodes
+```bash
 https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
 ```
 
-
-ITRocket
-```md
+#### ITRocket
+```bash
 https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
 ```
-
-
