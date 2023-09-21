@@ -5,9 +5,9 @@ description: Explorers
 
 # Explorers
 
-> A block explorer is a search engine that allows users to access and explore the contents of individual blocks, transactions, validators, and addresses on a blockchain. It provides a visual interface to navigate the intricate details of blockchain operations. Through a block explorer, users can verify transactions, check balances of addresses, and track the history and state of the blockchain.
+> A block explorer is a search engine that allows users to access and explore the contents of individual blocks, transactions, validators, and addresses on a blockchain. It provides a visual interface to navigate the intricate details of blockchain operations.
 
-There are a number of explorers that you can use for ZetaChain:
+### There are a number of explorers that you can use for ZetaChain:
 
 #### ZetaScan
 ```bash
