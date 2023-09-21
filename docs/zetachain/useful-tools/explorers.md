@@ -19,7 +19,7 @@ https://explorer.zetachain.com
 https://zetachain-athens-3.blockscout.com
 ```
 
-#### Nodes.Guru: 
+#### Nodes.Guru
 ```bash
 https://zetachain.explorers.guru
 ```
