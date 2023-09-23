@@ -1,0 +1,28 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { stateSync }  from '@site/src/components/SelectPaste/stateSyncLava.ts';
+
+export let endpoints = [
+	'https://lava.rpc.t.anode.team',
+	'https://rpc.lava-testnet-2.lava.aviaone.com',
+	'https://lava-testnet-rpc.itrocket.net:443',
+	'https://lava-testnet.rpc.kjnodes.com',
+	'https://t-lava.rpc.utsa.tech',
+	'https://lava.rpc.liveraven.net',
+	'https://lava-testnet.nodejumper.io:443',
+  'https://rpc-t.lava.nodestake.top',
+  'https://rpc.lava-t.nodexcapital.com',
+  'https://lava-testnet-rpc.polkachu.com',
+  'https://lava-testnet.rpc.stakevillage.net:443',
+];
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} tip="Click on any RPC to paste it into the code block." />
