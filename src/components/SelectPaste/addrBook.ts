@@ -1,3 +1,3 @@
-export const addrBook = `curl -s {{endpoint}} > $HOME/.zetacored/config/addrbook.json
+export const addrBook = `curl -s {{endpoint}} > $HOME/.{{workingDirectory}}/config/addrbook.json
 
-sudo systemctl restart zetacored`;
+sudo systemctl restart {{binary}}`;
