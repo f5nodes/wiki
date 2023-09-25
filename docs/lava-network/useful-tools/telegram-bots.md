@@ -13,12 +13,12 @@ description: Telegram Bots
 https://t.me/kjnodes_testnet_proposal_bot
 ```
 
-#### Governance Bot | NODEJUMPER
+#### Governance Bot | NodeJumper
 
 > A telegram bot to notify users of governance proposals when they're available for voting.
-
+```bash
 https://t.me/nodejumper_governance_bot
-
+```
 
 #### NodesChecker
 
@@ -28,6 +28,7 @@ https://t.me/NodesGuru_bot
 ```
 
 #### Stake Village | Check Nodes bot
+>
 ```bash
 https://t.me/stakeVillage_check_nodes_bot
 ```
