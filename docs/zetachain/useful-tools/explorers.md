@@ -9,7 +9,7 @@ description: Explorers
 
 ### There are a number of explorers that you can use for ZetaChain:
 
-#### ZetaScan
+#### ZetaScan (official)
 ```bash
 https://explorer.zetachain.com
 ```
