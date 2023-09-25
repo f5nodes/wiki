@@ -1,7 +1,7 @@
-export const stateSync = `sudo systemctl stop zetacored
+export const stateSync = `sudo systemctl stop {{binary}}
 
-cp $HOME/.zetacored/data/priv_validator_state.json $HOME/.zetacored/priv_validator_state.json.backup
-zetacored tendermint unsafe-reset-all --home $HOME/.zetacored --keep-addr-book
+cp $HOME/.{{home}}/data/priv_validator_state.json $HOME/.{{home}}/priv_validator_state.json.backup
+{{binary}} tendermint unsafe-reset-all --home $HOME/.{{home}} --keep-addr-book
 
 CUSTOM_RPC="{{endpoint}}"
 
@@ -11,12 +11,12 @@ TRUST_HASH=$(curl -s "$CUSTOM_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bl
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-sed -i 's|^enable *=.*|enable = true|' $HOME/.zetacored/config/config.toml
-sed -i 's|^rpc_servers *=.*|rpc_servers = "'$CUSTOM_RPC,$CUSTOM_RPC'"|' $HOME/.zetacored/config/config.toml
-sed -i 's|^trust_height *=.*|trust_height = '$BLOCK_HEIGHT'|' $HOME/.zetacored/config/config.toml
-sed -i 's|^trust_hash *=.*|trust_hash = "'$TRUST_HASH'"|' $HOME/.zetacored/config/config.toml
+sed -i 's|^enable *=.*|enable = true|' $HOME/.{{home}}/config/config.toml
+sed -i 's|^rpc_servers *=.*|rpc_servers = "'$CUSTOM_RPC,$CUSTOM_RPC'"|' $HOME/.{{home}}/config/config.toml
+sed -i 's|^trust_height *=.*|trust_height = '$BLOCK_HEIGHT'|' $HOME/.{{home}}/config/config.toml
+sed -i 's|^trust_hash *=.*|trust_hash = "'$TRUST_HASH'"|' $HOME/.{{home}}/config/config.toml
 
-mv $HOME/.zetacored/priv_validator_state.json.backup $HOME/.zetacored/data/priv_validator_state.json
+mv $HOME/.{{home}}/priv_validator_state.json.backup $HOME/.{{home}}/data/priv_validator_state.json
 
-sudo systemctl restart zetacored
-sudo journalctl -u zetacored -f --no-hostname -o cat`;
+sudo systemctl restart {{binary}}
+sudo journalctl -u {{binary}} -f --no-hostname -o cat`;

@@ -4,14 +4,16 @@ import Admonition from "@theme/Admonition";
 
 interface SelectPasteProps {
 	endpoints: string[];
+	home: string[];
+	binary: string[];
 	codeTemplate: string;
 	tip?: string;
 }
 
-const SelectPaste: React.FC<SelectPasteProps> = ({ endpoints, codeTemplate, tip }) => {
+const SelectPaste: React.FC<SelectPasteProps> = ({ endpoints, home, binary, codeTemplate, tip }) => {
 	const [selectedEndpoint, setSelectedEndpoint] = useState<string>(endpoints[0]);
 
-	const renderedCode = codeTemplate.replace("{{endpoint}}", selectedEndpoint);
+	const renderedCode = codeTemplate.replace("{{endpoint}}", selectedEndpoint).replace("{{home}}", home).replace("{{binary}}", binary);
 
 	return (
 		<div>
