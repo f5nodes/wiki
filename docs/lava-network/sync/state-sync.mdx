@@ -9,7 +9,7 @@ description: State Sync
 
 import SelectPaste from '@site/src/components/SelectPaste';
 
-import { stateSync }  from '@site/src/components/SelectPaste/stateSyncLava.ts';
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
 
 export let endpoints = [
 	'https://lava.rpc.t.anode.team',
@@ -19,10 +19,10 @@ export let endpoints = [
 	'https://t-lava.rpc.utsa.tech',
 	'https://lava.rpc.liveraven.net',
 	'https://lava-testnet.nodejumper.io:443',
-  'https://rpc-t.lava.nodestake.top',
-  'https://rpc.lava-t.nodexcapital.com',
-  'https://lava-testnet-rpc.polkachu.com',
-  'https://lava-testnet.rpc.stakevillage.net:443',
+  	'https://rpc-t.lava.nodestake.top',
+  	'https://rpc.lava-t.nodexcapital.com',
+ 	'https://lava-testnet-rpc.polkachu.com',
+  	'https://lava-testnet.rpc.stakevillage.net:443',
 ];
 
 <SelectPaste endpoints={endpoints} codeTemplate={stateSync} tip="Click on any RPC to paste it into the code block." />
