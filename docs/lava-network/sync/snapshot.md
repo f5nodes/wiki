@@ -25,7 +25,7 @@ wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.lava
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.lava/priv_validator_state.json.backup $HOME/.lava/data/priv_validator_state.json 
 
-sudo systemctl restart lavad && sudo journalctl -fu lavad -o cat
+sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 
 A list of Snapshots you can use:
