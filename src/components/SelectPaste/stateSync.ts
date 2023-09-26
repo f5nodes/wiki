@@ -19,4 +19,4 @@ sed -i 's|^trust_hash *=.*|trust_hash = "'$TRUST_HASH'"|' $HOME/.{{home}}/config
 mv $HOME/.{{home}}/priv_validator_state.json.backup $HOME/.{{home}}/data/priv_validator_state.json
 
 sudo systemctl restart {{binary}}
-sudo journalctl -u {{binary}} -f --no-hostname -o cat`;
+sudo journalctl -u {{binary}} -f -o cat`;
