@@ -21,4 +21,8 @@ export let endpoints = [
 	'https://zeta-testnet-rpc.synergynodes.com',
 ];
 
-<SelectPaste endpoints={endpoints} codeTemplate={stateSync} tip="Click on any RPC to paste it into the code block." />
+export let home = 'zetacored';
+
+export let binary = 'zetacored';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />
