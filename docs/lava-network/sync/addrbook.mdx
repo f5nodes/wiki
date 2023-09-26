@@ -11,9 +11,6 @@ import SelectPaste from '@site/src/components/SelectPaste';
 
 import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
 
-export let home = 'lava';
-export let binary = 'lavad';
-
 export let endpoints = [
 	'https://anode.team/Lava/test/addrbook.json',
 	'http://snapshots.autostake.com/lava-testnet-2/addrbook.json',
@@ -28,4 +25,8 @@ export let endpoints = [
  	'https://snapshots.polkachu.com/testnet-addrbook/lava/addrbook.json',
 ];
 
-<SelectPaste endpoints={endpoints} codeTemplate={addrBook} tip="Click on any endpoint to paste it into the code block." />
+export let home = 'lava';
+
+export let binary = 'lavad';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />

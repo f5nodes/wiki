@@ -24,7 +24,7 @@ wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.zetacored
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.zetacored/priv_validator_state.json.backup $HOME/.zetacored/data/priv_validator_state.json
 
-sudo systemctl restart zetacored && sudo journalctl -u zetacored -f
+sudo systemctl restart zetacored && sudo journalctl -u zetacored -f -o cat
 ```
 
 A list of Snapshots you can use:
