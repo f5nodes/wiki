@@ -20,4 +20,8 @@ export let endpoints = [
 	'https://snapshots.synergynodes.com/addrbook/zetachain_testnet/addrbook.json',
 ];
 
-<SelectPaste endpoints={endpoints} codeTemplate={addrBook} tip="Click on any endpoint to paste it into the code block." />
+export let home = 'zetacored';
+
+export let binary = 'zetacored';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
