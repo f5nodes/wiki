@@ -1,0 +1,26 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+	  'https://anode.team/HAQQ/main/addrbook.json',
+	  'https://snapshots.l0vd.com/haqq-mainnet/addrbook.json',
+	  'https://ss.haqq.nodestake.top/addrbook.json',
+	  'https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/haqq/addrbook.json',
+	  'https://snapshots.synergynodes.com/addrbook/haqq_mainnet/addrbook.json',
+];
+
+export let home = 'haqqd';
+
+export let binary = 'haqqd';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
