@@ -1,0 +1,107 @@
+---
+sidebar_position: 1
+description: Endpoints
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Endpoints — API / RPC / gRPC
+
+> In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
+
+> The RPC endpoint enables users to interact with Haqq's nodes, querying the node's state and transmitting transactions within the Haqq Network.
+
+> The gRPC endpoint enables user interactions with a Haqq Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+
+<Tabs>
+  <TabItem value="api" label="API" default>
+
+#### Allnodes:
+```bash
+https://haqq-rest.publicnode.com
+```
+
+#### Anode:
+```bash
+https://haqq.api.m.anode.team
+```
+
+#### L0vd:
+```bash
+https://haqq-mainnet.api.l0vd.com
+```
+
+#### NodeStake:
+```bash
+https://api.haqq.nodestake.top
+```
+
+#### [Noders]Team:
+```bash
+https://haqq.api.nodersteam.com:19017
+```
+
+  </TabItem>
+  <TabItem value="rpc" label="RPC">
+
+#### Allnodes:
+```bash
+https://haqq-rpc.publicnode.com:443
+```
+
+#### Anode:
+```bash
+https://haqq.rpc.m.anode.team
+```
+
+#### L0vd:
+```bash
+https://haqq-mainnet.rpc.l0vd.com
+```
+
+#### NodeStake:
+```bash
+https://rpc.haqq.nodestake.top
+```
+
+#### [Noders]Team:
+```bash
+https://haqq.rpc.nodersteam.com:19657
+```
+
+#### Synergy Nodes:
+```bash
+https://rpc-haqq.synergynodes.com
+```
+
+#### thirdweb:
+```bash
+https://haqq-network.rpc.thirdweb.com
+```
+
+  </TabItem>
+  <TabItem value="grpc" label="gRPC">
+
+#### Allnodes:
+```bash
+haqq-grpc.publicnode.com:443
+```
+
+#### L0vd:
+```bash
+haqq-mainnet.grpc.l0vd.com:80
+```
+
+#### NodeStake:
+```bash
+grpc.haqq.nodestake.top:9090
+```
+
+#### [Noders]Team:
+```bash
+haqq.grpc.nodersteam.com:9191
+```
+
+  </TabItem>
+</Tabs>
