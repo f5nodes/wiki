@@ -14,7 +14,7 @@ https://shell.haqq.network/staking
 
 ### Haqq deployment service
 
-thirdweb – lace for web3 developers to explore smart contracts from world-class web3 protocols & engineers — all deployable with one click.
+Thirdweb – place for web3 developers to explore smart contracts from world-class web3 protocols & engineers — all deployable with one click.
 ```bash
 https://thirdweb.com/haqq-network
 ```
