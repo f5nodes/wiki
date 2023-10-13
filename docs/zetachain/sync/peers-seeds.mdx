@@ -13,4 +13,8 @@ Copy and run the commands below to add your peers into `config.toml`.
 
 import LivePeers from '@site/src/components/LivePeers';
 
-<LivePeers rpc="https://zetachain-rpc.f5nodes.com" />
+export let home = 'zetacored';
+
+export let binary = 'zetacored';
+
+<LivePeers rpc="https://zetachain-rpc.f5nodes.com" home={home} binary={binary} />

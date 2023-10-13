@@ -43,7 +43,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc, home, binary }) => {
 		<>
 			{isLoading ? <h4>Loading live peers...</h4> : <h4>Live peers: {peers.split(", ").length}</h4>}
 			<CodeBlock language="bash">{`PEERS="${peers}"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${home}/config/config.toml
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.${home}/config/config.toml
 sudo systemctl restart ${binary}`}</CodeBlock>
 		</>
 	);

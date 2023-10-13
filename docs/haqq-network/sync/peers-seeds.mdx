@@ -13,4 +13,8 @@ Copy and run the commands below to add your peers into `config.toml`.
 
 import LivePeers from '@site/src/components/LivePeers';
 
-<LivePeers rpc="https://haqq-rpc.publicnode.com:443" />
+export let home = 'haqqd';
+
+export let binary = 'haqqd';
+
+<LivePeers rpc="https://haqq-rpc.publicnode.com:443" home={home} binary={binary} />
