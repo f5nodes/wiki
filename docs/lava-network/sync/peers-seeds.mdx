@@ -13,4 +13,8 @@ Copy and run the commands below to add your peers into `config.toml`.
 
 import LivePeers from '@site/src/components/LivePeers';
 
-<LivePeers rpc="https://lava-testnet-rpc.polkachu.com" />
+export let home = 'lava';
+
+export let binary = 'lavad';
+
+<LivePeers rpc="https://lava-testnet-rpc.polkachu.com" home={home} binary={binary} />

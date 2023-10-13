@@ -9,9 +9,11 @@ type Peer = {
 
 interface LivePeersProps {
 	rpc: string;
+	home: string;
+	binary: string;
 }
 
-const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
+const LivePeers: React.FC<LivePeersProps> = ({ rpc, home, binary }) => {
 	const [peers, setPeers] = useState<string>("LOADING...");
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -41,8 +43,8 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc }) => {
 		<>
 			{isLoading ? <h4>Loading live peers...</h4> : <h4>Live peers: {peers.split(", ").length}</h4>}
 			<CodeBlock language="bash">{`PEERS="${peers}"
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.zetacored/config/config.toml
-sudo systemctl restart zetacored`}</CodeBlock>
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${home}/config/config.toml
+sudo systemctl restart ${binary}`}</CodeBlock>
 		</>
 	);
 };
