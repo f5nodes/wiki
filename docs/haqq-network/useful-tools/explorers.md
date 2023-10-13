@@ -9,42 +9,42 @@ description: Explorers
 
 ### There are a number of explorers that you can use for Haqq Network:
 
-#### Haqq (official)
-```bash
-https://explorer.haqq.network
-```
-
-#### Anode
+#### Anode (Cosmos)
 ```bash
 https://main.anode.team/haqq
 ```
 
-#### L0vd 
+#### Blockscout (EVM)
+```bash
+https://explorer.haqq.network
+```
+
+#### L0vd (Cosmos)
 ```bash
 https://explorers.l0vd.com/haqq-mainnet
 ```
 
-#### Nodes.Guru
+#### Nodes.Guru (Cosmos)
 ```bash
 https://haqq.explorers.guru
 ```
 
-#### NodeStake
+#### NodeStake (Cosmos)
 ```bash
 https://explorer.nodestake.top/haqq
 ```
 
-#### StakeMe
+#### StakeMe (Cosmos)
 ```bash
 https://haqq.exploreme.pro
 ```
 
-#### STAVR
+#### STAVR (Cosmos)
 ```bash
 https://explorer.stavr.tech/HAQQ-Mainnet
 ```
 
-#### Ping.pub
+#### Ping.pub (Cosmos)
 ```bash
 https://ping.pub/haqq
 ```
