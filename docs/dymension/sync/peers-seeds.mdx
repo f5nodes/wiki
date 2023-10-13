@@ -13,4 +13,8 @@ Copy and run the commands below to add your peers into `config.toml`.
 
 import LivePeers from '@site/src/components/LivePeers';
 
-<LivePeers rpc="https://dymension-testnet-rpc.polkachu.com" />
+export let home = 'dymension';
+
+export let binary = 'dymension';
+
+<LivePeers rpc="https://dymension-testnet-rpc.polkachu.com" home={home} binary={binary} />
