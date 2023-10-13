@@ -34,7 +34,7 @@ https://haqq.explorers.guru
 https://explorer.nodestake.top/haqq
 ```
 
-#### Stakeme
+#### StakeMe
 ```bash
 https://haqq.exploreme.pro
 ```
