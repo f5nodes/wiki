@@ -47,6 +47,12 @@ const config = {
 				defaultMode: "dark",
 			},
 
+			docs: {
+				sidebar: {
+					autoCollapseCategories: true,
+				},
+			},
+
 			announcementBar: {
 				id: "lets_contribute",
 				content:
