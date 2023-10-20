@@ -1,0 +1,244 @@
+---
+sidebar_position: 1
+description: Endpoints
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Endpoints — API / RPC / gRPC
+
+> In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
+
+> The RPC endpoint enables users to interact with Band's nodes, querying the node's state and transmitting transactions within the Band Protocol.
+
+> The gRPC endpoint enables user interactions with a Band Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+
+<Tabs>
+  <TabItem value="api" label="API" default>
+
+#### Band (official):
+```bash
+https://laozi1.bandchain.org/api
+```
+
+#### AutoStake:
+```bash 
+https://bandchain-mainnet-lcd.autostake.com:443
+```
+
+#### CosmosSpaces:
+```bash 
+https://api-band.cosmos-spaces.cloud
+```
+
+#### F5 Nodes:
+```bash 
+https://band-api.f5nodes.com
+```
+
+#### High Stakes:
+```bash 
+https://bandprotocol-api.highstakes.ch:1317
+```
+
+#### Ibs.team:
+```bash 
+https://band-api.ibs.team
+```
+
+#### Imperator:
+```bash 
+https://lcd-band.imperator.co
+```
+
+#### Indonode:
+```bash 
+https://api.band.indonode.net
+```
+
+#### kjnodes:
+```bash 
+https://band.api.kjnodes.com
+```
+
+#### Node&Validator:
+```bash 
+https://api.band.validatorvn.com
+```
+
+#### Nodeist:
+```bash 
+https://api-band.nodeist.net
+```
+
+#### Notional:
+```bash 
+https://api-bandchain-ia.cosmosia.notional.ventures
+```
+
+#### Polkachu:
+```bash 
+https://band-api.polkachu.com
+```
+
+#### Stakeflow:
+```bash 
+https://api-band-01.stakeflow.io
+```
+
+#### w3coins:
+```bash 
+https://band-api.w3coins.io
+```
+
+  </TabItem>
+  <TabItem value="rpc" label="RPC">
+
+#### Band (official):
+```bash 
+https://rpc.laozi1.bandchain.org:80
+```
+
+#### AutoStake:
+```bash
+https://bandchain-mainnet-rpc.autostake.com:443
+```
+
+#### CosmosSpaces:
+```bash
+https://rpc-band.cosmos-spaces.cloud
+```
+
+#### F5 Nodes:
+```bash
+https://band-rpc.f5nodes.com
+```
+
+#### High Stakes:
+```bash
+https://bandprotocol-rpc.highstakes.ch:26657
+```
+
+#### Ibs.team:
+```bash
+https://band-rpc.ibs.team
+```
+
+#### Imperator:
+```bash
+https://rpc-band.imperator.co # Tendermint RPC
+ws://rpc-band.imperator.co/wss/websocket # RPC Websocket
+```
+
+#### Indonode:
+```bash
+https://rpc.band.indonode.net
+```
+
+#### kjnodes:
+```bash
+https://band.rpc.kjnodes.com
+```
+
+#### Node&Validator:
+```bash
+https://band.validatorvn.com
+```
+
+#### Nodeist:
+```bash
+https://rpc-band.nodeist.net
+``` 
+
+#### Notional:
+```bash
+https://rpc-bandchain-ia.cosmosia.notional.ventures
+```
+
+#### Polkachu:
+```bash 
+https://band-rpc.polkachu.com
+```
+
+#### Stakeflow:
+```bash
+https://rpc-band-01.stakeflow.io
+```
+
+#### w3coins:
+```bash
+https://band-rpc.w3coins.io
+```
+
+  </TabItem>
+  <TabItem value="grpc" label="gRPC">
+
+#### Band (official):
+```bash 
+laozi1.bandchain.org #GRPC
+laozi1.bandchain.org/grpc-web #GRPC_WEB
+```
+
+#### AutoStake:
+```bash
+bandchain-mainnet-grpc.autostake.com:443
+```
+
+#### Cosmos Spaces:
+```bash
+grpc-band.cosmos-spaces.cloud:2240
+```
+
+#### F5 Nodes:
+```bash
+band-grpc.f5nodes.com
+```
+
+#### Imperator:
+```bash
+grpc-band.imperator.co:2072
+```
+
+#### Indonode:
+```bash
+grpc.band.indonode.net:20090
+```
+
+#### kjnodes:
+```bash
+band.grpc.kjnodes.com:443
+```
+
+#### Node&Validator:
+```bash
+grpc.band.validatorvn.com
+```
+
+#### Nodeist:
+```bash
+grpc-band.nodeist.net:443
+```
+
+#### Notional:
+```bash
+grpc-bandchain-ia.cosmosia.notional.ventures:443
+```
+
+#### Polkachu:
+```bash
+band-grpc.polkachu.com:22990
+```
+
+#### Stakeflow:
+```bash
+grpc-band-01.stakeflow.io:2502
+```
+
+#### w3coins:
+```bash
+band-grpc.w3coins.io:22990
+```
+
+  </TabItem>
+</Tabs>

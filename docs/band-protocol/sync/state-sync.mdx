@@ -1,0 +1,35 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
+export let endpoints = [
+	    'https://rpc.laozi1.bandchain.org:80',
+	    'https://bandchain-mainnet-rpc.autostake.com:443',
+	    'https://rpc-band.cosmos-spaces.cloud',
+	    'https://band-rpc.f5nodes.com',
+	    'https://bandprotocol-rpc.highstakes.ch:26657',
+	    'https://band-rpc.ibs.team',
+  	  'https://rpc-band.imperator.cohttps://rpc.band.indonode.net',
+  	  'https://band.rpc.kjnodes.com',
+  	  'https://band.validatorvn.com',
+  	  'https://rpc-band.nodeist.net',
+      'https://rpc-bandchain-ia.cosmosia.notional.ventures',
+      'https://band-rpc.polkachu.com',
+      'https://rpc-band-01.stakeflow.io',
+      'https://band-rpc.w3coins.io',
+];
+
+export let home = 'band';
+
+export let binary = 'bandd';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />
