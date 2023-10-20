@@ -29,22 +29,22 @@ sudo systemctl restart zetacored && sudo journalctl -u zetacored -f -o cat
 
 A list of Snapshots you can use:
 
-#### NodeJumper
+#### ITRocket:
 ```bash
-https://snapshots-testnet.nodejumper.io/zetachain-testnet
+https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
 ```
 
-#### NodeStake
-```bash
-https://ss-t.zeta.nodestake.top
-```
-
-#### kjnodes
+#### kjnodes:
 ```bash
 https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
 ```
 
-#### ITRocket
+#### NodeJumper:
 ```bash
-https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
+https://snapshots-testnet.nodejumper.io/zetachain-testnet
+```
+
+#### NodeStake:
+```bash
+https://ss-t.zeta.nodestake.top
 ```
