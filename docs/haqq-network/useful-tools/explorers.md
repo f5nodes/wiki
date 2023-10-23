@@ -11,14 +11,14 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| Anode | Cosmos | haqq_11235-1 (Mainnet) | https://main.anode.team/haqq |
+| Anode | Cosmos | Mainnet (haqq_11235-1) | https://main.anode.team/haqq |
 | Blockscout | EVM | Mainnet | https://explorer.haqq.network |
-| Blockscout | EVM | Testnet | https://explorer.testedge2.haqq.network |
-| L0vd | Cosmos | haqq_11235-1 (Mainnet) | https://explorers.l0vd.com/haqq-mainnet |
-| Nodes.Guru | Cosmos | haqq_11235-1 (Mainnet) | https://haqq.explorers.guru |
-| NodeStake | Cosmos | haqq_11235-1 (Mainnet) | https://explorer.nodestake.top/haqq |
-| StakeMe | Cosmos | haqq_11235-1 (Mainnet) | https://haqq.exploreme.pro |
-| STAVR | Cosmos | haqq_11235-1 (Mainnet) | https://explorer.stavr.tech/HAQQ-Mainnet | 
-| Ping.pub | Cosmos | haqq_11235-1 (Mainnet) | https://ping.pub/haqq | 
-| Ping.pub | Cosmos | haqq_54211-3 (Testnet) | https://testnet.ping.pub/haqq |
+| Blockscout | EVM | Testnet (Testedge2) | https://explorer.testedge2.haqq.network |
+| L0vd | Cosmos | Mainnet (haqq_11235-1) | https://explorers.l0vd.com/haqq-mainnet |
+| Nodes.Guru | Cosmos | Mainnet (haqq_11235-1) | https://haqq.explorers.guru |
+| NodeStake | Cosmos | Mainnet (haqq_11235-1) | https://explorer.nodestake.top/haqq |
+| StakeMe | Cosmos | Mainnet (haqq_11235-1) | https://haqq.exploreme.pro |
+| STAVR | Cosmos | Mainnet (haqq_11235-1) | https://explorer.stavr.tech/HAQQ-Mainnet | 
+| Ping.pub | Cosmos | Mainnet (haqq_11235-1) | https://ping.pub/haqq | 
+| Ping.pub | Cosmos | Testnet (haqq_54211-3) | https://testnet.ping.pub/haqq |
 
