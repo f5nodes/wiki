@@ -9,54 +9,19 @@ description: Explorers
 
 ### There are a number of explorers that you can use for Band Protocol:
 
-#### Band (official)
-```bash
-https://www.cosmoscan.io
-```
+| Name | Layer | Network | URL |
+| --- | --- | --- | --- |
+| AtomScan | Cosmos | laozi-mainnet) | https://atomscan.com/band-protocol |
+| Band (official) | Cosmos | laozi-mainnet | https://www.cosmoscan.io |
+| Band (official) | Cosmos | laozi-testnet | https://laozi-testnet6.cosmoscan.io |
+| Cosmostation | Cosmos | laozi-mainnet | https://www.mintscan.io/band |
+| Cryptonian | Cosmos | laozi-mainnet | https://s.cryptonian.life/band |
+| Forbole | Cosmos | laozi-mainnet | https://bigdipper.live/band |
+| Indonode | Cosmos | laozi-mainnet | https://explorer.indonode.net/band | 
+| Nodes.Guru (official) | laozi-mainnet | https://band.explorers.guru |
+| Ping.pub (official) | laozi-mainnet | https://ping.pub/band |
+| Stakeflow (official) | laozi-mainnet | https://stakeflow.io/band-protocol |
+| STAVR (official) | Cosmos | laozi-mainnet | https://explorer.stavr.tech/Band-Mainnet |
 
-#### AtomScan
-```bash
-https://atomscan.com/band-protocol
-```
-
-#### Cosmostation
-```bash
-https://www.mintscan.io/band
-```
-
-#### Cryptonian
-```bash
-https://s.cryptonian.life/band
-```
-
-#### Forbole
-```bash
-https://bigdipper.live/band
-```
-
-#### Indonode
-```bash
-https://explorer.indonode.net/band
-```
-
-#### Nodes.Guru
-```bash
-https://band.explorers.guru
-```
-
-#### Ping.pub
-```bash
-https://ping.pub/band
-```
-
-#### Stakeflow
-```bash
-https://stakeflow.io/band-protocol
-```
-
-#### STAVR
-```bash
-https://explorer.stavr.tech/Band-Mainnet
-```
 
 
