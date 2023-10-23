@@ -9,37 +9,12 @@ description: Explorers
 
 ### There are a number of explorers that you can use for ZetaChain:
 
-#### ZetaScan (official)
-```bash
-https://explorer.zetachain.com
-```
-
-#### Blockscout
-```bash
-https://zetachain-athens-3.blockscout.com
-```
-
-#### Nodes.Guru
-```bash
-https://zetachain.explorers.guru
-```
-
-#### NodeStake
-```bash
-https://explorer.nodestake.top/zeta-testnet
-```
-
-#### kjnodes 
-```bash
-https://explorer.kjnodes.com/zetachain-testnet
-```
-
-#### ITRocket
-```bash
-https://testnet.itrocket.net/zetachain
-```
-
-#### StakeMe
-```bash
-https://zetachain.exploreme.pro
-```
+| Name | Layer | Network | URL |
+| --- | --- | --- | --- |
+| Blockscout | EVM | Testnet (Athens-3) | https://zetachain-athens-3.blockscout.com |
+| ITRocket | Cosmos | Testnet (Athens-3) | https://testnet.itrocket.net/zetachain |
+| kjnodes | Cosmos | Testnet (athens_7001-1) | https://explorer.kjnodes.com/zetachain-testnet |
+| NodeStake | Cosmos | Testnet (athens_7001-1) | https://explorer.nodestake.top/zeta-testnet |
+| Nodes.Guru | Cosmos | Testnet (athens_7001-1) | https://zetachain.explorers.guru |
+| StakeMe | Cosmos | Testnet (athens_7001-1) | https://zetachain.exploreme.pro | 
+| ZetaScan (official) | EVM | Testnet (Athens-3) | https://explorer.zetachain.com |
