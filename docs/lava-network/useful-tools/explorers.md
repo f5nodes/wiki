@@ -9,43 +9,13 @@ description: Explorers
 
 ### There are a number of explorers that you can use for Lava Network:
 
-#### Nodes.Guru (official)
-```bash
-https://lava.explorers.guru
-```
-
-#### BonyNode
-```bash
-https://bonynode.online/lava
-```
-
-#### kjnodes
-```bash
-https://explorer.kjnodes.com/lava-testnet
-```
-
-#### UTSA
-```bash
-https://exp.utsa.tech/lava-test
-```
-
-#### NodeStake 
-```bash
-https://explorer.nodestake.top/lava-testnet
-```
-
-#### StakeMe
-```bash
-https://lava.exploreme.pro/dashboard
-```
-
-#### 🔥STAVR🔥
-```bash
-https://explorer.stavr.tech/Lava-Testnet
-```
-
-#### Stake Village
-```bash
-https://exp.stakevillage.net/Lava-testnet
-```
-
+| Name | Layer | Network | URL |
+| --- | --- | --- | --- |
+| BonyNode | Cosmos | Testnet (lava-testnet-2) | https://bonynode.online/lava |
+| kjnodes | Cosmos | Testnet (lava-testnet-2) | https://explorer.kjnodes.com/lava-testnet |
+| NodeStake | Cosmos | Testnet (lava-testnet-2) | https://explorer.nodestake.top/lava-testnet |
+| Nodes.Guru (official) | Cosmos | Testnet (lava-testnet-2) | https://lava.explorers.guru |
+| StakeMe | Cosmos | Testnet (lava-testnet-2) | https://lava.exploreme.pro/dashboard |
+| Stake Village | Cosmos | Testnet (lava-testnet-2) | https://exp.stakevillage.net/Lava-testnet |
+| STAVR | Cosmos | Testnet (lava-testnet-2) | https://explorer.stavr.tech/Lava-Testnet |
+| UTSA | Cosmos | Testnet (lava-testnet-2) | https://exp.utsa.tech/lava-test |
