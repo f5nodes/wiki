@@ -5,7 +5,7 @@ import CodeBlock from "@theme/CodeBlock";
 export const AddressConverter: React.FC<{}> = () => {
 	const [address, setAddress] = useState("");
 	const [convertedAddress, setConvertedAddress] = useState("");
-	const [network, setNetwork] = useState(""); // Default network
+	const [network, setNetwork] = useState("");
 
 	const handleAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setAddress(e.target.value);
