@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { bech32 } from "bech32";
+import CodeBlock from "@theme/CodeBlock";
 
 export const AddressConverter: React.FC<{}> = () => {
 	const [address, setAddress] = useState("");
@@ -46,27 +47,32 @@ export const AddressConverter: React.FC<{}> = () => {
 
 	return (
 		<div>
-			<div className="flex items-center gap-3 mb-3">
+			<div className="convert-container">
 				<input
 					type="text"
 					value={network}
 					onChange={handleNetworkChange}
 					placeholder="Network (e.g., dydx)"
-					className="bg-yellow-800 dark:bg-red-800"
+					className="convert-input"
 				/>
 				<input
 					type="text"
 					value={address}
 					onChange={handleAddressChange}
 					placeholder="0x or Bech32 address"
-					className="bg-yellow-800 dark:bg-red-800"
+					className="convert-input"
 				/>
 
-				<button type="button" onClick={handleConvert} className="hover:dark:border-green-500">
+				<button type="button" onClick={handleConvert} className="convert-button button button--primary">
 					Convert
 				</button>
 			</div>
-			<p>Converted address: {convertedAddress}</p>
+			{convertedAddress && (
+				<>
+					<h4>Converted address:</h4>
+					<CodeBlock language="bash">{convertedAddress}</CodeBlock>
+				</>
+			)}
 		</div>
 	);
 };
