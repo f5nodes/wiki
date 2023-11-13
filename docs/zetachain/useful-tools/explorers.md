@@ -16,5 +16,6 @@ description: Explorers
 | kjnodes | Cosmos | Testnet (athens_7001-1) | https://explorer.kjnodes.com/zetachain-testnet |
 | NodeStake | Cosmos | Testnet (athens_7001-1) | https://explorer.nodestake.top/zeta-testnet |
 | Nodes.Guru | Cosmos | Testnet (athens_7001-1) | https://zetachain.explorers.guru |
+| NodeX | Cosmos | Testnet (athens_7001-1) | https://explorer.nodex.one/zetachain |
 | StakeMe | Cosmos | Testnet (athens_7001-1) | https://zetachain.exploreme.pro | 
 | ZetaScan (official) | EVM | Testnet (Athens-3) | https://explorer.zetachain.com |
