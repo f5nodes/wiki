@@ -10,3 +10,21 @@ description: AddrBook
 import SelectPaste from '@site/src/components/SelectPaste';
 
 import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+          'https://raw.githubusercontent.com/nodersteam/cosmos-adrbook/main/dymension/addrbook.json',
+	        'https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Dymension/addrbook.json',
+	        'https://services.froopyland-100-1.dymension.aviaone.com/addrbook.json',
+	        'https://snapshots-testnet.nodejumper.io/dymension-testnet/addrbook.json',
+	        'https://snapshots.autostake.com/froopyland_100-1/addrbook.json',
+    	    'https://snapshots.kjnodes.com/dymension-testnet/addrbook.json', 
+          'https://snapshots.polkachu.com/testnet-addrbook/dymension/addrbook.json', 
+          'https://ss-t.dymension.nodestake.top/addrbook.json', 
+          'https://s3.eu-central-1.amazonaws.com/w3coins.io/addrbook/band-mainnet/addrbook.json',
+];
+
+export let home = 'dymension';
+
+export let binary = 'dymd';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
