@@ -39,6 +39,11 @@ https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
 https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
 ```
 
+#### Lavender.Five:
+```bash
+https://snapshots.lavenderfive.com/testnet-snapshots/zetachain/latest.tar.lz4
+```
+
 #### NodeJumper:
 ```bash
 https://snapshots-testnet.nodejumper.io/zetachain-testnet
