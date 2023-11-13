@@ -5,59 +5,88 @@
  */
 
 @font-face {
-  font-family: "RuberoidBold";
-  src: url('/fonts/Ruberoid/Ruberoid-Bold.otf') format('opentype');
+	font-family: "RuberoidBold";
+	src: url('/fonts/Ruberoid/Ruberoid-Bold.otf') format('opentype');
 }
 
 @font-face {
-  font-family: "RuberoidRegular";
-  src: url('/fonts/Ruberoid/Ruberoid-Regular.otf') format('opentype');
+	font-family: "RuberoidRegular";
+	src: url('/fonts/Ruberoid/Ruberoid-Regular.otf') format('opentype');
 }
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-base: "RuberoidBold";
-  --ifm-color-primary: #427ae7;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+	--ifm-font-family-base: "RuberoidBold";
+	--ifm-color-primary: #427ae7;
+	--ifm-color-primary-dark: #29784c;
+	--ifm-color-primary-darker: #277148;
+	--ifm-color-primary-darkest: #205d3b;
+	--ifm-color-primary-light: #33925d;
+	--ifm-color-primary-lighter: #359962;
+	--ifm-color-primary-lightest: #3cad6e;
+	--ifm-code-font-size: 95%;
 
-  --docusaurus-highlighted-code-line-bg: rgba(0,0,0,.1);
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .1);
 
-  --hero-background: url("../../static/img/back-light.png");
-  --hero-text-color: black;
+	--hero-background: url("../../static/img/back-light.png");
+	--hero-text-color: black;
 }
 
-p, li {
-  font-family: "Inter";
+p,
+li {
+	font-family: "Inter";
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #427ae7;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  
-  --docusaurus-highlighted-code-line-bg: rgba(66,66,66,.35);
+	--ifm-color-primary: #427ae7;
+	--ifm-color-primary-dark: #21af90;
+	--ifm-color-primary-darker: #1fa588;
+	--ifm-color-primary-darkest: #1a8870;
+	--ifm-color-primary-light: #29d5b0;
+	--ifm-color-primary-lighter: #32d8b4;
+	--ifm-color-primary-lightest: #4fddbf;
 
-  --hero-background: url("../../static/img/back-dark.png");
-  --hero-text-color: white;
+	--docusaurus-highlighted-code-line-bg: rgba(66, 66, 66, .35);
+
+	--hero-background: url("../../static/img/back-dark.png");
+	--hero-text-color: white;
 }
 
-p, li {
-  font-family: "RuberoidRegular";
+p,
+li {
+	font-family: "RuberoidRegular";
 }
 
 .hero {
-  color: var(--hero-text-color);
-  background-image: var(--hero-background);
-  background-size: cover;
+	color: var(--hero-text-color);
+	background-image: var(--hero-background);
+	background-size: cover;
+}
+
+/* UTILITIES -> AddressConvert */
+.convert-container {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.convert-input {
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.75rem;
+	width: 450px;
+	background: transparent;
+	outline: none;
+}
+
+.convert-input:first-child {
+	width: 20%;
+}
+
+.convert-button {
+	padding: calc(var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier) + 5px) calc(var(--ifm-button-padding-horizontal) * var(--ifm-button-size-multiplier))
 }
