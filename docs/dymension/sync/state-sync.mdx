@@ -10,3 +10,26 @@ description: State Sync
 import SelectPaste from '@site/src/components/SelectPaste';
 
 import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
+export let endpoints = [
+	    'https://dymension-rpc.f5nodes.com',
+	    'https://dymension-testnet-rpc.brocha.in',
+	    'https://dymension-testnet-rpc.polkachu.com',
+	    'https://dymension-testnet.rpc.kjnodes.com',
+	    'https://rpc-t.dymension.nodestake.top',
+	    'https://rpc-testnet-dymension.nodeist.net',
+  	  'https://rpc.dymension-testnet.crypton-node.tech',
+  	  'https://rpc.froopyland-100-1.dymension.aviaone.com',
+  	  'https://rpc.nodejumper.io/dymensiontestnet',
+  	  'https://t-dymension.rpc.utsa.tech',
+];
+
+export let home = 'dymension';
+
+export let binary = 'dymd';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />
+
+
+
+
