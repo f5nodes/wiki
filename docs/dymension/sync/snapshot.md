@@ -30,27 +30,27 @@ sudo systemctl restart dymd && sudo journalctl -u dymd -f -o cat
 
 A list of Snapshots you can use:
 
-### Autostake
+#### Autostake
 ```bash
 https://snapshots.autostake.com/froopyland_100-1
 ```
 
-### kjnodes
+#### kjnodes
 ``` bash
 https://snapshots.kjnodes.com/dymension-testnet/snapshot_latest.tar.lz4
 ```
 
-### Nodeist
+#### Nodeist
 ```bash
 https://ss.nodeist.net/t/dymension/snapshot_latest.tar.lz4
 ```
 
-### NodeStake
+#### NodeStake
 ```bash
 https://ss-t.dymension.nodestake.top
 ```
 
-### STAVR
+#### STAVR
 ```bash
 https://dymension.snapshot.stavr.tech
 ```
