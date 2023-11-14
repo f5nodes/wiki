@@ -9,5 +9,3 @@ description: Telegram Bots
 
 To contribute your own resource, simply click on **Edit this** page at the bottom, insert your resource using Markdown formatting, and then initiate a pull request for the submission to be reviewed.
 
-| Name | Description | Author | Date added/updated |
-| --- | --- | --- | --- |
