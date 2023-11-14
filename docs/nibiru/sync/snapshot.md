@@ -28,3 +28,10 @@ sudo systemctl restart nibid && sudo journalctl -u nibid -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### kjnodes
+```bash
+https://snapshots.kjnodes.com/nibiru/snapshot_latest.tar.lz4
+```
+
+
