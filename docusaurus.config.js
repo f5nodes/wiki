@@ -104,7 +104,7 @@ const config = {
 							},
 							{
 								label: "Celestia",
-								to: "/category/celestia",
+								to: "/celestia",
 							},
 							{
 								label: "ZetaChain",
