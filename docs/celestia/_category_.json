@@ -1,8 +1,4 @@
 {
-  "label": "Celestia",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Celestia is the first modular consensus and blockchain data network."
-  }
+	"label": "Celestia",
+	"position": 3
 }
