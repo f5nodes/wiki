@@ -27,5 +27,3 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [Reward calculator](https://analytics.smartstake.io/celestia/calc) | The tool used to estimate the potential earnings or returns that can be gained by staking. | [Smart Stake](https://smartstake.io/) | 2023-04-11 |
 | [Unagii](https://app.unagii.com/stake/celestia) | Staking platform empowers users to securely participate in the decentralized network, enabling them to earn rewards by staking their Tia tokens and actively contributing to the protocol's stability and growth. | [Stakewithus](https://www.stakewith.us) | 2023-11-16 |
 | [RPC Scanner](https://rpc-celestia-mainnet.testnet-pride.com/rpc_list.json) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [TestnetPride](https://github.com/testnet-pride) | 2023-10-31 |
-| [Tool for allerts](https://web3alert.io/celestia) | Real-time notifications for all Celestia blockchain events: stake, delegation, slashing, transfers, etc. | [Web3alert](https://twitter.com/web3alert) | 2023-10-31 |
-
