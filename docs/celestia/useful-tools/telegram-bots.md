@@ -13,3 +13,4 @@ To contribute your own resource, simply click on **Edit this** page at the botto
 | --- | --- | --- | --- |
 | [NodesChecker](https://t.me/NodesGuru_bot) | Check your nodes status online and receive instant notification if something is wrong with your node. | [Nodes.Guru](https://github.com/nodesguru) | 2023-10-31 |
 | [Proposal Bot](https://t.me/kjnodes_proposal_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [kjnodes](https://github.com/kj89) | 2023-10-31 |
+| [Alerts Dashboard](https://web3alert.io/celestia) | Real-time notifications for all Celestia blockchain events: stake, delegation, slashing, transfers, etc. | [Web3alert](https://web3alert.io/) | 2023-10-31 |
