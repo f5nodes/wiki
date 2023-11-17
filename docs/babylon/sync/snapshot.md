@@ -28,3 +28,18 @@ sudo systemctl restart babylond && sudo journalctl -u babylond -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### kjnodes:
+```bash
+https://snapshots.kjnodes.com/babylon-testnet/snapshot_latest.tar.lz4
+```
+
+#### Nodeist:
+```bash
+https://ss.nodeist.net/t/babylon/snapshot_latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/babylon-testnet/babylon-latest.tar.lz4
+```
