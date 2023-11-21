@@ -28,3 +28,28 @@ sudo systemctl restart archwayd && sudo journalctl -u archwayd -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### kjnodes:
+```bash
+https://snapshots.kjnodes.com/archway/snapshot_latest.tar.lz4
+```
+
+#### lesnik | UTSA:
+```bash
+https://share2.utsa.tech/archway/snap-archway.tar.lz4
+```
+
+#### NodeStake:
+```bash
+https://ss.archway.nodestake.top
+```
+
+#### StateTown:
+```bash
+https://snapshots.stake-town.com/archway/archway-1_latest.tar.lz4
+```
+
+#### w3coins:
+```bash
+https://s3.eu-central-1.amazonaws.com/w3coins.io/wasm/archway-mainnet/wasmonly.tar.lz4
+```
