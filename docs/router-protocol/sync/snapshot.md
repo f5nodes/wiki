@@ -28,3 +28,13 @@ sudo systemctl restart routerd && sudo journalctl -u routerd -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### Nodeist:
+```bash
+https://ss.nodeist.net/t/router/snapshot_latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/router-testnet/router-latest.tar.lz4
+```
