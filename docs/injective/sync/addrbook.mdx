@@ -1,0 +1,28 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+`http://snapshots.autostake.com/injective-1/addrbook.json`,
+`https://dl.ccvalidators.com/SERVICE/injective/addrbook.json`,
+`https://s3.imperator.co/mainnets-addrbook/injective/addrbook.json`,
+`https://snapshots.lavenderfive.com/addrbooks/injective/addrbook.json`,
+`https://snapshots.nodejumper.io/injective/addrbook.json`,
+`https://snapshots.nysa.network/injective-1/addrbook.json`,
+`https://s3.eu-central-1.amazonaws.com/w3coins.io/addrbook/injective-mainnet/addrbook.json`,
+];
+
+export let home = 'injectived';
+
+export let binary = 'injectived';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
