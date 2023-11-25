@@ -16,7 +16,7 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
 | [Injective Hub](https://hub.injective.network/) | Injective Hub is the platform and gateway that allows you to interact directly with Injective: wallet, bridge, staking, governance, auction, insurance funds... | [Injective (official)](https://github.com/InjectiveLabs) | 2023-11-25 |
-| [Chain Information Platform](https://cosmos.directory/injective/chain) | This platform provides information about the network, validators, public nodes, etc. | [ECO Stake](https://github.com/eco-stake) | 2023-11-25 |
+| [Chain Information Platform](https://cosmos.directory/injective) | This platform provides information about the network, validators, public nodes, etc. | [ECO Stake](https://github.com/eco-stake) | 2023-11-25 |
 | [Restake](https://restake.app/injective) | REStake allows validators to auto-compound your Injective staking rewards. | [ECO Stake](https://github.com/eco-stake) | 2023-11-25 |
 | [Network Visualizer](https://tools.highstakes.ch/geoloc/injective) | The network visualizer shows a graphical view of all the nodes are distributed by country and data center on map.| [High Stakes](https://highstakes.ch/) | 2023-11-25 |
 | [Governance Bot](https://t.me/nodejumper_governance_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [NodeJumper](https://github.com/nodejumper-org) | 2023-11-25 |
