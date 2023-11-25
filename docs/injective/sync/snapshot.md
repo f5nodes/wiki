@@ -28,3 +28,18 @@ sudo systemctl restart injectived && sudo journalctl -u injectived -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### High Stakes:
+```bash
+https://tools.highstakes.ch/files/injective.tar.gz
+```
+
+#### Lavender.Five:
+```bash
+https://snapshots.lavenderfive.com/snapshots/injective/latest.tar.lz4
+```
+
+#### w3coins:
+```bash
+https://s3.eu-central-1.amazonaws.com/w3coins.io/wasm/injective-mainnet/wasmonly.tar.lz4
+```
