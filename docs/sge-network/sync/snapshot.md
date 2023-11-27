@@ -28,3 +28,28 @@ sudo systemctl restart sged && sudo journalctl -u sged -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### Anode:
+```bash
+https://anode.team/SGE/main/anode.team_sge.tar.lz4
+```
+
+#### Indonode:
+```bash
+https://snapshots.indonode.net/sge/sge-latest.tar.lz4
+```
+
+#### Nodeist:
+```bash
+https://ss.nodeist.net/sge/snapshot_latest.tar.lz4
+```
+
+#### Nodex:
+```bash
+https://snap.nodex.one/sge/sge-latest.tar.lz4
+```
+
+#### STAVR:
+```bash
+http://sge.snapshot.stavr.tech:1003/sge/sge-snap.tar.lz4
+```
