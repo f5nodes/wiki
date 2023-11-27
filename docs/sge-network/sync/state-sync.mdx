@@ -1,0 +1,37 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
+export let endpoints = [
+            `https://sge.rpc.m.anode.team`,
+            `https://sge-rpc.genznodes.dev`,
+            `https://rpc.sge.indonode.net`,
+            `https://sge-rpc.lavenderfive.com`,
+            `https://rpc-sge.nodeist.net`,
+            `https://rpc.sge.nodestake.top`,
+            `https://sge.rpc.nodex.one`,
+            `https://sge-rpc.polkachu.com`,
+            `https://sge-rpc.ramuchi.tech`,
+            `https://rpc.sge.roomit.xyz`,
+            `https://rpc.sge.safeblock.space`,
+            `https://sge-rpc.sr20de.xyz`,
+            `https://sge-rpc.stakerhouse.com`,
+            `http://sge.rpc.m.stavr.tech:1157`,
+            `https://rpc.sge.tcnetwork.io`,
+            `https://rpc-sge.vinjan.xyz`,
+];
+
+export let home = 'sge';
+
+export let binary = 'sged';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />

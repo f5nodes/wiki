@@ -1,0 +1,28 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+            `https://anode.team/SGE/main/addrbook.json`,
+            `https://snapshot.genznodes.dev/sge/addrbook.json`,
+            `https://snapshots.indonode.net/sge/addrbook.json`,
+            `https://ss.nodeist.net/sge/addrbook.json`,
+            `https://ss.sge.nodestake.top/addrbook.json`,
+            `https://snapshots.polkachu.com/addrbook/sge/addrbook.json`,
+            `https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/SGE/addrbook.json`,
+];
+
+export let home = 'sge';
+
+export let binary = 'sged';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
