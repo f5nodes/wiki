@@ -30,16 +30,6 @@ sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 
 A list of Snapshots you can use:
 
-#### AutoStake:
-```bash
-https://snapshots.autostake.com/lava-testnet-2
-```
-
-#### AviaOne:
-```bash
-https://services.lava-testnet-2.lava.aviaone.com
-```
-
 #### ITRocket:
 ```bash 
 https://testnet-files.itrocket.net/lava/snap_lava.tar.lz4
@@ -58,16 +48,6 @@ https://share101.utsa.tech/lava/snap-lava.tar.lz4
 #### LiveRaveN:
 ```bash 
 https://snapshots.liveraven.net/snapshots/lava/lava-testnet-2_latest.tar.lz4
-```
-
-#### NodeJumper:
-```bash 
-https://snapshots-testnet.nodejumper.io/lava-testnet
-```
-
-#### NodeStake:
-```bash 
-https://ss-t.lava.nodestake.top
 ```
 
 #### Stake Village:
