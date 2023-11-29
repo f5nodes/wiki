@@ -29,12 +29,7 @@ sudo systemctl restart haqqd && sudo journalctl -u haqqd -f -o cat
 
 A list of Snapshots you can use:
 
-#### L0vd:
+#### Lavender.Five:
 ```bash
-https://snapshots.l0vd.com/haqq-mainnet
-```
-
-#### NodeStake:
-```bash
-https://ss.haqq.nodestake.top
+https://snapshots.lavenderfive.com/snapshots/haqq/latest.tar.lz4
 ```

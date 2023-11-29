@@ -12,5 +12,7 @@ description: Explorers
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
 | kjnodes | Cosmos | cataclysm-1 | https://explorer.kjnodes.com/nibiru |
+| lesnik | Cosmos | cataclysm-1 | https://exp.utsa.tech/nibiru |
 | Nodes.Guru | Cosmos | cataclysm-1 | https://nibiru.explorers.guru |
 | NodeStake | Cosmos | cataclysm-1 | https://explorer.nodestake.top/nibiru |
+
