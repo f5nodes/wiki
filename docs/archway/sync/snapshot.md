@@ -34,14 +34,14 @@ A list of Snapshots you can use:
 https://snapshots.kjnodes.com/archway/snapshot_latest.tar.lz4
 ```
 
+#### Lavender.Five:
+```bash
+https://snapshots.lavenderfive.com/snapshots/archway/latest.tar.lz4
+```
+
 #### lesnik | UTSA:
 ```bash
 https://share2.utsa.tech/archway/snap-archway.tar.lz4
-```
-
-#### NodeStake:
-```bash
-https://ss.archway.nodestake.top
 ```
 
 #### StateTown:
