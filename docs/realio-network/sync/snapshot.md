@@ -28,3 +28,33 @@ sudo systemctl restart realio-networkd && sudo journalctl -u realio-networkd -f 
 ```
 
 A list of Snapshots you can use:
+
+#### itrocket:
+```bash
+https://mainnet-files.itrocket.net/realio/snap_realio.tar.lz4
+```
+
+#### Kynraze:
+```bash
+https://snap.kynraze.com/realio/snapshot-latest.tar.lz4 
+```
+
+#### Nodeist:
+```bash
+https://ss.nodeist.net/realio-network/snapshot_latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/realio/realio-latest.tar.lz4
+```
+
+#### Skynodes:
+```bash
+https://snapshots.skynodejs.net/realio/realio.tar.lz4
+```
+
+#### STAVR:
+```bash
+http://realio.snapshot.stavr.tech:1029/realio/realio-snap.tar.lz4
+```
