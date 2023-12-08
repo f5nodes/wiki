@@ -29,7 +29,7 @@ sudo systemctl restart realio-networkd && sudo journalctl -u realio-networkd -f 
 
 A list of Snapshots you can use:
 
-#### itrocket:
+#### ITRocket:
 ```bash
 https://mainnet-files.itrocket.net/realio/snap_realio.tar.lz4
 ```
