@@ -29,3 +29,28 @@ sudo systemctl restart c4ed && sudo journalctl -u c4ed -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### Anode:
+```bash
+https://anode.team/C4E/main/anode.team_c4e.tar.lz4
+```
+
+#### BccNodes:
+```bash
+https://services.bccnodes.com/mainnets/c4e/c4e.tar.lz4
+```
+
+#### Skynodes:
+```bash
+https://snapshots.skynodejs.net/c4e/c4e.tar.lz4
+```
+
+#### StakeTown:
+```bash
+https://snapshots.stake-town.com/c4e/perun-1_latest.tar.lz4
+```
+
+#### STAVR:
+```bash
+http://c4e.snapshot.stavr.tech:1018/c4e/c4e-snap.tar.lz4
+```
