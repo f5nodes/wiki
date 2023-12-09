@@ -17,7 +17,7 @@ description: Explorers
 | Indonode | Cosmos | sgenet-1 | https://explorer.indonode.net/sge |
 | NodeStake | Cosmos | sgenet-1 | https://explorer.nodestake.top/sge |
 | NodeX | Cosmos | sgenet-1 | https://explorer.nodex.one/sge |
-| Ping.pub | Cosmos | sgenet-1 | https://stakeflow.io/injective |
+| Ping.pub | Cosmos | sgenet-1 | https://ping.pub/sge |
 | Safe Block | Cosmos | sgenet-1 | https://explorer.safeblock.space/sge |
 | StakerHouse | Cosmos | sgenet-1 | https://cosmotracker.com/sge |
 | STAVR | Cosmos | sgenet-1 | https://explorer.stavr.tech/Sge-Mainnet |
