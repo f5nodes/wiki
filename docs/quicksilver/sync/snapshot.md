@@ -29,3 +29,27 @@ sudo systemctl restart quicksilverd && sudo journalctl -u quicksilverd -f -o cat
 
 A list of Snapshots you can use:
 
+#### Anode:
+```bash
+https://anode.team/Quicksilver/main/anode.team_quicksilver.tar.lz4
+```
+
+#### kjnodes:
+```bash
+https://snapshots.kjnodes.com/quicksilver/snapshot_latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/quicksilver/quicksilver-latest.tar.lz4
+```
+
+#### StakeTown:
+```bash
+https://snapshots.stake-town.com/quicksilver/quicksilver-2_latest.tar.lz4
+```
+
+#### STAVR:
+```bash
+http://quick.snapshot.stavr.tech:1009/quick/quick-snap.tar.lz4
+```
