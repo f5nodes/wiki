@@ -28,3 +28,23 @@ sudo systemctl restart andromedad && sudo journalctl -u andromedad -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### kjnodes:
+```bash
+https://snapshots.kjnodes.com/andromeda/snapshot_latest.tar.lz4
+```
+
+#### Nodejumper:
+```bash
+https://snapshots.nodejumper.io/andromeda/andromeda_latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/andromeda/andromeda-latest.tar.lz4
+```
+
+#### STAVR:
+```bash
+http://andro.snapshot.stavr.tech:1030/andromeda/andromeda-snap.tar.lz4
+```
