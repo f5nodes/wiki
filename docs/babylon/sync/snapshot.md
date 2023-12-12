@@ -19,7 +19,7 @@ cp $HOME/.babylond/data/priv_validator_state.json $HOME/.babylond/priv_validator
 
 # reset your node and download a snapshot
 babylond tendermint unsafe-reset-all --home $HOME/.babylond --keep-addr-book 
-wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.bbabylond
+wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.babylond
 
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.babylond/priv_validator_state.json.backup $HOME/.babylond/data/priv_validator_state.json 

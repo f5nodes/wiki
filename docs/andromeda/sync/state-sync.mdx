@@ -1,0 +1,29 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
+export let endpoints = [
+            `https://rpc.andromeda-1.andromeda.aviaone.com`,
+            `https://rpc.cosmos.directory/andromeda`,
+            `https://andromeda.rpc.kjnodes.com`,
+            `https://rpc-andromeda.nodeist.net`,
+            `https://rpc.nodejumper.io/andromeda`,
+            `https://andromeda.rpc.nodex.one`,
+            `https://andro.rpc.m.stavr.tech`,
+            `https://andromeda-rpc.synergynodes.com`,
+];
+
+export let home = 'andromedad';
+
+export let binary = 'andromedad';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />
