@@ -9,3 +9,8 @@ description: Explorers
 
 ### There are a number of explorers that you can use for Andromeda:
 
+| Name | Layer | Network | URL |
+| --- | --- | --- | --- |
+| kjnodes | Cosmos | andromeda-1 | https://explorer.kjnodes.com/andromeda |
+| NodeX | Cosmos | andromeda-1 | https://explorer.nodex.one/andromeda |
+| Stakeme| Cosmos | andromeda-1 | https://andromeda.exploreme.pro |
