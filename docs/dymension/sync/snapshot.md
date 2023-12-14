@@ -30,9 +30,9 @@ sudo systemctl restart dymd && sudo journalctl -u dymd -f -o cat
 
 A list of Snapshots you can use:
 
-#### Autostake
+#### Brochain:
 ```bash
-https://snapshots.autostake.com/froopyland_100-1
+https://snapshots.brocha.in/dymension/snapshot-froopyland_100-1-goleveldb-1664416.tar.lz4
 ```
 
 #### kjnodes
@@ -45,14 +45,15 @@ https://snapshots.kjnodes.com/dymension-testnet/snapshot_latest.tar.lz4
 https://ss.nodeist.net/t/dymension/snapshot_latest.tar.lz4
 ```
 
-#### NodeStake
+#### Silk Nodes:
 ```bash
-https://ss-t.dymension.nodestake.top
+https://services.silknodes.io/snapshots/dymension/dymension_1653000.tar.lz4
 ```
+
 
 #### STAVR
 ```bash
-https://dymension.snapshot.stavr.tech
+http://dymension.snapshot.stavr.tech:1019/dymension/dymension-snap.tar.lz4
 ```
 
 
