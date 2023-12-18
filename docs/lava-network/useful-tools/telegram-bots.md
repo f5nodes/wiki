@@ -11,7 +11,7 @@ To contribute your own resource, simply click on **Edit this** page at the botto
 
 | Name | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
-| [Testnet Proposal Bot](https://t.me/kjnodes_testnet_proposal_bot) |  | [kjnodes](https://github.com/kj89) | 2023-10-10 |
+| [Governance Bot](https://t.me/kjnodes_testnet_proposal_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [kjnodes](https://github.com/kj89) | 2023-10-10 |
 | [Governance Bot](https://t.me/nodejumper_governance_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [NodeJumper](https://github.com/nodejumper-org) | 2023-09-14 |
 | [NodesChecker](https://t.me/NodesGuru_bot) | Check your nodes status online and receive instant notification if something is wrong with your node. | [Nodes.Guru](https://github.com/nodesguru) | 2023-10-11 |
 | [Check Nodes Bot](https://t.me/stakeVillage_check_nodes_bot) | The Bot tracks the missed blocks of the active node and sends notifications. | [Stake Village](https://stakevillage.net) | 2023-10-13 |

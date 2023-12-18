@@ -1,0 +1,31 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+            `https://anode.team/C4E/main/addrbook.json`,
+            `https://snapshots.autostake.com/perun-1/addrbook.json`,
+            `https://services.bccnodes.com/mainnets/c4e/addrbook.json`,
+            `https://snapshots.indonode.net/c4e/addrbook.json`,
+            `https://download.mainnet.c4e.dteam.tech/addrbook.json`,
+            `https://snapshot.genznodes.dev/c4e/addrbook.json`,
+            `https://ss.c4e.nodestake.top/addrbook.json`,
+            `https://snapshots.skynodejs.net/c4e/addrbook.json`,
+            `https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/C4E/addrbook.json`,
+            `https://www.thenop.io/download/addrbook/perun-1/addrbook.json`,
+];
+
+export let home = 'c4e-chain';
+
+export let binary = 'c4ed';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />

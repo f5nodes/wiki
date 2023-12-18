@@ -34,12 +34,12 @@ A list of Snapshots you can use:
 https://snapshots.kjnodes.com/celestia/snapshot_latest.tar.lz4
 ```
 
+#### Lavender.Five:
+```bash
+https://snapshots.lavenderfive.com/snapshots/celestia/latest.tar.lz4
+```
+
 #### Synarge Nodes:
 ```bash
 https://s3.eu-central-1.amazonaws.com/snapshots.synergynodes.com/celestia_mainnet/celestia_36.tar.lz4
-```
-
-#### NodeStake:
-```bash
-https://ss-t.celestia.nodestake.top
 ```
