@@ -30,11 +30,7 @@ export default function Home(): JSX.Element {
 	return (
 		<Layout title={`${siteConfig.title}`} description="Nodes wiki from validators to validators with love.">
 			<Head>
-				<script
-					defer
-					data-api="https://f5nodes.com/proxy/api/event"
-					data-domain="wiki.f5nodes.com"
-					src="https://f5nodes.com/js/script.js"></script>
+				<script defer data-domain="wiki.f5nodes.com" src="https://makalu.f5checker.com/js/script.js"></script>
 			</Head>
 			<HomepageHeader />
 			<main>
