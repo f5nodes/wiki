@@ -146,14 +146,7 @@ const config = {
 				darkTheme: darkCodeTheme,
 			},
 		}),
-	plugins: [
-		[
-			"docusaurus-plugin-plausible",
-			{
-				domain: "wiki.f5nodes.com",
-			},
-		],
-	],
+	plugins: [],
 };
 
 module.exports = config;
