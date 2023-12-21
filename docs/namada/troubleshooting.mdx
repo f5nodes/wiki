@@ -1,0 +1,130 @@
+---
+sidebar_position: 1
+description: Troubleshooting
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Troubleshooting
+
+Welcome to the Troubleshooting section of Namada Wiki 🛠
+
+This documentation is dedicated to resolving common errors, bugs, and issues that arise when interacting with the Namada network and maintaining validators. This resource is specifically designed to provide instant resolution to these common issues.
+
+:::tip
+To share your own troubleshooting solutions, simply click "Edit this page" below, add your solution using Markdown, and initiate a pull request for review. 
+
+Visit [Introduction page](/intro) for more information. 
+:::
+
+---
+
+## Validator is jailed 
+
+- **Error:** `validator tnam1q... is jailed` while running `namada client validator-state --validator <address>` 
+
+- **Solution:**
+
+    Get the current epoch:
+
+    ```bash 
+    namada client epoch 
+
+    #output: Last committed epoch: 24
+    ```
+
+    Submit unjail txn:
+
+    ```bash 
+    namadac unjail-validator --validator <address>
+    ```
+
+    :::note
+    If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
+    :::
+
+    Wait 2 epochs and your validator should be unjailed. To check it, run: 
+
+    ```bash 
+    namada client validator-state --validator <address>
+
+    #output: Validator tnam1q... is in the consensus set
+    ```
+
+---
+
+## Cannot bond tokens to my validator
+
+- **Error:**
+
+   ```
+   0: The address tnam1q... doesn't belong to any known validator account.
+   1: The address tnam1q... doesn't belong to any known validator account.
+   ```
+
+- **Solution:** You can add your validator address as an alias to use it in bond txs, etc.
+    
+    Find your validator address:
+    ```bash 
+    namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address)
+
+    #output: Found validator address tnam1q...
+    ```
+
+    Add your address:
+    ```bash
+    namadaw address add --alias <your_address> --address <your_address>
+    ```
+
+    Bond tokens:
+    ```bash 
+    namadac bond --source <your_wallet> --validator <your_validator> --amount 1000
+    ```
+
+---
+
+## Stack overflow error
+
+- **Error:** `thread 'main' has overflowed its stack, fatal runtime error: stack overflow`
+
+- **Solution:**
+
+    Make sure your node is on the latest version: 
+    ```bash 
+    namada --version
+    ```
+
+    :::note
+    The latest version can be found [here](https://github.com/anoma/namada/releases).
+    :::
+
+    Find cometbft process:
+
+    ```bash
+    ps aux | grep cometbft
+    ```
+
+    Kill the process:
+
+    ```bash
+    kill -9 <pid>
+    ```
+
+    Increase stack limit in `namadad.service` file:
+
+    ```bash
+    nano /etc/systemd/system/namadad.service
+
+    #then add the line:
+    LimitSTACK=ulimit -s 32768
+    ```
+
+    Restart node and service:
+
+    ```bash
+    sudo systemctl daemon-reload && sudo systemctl restart namadad
+    ```
+
+---
+
