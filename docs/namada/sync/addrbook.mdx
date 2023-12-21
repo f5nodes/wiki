@@ -1,0 +1,27 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+`https://files.cryptosj.net/files/namadatestnet/addrbook.json`,
+`https://testnet-files.itrocket.net/namada/addrbook.json`,
+`https://snapshots.lavenderfive.com/testnet-addrbooks/namada/addrbook.json`,
+];
+
+export let home = 'local/share/namada/public-testnet-15.0dacadb8d663/cometbft';
+
+export let binary = 'namadad';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
+
+
+
