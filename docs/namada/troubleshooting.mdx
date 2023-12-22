@@ -128,3 +128,360 @@ Visit [Introduction page](/intro) for more information.
 
 ---
 
+## Many connections to RPC 
+
+- **Problem:** 
+
+    Many connections to node around 900 in close-wait state. Weak machines may have problems with response time, for example the interval in seconds between the proposal timestamp and the timestamp of the earliest prevote that reached a quorum.
+
+- **Solution:**
+
+    Try change config here `$HOME/.local/share/namada/<chain-id>/config.toml`:
+
+    - pex=`false`, 
+    
+    - persistent_peers=`list of persistent_peers`, 
+    
+    - addr_book_strict=`false`
+
+    
+ After such changes remove the addressbook and maybe reset your node_id. 
+ 
+ addressbook is located here  `$HOME/.local/share/namada/public-testnet-.../cometbft/config`.
+ 
+    Restart node and service:
+
+    ```bash
+    sudo systemctl daemon-reload && sudo systemctl restart namadad
+    ```
+
+---
+
+
+## TOML error
+
+- **Error:** 
+
+    ```
+    Message:  called `Result::unwrap()` on an `Err` value:
+    0: couldn't parse TOML from /home/namada/.local/share/namada/public-testnet-...toml
+    1: invalid type: integer `9223372036854`, expected a string for key `token.Schnitzel.balances.<my key>` at line 2518 column 88
+    ```
+
+- **Solution:**
+
+    It seems like there's a parsing error with your TOML file. Make sure the value for the key `token.Schnitzel.balances.<my key>` is a string, not an integer.
+    ```bash
+    cat /home/namada/.local/share/namada/public-testnet-...toml
+    ```
+
+---
+
+## No matching key found
+
+- **Error:** 
+    ```
+    Unable to load the keypair from the wallet for public key xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx. Failed with: No matching key found
+    ```
+
+- **Solution:**
+
+    Loks like you didn't run join network command with the `--genesis-validator flag`.
+
+    Try this command:
+    ```bash
+    namadac utils join-network --chain-id public-testnet-... --genesis-validator ...
+    ```
+
+---
+
+## MASP error
+
+- **Error:**
+    ```
+    The application panicked (crashed).
+    Message: parametr file size is not correct, please clean your MASP...
+    ```
+
+- **Solution:**
+
+    It is essential that you delete the old MASPParams folder. This does not always update correctly.
+
+    Use following commands:
+
+    Linux Users
+
+    ```bash
+    rm -rf $HOME/.masp-params
+    ```
+
+    MAC Users
+
+    ```bash
+    rm -rf "$HOME/Library/Application Support/MASPParams" 
+    ```
+
+    Once these steps have been taken, it is safe to run:
+
+    ```bash
+    namadac utils join-network --chain-id public-testnet-...
+    ```
+
+    Remember to include `--genesis-validator ...` if you are a pre-genesis validator.
+
+    And then run:
+    ```bash
+    NAMADA_CMT_STDOUT=true namada ledger run
+    ```
+
+---
+
+## Path cometbft
+
+- **Error:** Output after `cp <path-to-cometbft-binary> /usr/local binary`:
+    ```
+    bash: path-cometbft-binary: No such file or directory
+    ```
+
+- **Solution:**
+
+    You have to change `<path-to-cometbft-binary>` for the path where is located the cometbft binary. 
+    
+    In this case `$HOME/cometbft/build/cometbft`.
+
+---
+
+## Protoc error
+
+- **Error:**
+
+    ```bash
+    `Err` value: Custom { kind: Other, error: "protoc failed: google/protobuf/timestamp.proto: File not found.\ntypes.proto:3:1: Import \"google/protobuf/timestamp.proto\" was not found or had errors.\n" }', core/build.rs:21:10
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+    warning: build failed, waiting for other jobs to finish...
+    ```
+
+- **Solution:**
+
+    Protoc version seems outdated, try update this. 
+
+    Check [Namada docs](https://docs.namada.net/introduction/install/source/pre-requisites#remaining-dependencies) or [grpc docs](https://grpc.io/docs/protoc-installation/#install-pre-compiled-binaries-any-os).
+
+---
+
+## Listening RPC
+
+- **Error:** not working listening of the node.
+
+- **Solution:**
+
+    The ledger configuration is stored in `$BASE_DIR/$CHAIN_ID/config.toml` and is created when you join the network. You can modify this file to change the configuration of your node.
+    Change config here `$HOME/.local/share/namada/chain-id.../config.toml`, `laddr` should be `tcp://0.0.0.0:26657`.
+    ```
+    [rpc]
+    laddr = "tcp://0.0.0.0:26657
+    ```
+
+    Save and restart the node.
+
+---
+## ABCI error
+
+- **Error:** `Servers error: Address already in use`.
+
+- **Solution:**
+
+    It means that you are already running a node in the same server (i.e. you've to change your ports).
+
+    You can change the port configuration in the `config.toml` file located in the testnet directory.
+
+    In this case: `$HOME/.local/share/namada/chain-id.../config.toml`.
+
+---
+
+
+## Tendermint error
+
+- **Error:**
+    ```bash
+    ERROR namada_apps::node::ledger: Err(Tendermint(Init(Os { code: 2, kind: NotFound, message: "No such file or directory" })))
+    ERROR namada_apps::node::ledger: Tendermint error: Failed to initialize Tendermint: No such file or directory (os error 2)
+    ```
+
+- **Solution:**
+
+    Try [initialize another version Tendermint](https://docs.tendermint.com/v0.33/introduction/install.html).
+
+    Check version:
+    ```bash
+    tendermint --version
+    ```
+
+
+---
+
+## Mising genesis files
+
+- **Error:** output after `namada ledger`
+```
+Message: Mising genesis files
+0: Couldn`t read Validity predicates config file...
+```
+
+- **Solution:**
+
+    To join the network with your full node, you'll need the `chain-id` which will be available once the genesis file is ready; you can then use the `namada client utils join-network --chain-id $CHAIN_ID` command to join.
+
+---
+
+## Balance error
+
+- **Error:**
+
+    Occurs when transferring assets from Ethereum to Namada.
+```
+ 0: The balance of the source tnam1q... of token tnam1q... is lower than the amount required for fees. Amount of the fees is 0.025 and the balance is 0.
+ ```
+
+- **Solution:**
+    - If an ERC20 token is transferred to Namada, once the associated TransferToNamada Ethereum event is included into Namada, validators mint the appropriate amount to the corresponding multitoken balance key for the receiver, or release the escrowed native Namada token.
+    - To transfer 10 DAI to Namada, you must ensure that the Namada address receiving the wrapped assets has enough balance to cover the fees; the error message indicates that the balance is lower than the required fee amount of 0.025
+    - You can check the current balance and transaction details on [Etherscan](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f) for the ERC20 token DAI.
+
+
+---
+
+## Post-genesis
+
+- **Error:** cannot join the network after genesis and got `Failed to construct Namada chain context`.
+
+- **Solution:**
+
+    You may need to run `namada client utils join-network`. If the chain is configured, you may need to set the chain id with `--chain-id <chainid>`, via the env var `NAMADA_CHAIN_ID`, or configure the default chain id in the `global-config.toml` file. If you do intend to run pre-genesis operations, pass the `--pre-genesis` flag as the first argument to the command.
+
+
+---
+
+## Libudev error
+
+- **Error:** after delete the folder `namada/target`.
+```
+--- stderr
+Package libudev was not found in the pkg-config search path.
+Perhaps you should add the directory containing libudev.pc
+```
+
+- **Solution:**
+
+Install libudev
+```bash
+sudo apt install libudev-dev -y
+```
+
+---
+
+## New chain error
+
+- **Error:** occurs when build new chain.
+```
+The application panicked (crashed).
+Message:  called Result::unwrap() on an Err value: Os { code: 2, kind: NotFound, message: "No such file or directory" }
+Location: /home/ubuntu/namada/apps/src/lib/client/utils.rs:201
+```
+
+- **Solution:**
+
+Make sure to delete the old files in the base dir and rerun. 
+```bash
+namadac utils join-network --chain-id public-testnet-...
+```
+
+---
+
+## Tendermint error 
+
+- **Error:**  occurs in the node logs `Tendermint node is not longer running`.
+
+- **Solution:**
+
+    Correctly install [CometBFT](https://docs.namada.net/introduction/installing-cometbft).
+
+    Check cometbft location:
+    ```bash  
+    which cometbft
+    ```
+    Output should be `/usr/local/bin`.
+
+---
+
+## SocketClient failed
+
+- **Error:** logs on node starts.
+```
+abci.socketClient failed to connect to tcp://127.0.0.1:26658
+127.0.0.1:26658: connect: connection refused
+```
+
+- **Solution:**
+
+    - Looks good (just make sure to be on the correct chain id). Only p2p port needs to be exposed 26656. 
+    - The "connection refused" message you're encountering is a common log that appears before a node starts, and it's not necessary to expose port 26658 for a pre-genesis validator.
+
+
+---
+
+## Stake error
+
+- **Error:** occurs after the stake command.
+    ```
+    0: Fatal error
+    Location: apps/src/lib/cli/client.rs:15
+    ```
+
+- **Solution:**
+
+    Wait till your node fully sync. You can check the sync status by running: 
+    ```bash
+    curl -s localhost:26657/status | jq .result.sync_info.latest_block_height
+    ```
+
+---
+
+## Init error
+
+- **Error:** occurs during initialize a validator account.
+    ```
+    0: Timed out waiting for tx to be accepted
+    Location: /root/namada/apps/src/lib/cli/client.rs:127
+    ```
+
+- **Solution:**
+
+    This error occurs when testnet has halted. 
+
+    Therefore, first, check the network health in the [explorer](https://namada.info/) and check the appropriate channels.
+
+---
+
+## Node crashed
+
+- **Error:**
+
+```
+The application panicked (crashed).
+Message:  called `Result::unwrap()` on an `Err` value: Shell(StorageApi(Custom(CustomError(Rewards(InsufficientVotes
+Location: /home/namada/.cargo/git/checkouts/tower-abci-0d01b039e0b7a0c9/367d8d9/src/server.rs:163
+```
+
+- **Solution:**
+
+    This sometimes happens, try adding more peers.
+
+    And restart (stop/start) node and service:
+
+    ```bash
+    sudo systemctl daemon-reload && sudo systemctl restart namadad
+    ```
+
+
+
