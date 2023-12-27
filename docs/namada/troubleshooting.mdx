@@ -40,7 +40,7 @@ Visit [Introduction page](/intro) for more information.
     namadac unjail-validator --validator <address>
     ```
 
-    :::note
+    :::info
     If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
     :::
 
@@ -66,6 +66,7 @@ Visit [Introduction page](/intro) for more information.
 - **Solution:** You can add your validator address as an alias to use it in bond txs, etc.
     
     Find your validator address:
+
     ```bash 
     namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address)
 
@@ -73,11 +74,13 @@ Visit [Introduction page](/intro) for more information.
     ```
 
     Add your address:
+
     ```bash
     namadaw address add --alias <your_address> --address <your_address>
     ```
 
     Bond tokens:
+
     ```bash 
     namadac bond --source <your_wallet> --validator <your_validator> --amount 1000
     ```
@@ -95,7 +98,7 @@ Visit [Introduction page](/intro) for more information.
     namada --version
     ```
 
-    :::note
+    :::info
     The latest version can be found [here](https://github.com/anoma/namada/releases).
     :::
 
@@ -136,7 +139,7 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    Try to change the config by at `$HOME/.local/share/namada/<chain-id>/config.toml`:
+    Try to change the config at `$HOME/.local/share/namada/<chain-id>/config.toml`:
 
     - pex=`false`, 
     
@@ -238,7 +241,7 @@ Visit [Introduction page](/intro) for more information.
 
 ---
 
-## Path cometbft
+## Wrong cometbft binary path  
 
 - **Error:** Output after `cp <path-to-cometbft-binary> /usr/local binary`:
     ```
@@ -271,7 +274,7 @@ Visit [Introduction page](/intro) for more information.
 
 ---
 
-## Listening RPC
+## RPC listening
 
 - **Error:** listening of the node doesn't work.
 
@@ -354,7 +357,7 @@ Message: Mising genesis files
 
 ---
 
-## Post-genesis
+## Cannot join as a post-genesis validator
 
 - **Error:** cannot join the network after genesis and got `Failed to construct Namada chain context`.
 
@@ -471,7 +474,7 @@ abci.socketClient failed to connect to tcp://127.0.0.1:26658
 
 ---
 
-## Node crashes
+## Node crashes with `The application panicked`
 
 - **Error:**
 
@@ -483,7 +486,7 @@ Location: /home/namada/.cargo/git/checkouts/tower-abci-0d01b039e0b7a0c9/367d8d9/
 
 - **Solution:**
 
-    Sometimes this happens, try adding more peers and restart (stop/start) your node and service:
+    Sometimes this happens, try adding more [peers](/namada/sync/peers-seeds) and restart (stop/start) your node and service:
 
     ```bash
     sudo systemctl daemon-reload && sudo systemctl restart namadad
