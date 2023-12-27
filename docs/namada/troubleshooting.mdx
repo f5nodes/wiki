@@ -136,7 +136,7 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    Try change config here `$HOME/.local/share/namada/<chain-id>/config.toml`:
+    Try to change the config by at `$HOME/.local/share/namada/<chain-id>/config.toml`:
 
     - pex=`false`, 
     
@@ -145,9 +145,9 @@ Visit [Introduction page](/intro) for more information.
     - addr_book_strict=`false`
 
     
- After such changes remove the addressbook and maybe reset your node_id. 
- 
- addressbook is located here  `$HOME/.local/share/namada/public-testnet-.../cometbft/config`.
+    After such changes, remove the AddressBook and possibly reset your node_id. 
+
+    AddressBook path: `$HOME/.local/share/namada/public-testnet-.../cometbft/config`.
  
     Restart node and service:
 
@@ -170,7 +170,8 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    It seems like there's a parsing error with your TOML file. Make sure the value for the key `token.Schnitzel.balances.<my key>` is a string, not an integer.
+    It looks like there's a parsing error in your TOML file. Make sure that the value for the key `token.Schnitzel.balances.<my key>` is a string, not an integer.
+
     ```bash
     cat /home/namada/.local/share/namada/public-testnet-...toml
     ```
@@ -186,9 +187,10 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    Loks like you didn't run join network command with the `--genesis-validator flag`.
+    Looks like you didn't run the join network command with the `--genesis-validator flag`.
 
     Try this command:
+
     ```bash
     namadac utils join-network --chain-id public-testnet-... --genesis-validator ...
     ```
@@ -205,17 +207,17 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    It is essential that you delete the old MASPParams folder. This does not always update correctly.
+    It is important that you delete the old MASPParams folder. It does not always update correctly.
 
-    Use following commands:
+    Use the following commands:
 
-    Linux Users
+    For Linux Users:
 
     ```bash
     rm -rf $HOME/.masp-params
     ```
 
-    MAC Users
+    For MAC Users:
 
     ```bash
     rm -rf "$HOME/Library/Application Support/MASPParams" 
@@ -245,9 +247,9 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    You have to change `<path-to-cometbft-binary>` for the path where is located the cometbft binary. 
+    You need to change `<path-to-cometbft-binary>` for the path where the cometbft binary is located. 
     
-    In this case `$HOME/cometbft/build/cometbft`.
+    In this case: `$HOME/cometbft/build/cometbft`.
 
 ---
 
@@ -263,26 +265,27 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    Protoc version seems outdated, try update this. 
+    Protoc version seems to be outdated, try to update it. 
 
-    Check [Namada docs](https://docs.namada.net/introduction/install/source/pre-requisites#remaining-dependencies) or [grpc docs](https://grpc.io/docs/protoc-installation/#install-pre-compiled-binaries-any-os).
+    Check [Namada docs](https://docs.namada.net/introduction/install/source/pre-requisites#remaining-dependencies) and [grpc docs](https://grpc.io/docs/protoc-installation/#install-pre-compiled-binaries-any-os).
 
 ---
 
 ## Listening RPC
 
-- **Error:** not working listening of the node.
+- **Error:** listening of the node doesn't work.
 
 - **Solution:**
 
     The ledger configuration is stored in `$BASE_DIR/$CHAIN_ID/config.toml` and is created when you join the network. You can modify this file to change the configuration of your node.
-    Change config here `$HOME/.local/share/namada/chain-id.../config.toml`, `laddr` should be `tcp://0.0.0.0:26657`.
+    Change the config at `$HOME/.local/share/namada/chain-id.../config.toml`, `laddr` should be `tcp://0.0.0.0:26657`.
+
     ```
     [rpc]
     laddr = "tcp://0.0.0.0:26657
     ```
 
-    Save and restart the node.
+    Save your changes and restart the node.
 
 ---
 ## ABCI error
@@ -291,7 +294,7 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    It means that you are already running a node in the same server (i.e. you've to change your ports).
+    This means that you're already running a node on the same server (i.e. you need to change your ports).
 
     You can change the port configuration in the `config.toml` file located in the testnet directory.
 
@@ -313,6 +316,7 @@ Visit [Introduction page](/intro) for more information.
     Try [initialize another version Tendermint](https://docs.tendermint.com/v0.33/introduction/install.html).
 
     Check version:
+
     ```bash
     tendermint --version
     ```
@@ -330,7 +334,7 @@ Message: Mising genesis files
 
 - **Solution:**
 
-    To join the network with your full node, you'll need the `chain-id` which will be available once the genesis file is ready; you can then use the `namada client utils join-network --chain-id $CHAIN_ID` command to join.
+    To join the network with your full node, you'll need the `chain-id`, which will be available once the genesis file is ready; you can then use the `namada client utils join-network --chain-id $CHAIN_ID` command to join.
 
 ---
 
@@ -338,7 +342,7 @@ Message: Mising genesis files
 
 - **Error:**
 
-    Occurs when transferring assets from Ethereum to Namada.
+    Occurs when assets are transferred from Ethereum to Namada.
 ```
  0: The balance of the source tnam1q... of token tnam1q... is lower than the amount required for fees. Amount of the fees is 0.025 and the balance is 0.
  ```
@@ -347,7 +351,6 @@ Message: Mising genesis files
     - If an ERC20 token is transferred to Namada, once the associated TransferToNamada Ethereum event is included into Namada, validators mint the appropriate amount to the corresponding multitoken balance key for the receiver, or release the escrowed native Namada token.
     - To transfer 10 DAI to Namada, you must ensure that the Namada address receiving the wrapped assets has enough balance to cover the fees; the error message indicates that the balance is lower than the required fee amount of 0.025
     - You can check the current balance and transaction details on [Etherscan](https://etherscan.io/token/0x6b175474e89094c44da98b954eedeac495271d0f) for the ERC20 token DAI.
-
 
 ---
 
@@ -373,7 +376,8 @@ Perhaps you should add the directory containing libudev.pc
 
 - **Solution:**
 
-Install libudev
+Install libudev:
+
 ```bash
 sudo apt install libudev-dev -y
 ```
@@ -391,7 +395,8 @@ Location: /home/ubuntu/namada/apps/src/lib/client/utils.rs:201
 
 - **Solution:**
 
-Make sure to delete the old files in the base dir and rerun. 
+Make sure to delete the old files in the base dir and re-run. 
+
 ```bash
 namadac utils join-network --chain-id public-testnet-...
 ```
@@ -407,10 +412,12 @@ namadac utils join-network --chain-id public-testnet-...
     Correctly install [CometBFT](https://docs.namada.net/introduction/installing-cometbft).
 
     Check cometbft location:
+
     ```bash  
     which cometbft
+
+    # output should be /usr/local/bin
     ```
-    Output should be `/usr/local/bin`.
 
 ---
 
@@ -440,7 +447,8 @@ abci.socketClient failed to connect to tcp://127.0.0.1:26658
 
 - **Solution:**
 
-    Wait till your node fully sync. You can check the sync status by running: 
+    Wait untill your node fully sync. You can check the sync status by running: 
+
     ```bash
     curl -s localhost:26657/status | jq .result.sync_info.latest_block_height
     ```
@@ -457,13 +465,13 @@ abci.socketClient failed to connect to tcp://127.0.0.1:26658
 
 - **Solution:**
 
-    This error occurs when testnet has halted. 
+    This error occurs when chain is halted. 
 
     Therefore, first, check the network health in the [explorer](https://namada.info/) and check the appropriate channels.
 
 ---
 
-## Node crashed
+## Node crashes
 
 - **Error:**
 
@@ -475,9 +483,7 @@ Location: /home/namada/.cargo/git/checkouts/tower-abci-0d01b039e0b7a0c9/367d8d9/
 
 - **Solution:**
 
-    This sometimes happens, try adding more peers.
-
-    And restart (stop/start) node and service:
+    Sometimes this happens, try adding more peers and restart (stop/start) your node and service:
 
     ```bash
     sudo systemctl daemon-reload && sudo systemctl restart namadad
