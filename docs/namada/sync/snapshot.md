@@ -42,3 +42,9 @@ https://files.cryptosj.net/files/namadatestnet/namadatestnet.tar.gz
 https://testnet-files.itrocket.net/namada/snap_namada.tar
 ```
 
+**KonsorTech:**
+
+```bash
+https://snapshot.konsortech.xyz/namada/namada-snapshot.tar.lz4
+```
+
