@@ -1,0 +1,389 @@
+---
+sidebar_position: 1
+description: Troubleshooting Rollapp 
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Troubleshooting Rollapp
+
+Welcome to the Troubleshooting section of Dymension Wiki 🛠
+
+This documentation is dedicated to resolving common errors, bugs, and issues that arise when interacting with the Rollapp on Dymension. This resource is specifically designed to provide instant resolution to these common issues.
+
+:::tip
+To share your own troubleshooting solutions, simply click "Edit this page" below, add your solution using Markdown, and initiate a pull request for review. 
+
+Visit [Introduction page](/intro) for more information. 
+:::
+
+--- 
+
+## Error: [grpc]: tcp 0.0.0.0:9091: address already in use
+
+- **Error:** 
+```bash
+Error: [grpc] failed to serve: listen tcp 0.0.0.0:9091: bind: address already in use
+```
+
+- **Solution:** usually this means other node use 9091 port.
+
+
+Check open ports:
+```bash
+sudo lsof -nP -iTCP -sTCP:LISTEN
+```
+If the ports are occupied by another node, reinstall the rollapp on the new server with default ports.
+
+Or all the ports the rollapp is using are configurable on this server. The available keys are: `rollapp-rpc-port`, `lc-gateway-port`, `lc-rpc-port`, `rollapp-jsonrpc-port`, `rollapp-ws-port` and `rollapp-grpc-port`.
+```bash
+roller config set rollapp-rpc-port 6969
+```
+
+---
+
+## Firewall status is inactive
+
+- **Problem:**
+
+On a server with a working rollapp, you need to configure a firewall and open ports 26657, 8545, 1317 (by default).
+
+Check firewall status:
+ ```bash
+sudo ufw status
+```
+
+If we get `inactive`, we solve it below.
+
+- **Solution:**
+
+To allow opening a connection on port 26657:
+```bash
+sudo ufw allow 26657
+```
+
+Reload the firewall service:
+```bash
+sudo ufw reload
+```
+
+Check the status of the firewall:
+```bash
+sudo ufw status
+```
+
+Similar to other ports:
+```bash
+sudo ufw allow 8545
+```
+```bash
+sudo ufw allow 1317
+```
+
+---
+
+## Cannot connect via SSH after configured firewall
+
+- **Problem:**
+
+After opening ports and configuring the firewall, I cannot connect to the server via SSH.
+
+- **Solution:**
+
+Verify OpenSSH installation on your system:
+```bash
+sudo apt list --installed | grep openssh-server
+```
+
+You can skip this step if the OpenSSH server is installed on your system:
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt install openssh-server
+```
+
+Check the ssh service status:
+```bash
+sudo service ssh status
+```
+
+If it is not `active`, you can start it by running the following command:
+```bash
+sudo service ssh start
+```
+
+To enable the service on system start, you can run the following command:
+```bash
+sudo service enable ssh
+```
+
+It is likely that the server is listening on a different port than the default port 22.
+
+Check which port the OpenSSH server is listening to:
+```bash
+sudo netstat -ltnp | grep sshd
+```
+To allow opening a connection on port 22:
+```bash
+sudo ufw allow 22
+```
+
+Reload the firewall service:
+```bash
+sudo ufw reload
+```
+
+Check the status of the firewall:
+```bash
+sudo ufw status
+```
+
+
+---
+
+## WebSocket connection closed
+
+- **Error:** logs rollapp have error 
+```
+WebSocket connection closed
+```
+
+- **Solution:**
+
+     - There is an issue with your sequencer.
+     - It is necessary to forcefully stop and restart the sequencer. 
+     - If you do this through the screen, stop all processes.
+
+
+---
+
+## Relayer status -> creating channel
+
+- **Error:** status relayer is `creating channel` and logs rollapp have error 
+```
+Error sending messages
+```
+
+- **Solution:**
+
+You can wait. Or search for overide for some context
+
+---
+
+## Node: store is not initialized
+
+- **Error:** after migrate rollapp
+```
+Node: store is not initialized
+```
+
+- **Solution:**
+
+You can't migrate with [resync](https://docs.dymension.xyz/build/state_sync).
+
+---
+
+## Failed to query node status
+
+- **Error:** you have error on relayer logs
+```bash
+Failed to query node status
+```
+
+- **Solution:**
+
+You can wait. Or try to [change rpc](/dymension/troubleshooting#change-rpc).
+
+---
+
+## Change RPC
+
+
+```bash
+nano $HOME/.roller/config.toml
+```
+- `API_URL = "https://dymension-api.f5nodes.com"`
+- `RPC_URL = "https://dymension-rpc.f5nodes.com"`
+
+```bash
+nano $HOME/.roller/relayer/config/config.yaml
+```
+- `rpc-addr: https://dymension-rpc.f5nodes.com`
+
+```bash
+nano $HOME/.roller/rollapp/config/dymint.toml
+```
+- `node_address = "https://dymension-rpc.f5nodes.com"`
+
+---
+
+## Unknown data layer type
+
+- **Error:** after `roller run`
+```bash
+Unknown data layer type
+```
+
+- **Solution:**
+
+Try add archive node to config:
+```bash
+nano $HOME/.roller/relayer/config/config.yaml
+```
+- `ARCHIVE_RPC_URL = "https://rpc-dymension-testnet.mzonder.com:443"`
+
+
+---
+
+## Failed to listen on debug address 
+
+- **Error:** you have this on rollapp logs
+```bash
+Failed to listen on debug address
+```
+
+- **Solution:**
+
+    - You probably run 2 instances of the rollapp. 
+    - Choose between screen and systemd. 
+    - Stop one of them. 
+    - For inexperienced users, it is better to use systemd.
+
+---
+
+## Deleting empty file
+
+- **Error:** rollapp logs get stuck and you have an messages:
+```bash
+INFO: Deleting empty file: /root/.roller/rollapp/data/dymint/004007.vlog
+```
+
+- **Solution:** 
+
+Try restart this.
+
+If you use screen. Stop with `CTRL+C` and start again.
+
+If you use systemd:
+```bash
+sudo systemctl restart da-light-client
+sudo systemctl restart sequencer
+sudo systemctl restart relayer
+```
+
+---
+
+## RPC client connection failed
+
+
+- **Error:** you see error on portal after connection to rollapp:
+```bash
+RPC client connection failed, please try again later
+```
+
+- **Solution:** 
+
+It looks like your IP is not responding
+
+Check status node:
+```bash
+curl localhost:26657/status
+```
+
+If you have output `{"jsonrpc":"2.0","result":{"node_info":{"protocol_version":{"p2p":"8","block":"11","app":"0"},"id` then all good.
+
+Next step is [check firewall](/dymension/troubleshooting#firewall-status-is-inactive)
+
+If you have output `curl: (7) Failed to connect to localhost port ...: Connection refused` then restart your da-light client.
+
+---
+
+## Failed to initialize database
+
+- **Error:** you can error on rollapp logs
+```bash
+Error: failed to initialize database: resource temporarily unavailable
+```
+
+- **Solution:**
+
+    - You probably run 2 instances of the rollapp. 
+    - Choose between screen and systemd. 
+    - Stop one of them. 
+    - For inexperienced users, it is better to use systemd.
+
+
+---
+
+## Availability validation failed
+
+- **Error:** 
+```bash
+ERROR   share/light     light/availability.go:88        availability validation failed  {"root": "xxxxxxxxxxxxx", "err": "context deadline exceeded"}
+```
+
+- **Solution:**
+
+Try restart your da-light client. 
+
+If you use screen. Stop with `CTRL+C` and start again.
+
+If you use systemd:
+```bash
+sudo systemctl restart da-light-client
+sudo systemctl restart sequencer
+sudo systemctl restart relayer
+```
+
+----
+
+## Node is unhealthy: insufficient funds
+
+- **Error:** 
+```bash
+ERROR   share/light     light/availability.go:88        availability validation failed  {"root": "xxxxxxxxxxxxx", "err": "context deadline exceeded"}
+```
+
+- **Solution:**
+
+You need to request more tokens on your key da-light client. 
+
+This can be [TIA or AVL](https://docs.dymension.xyz/build/quick-start/roller-quick/initialize), depending on your environment.
+
+
+----
+
+## Flush not complete  
+
+
+- **Error:** you have error on rolayer logs
+```bash
+warn    Flush not complete     "error": "failed to enqueue pending messages for flush: no ibc messages found
+```
+
+- **Solution:**
+
+Flush not complete error can be ignored if your rollapp is fully functional.
+
+If no try to restart services.
+
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
