@@ -50,6 +50,10 @@ https://ss.nodeist.net/t/dymension/snapshot_latest.tar.lz4
 https://services.silknodes.io/snapshots/dymension/dymension_1653000.tar.lz4
 ```
 
+#### Stake&Relax:
+```bash
+https://eu2.contabostorage.com/455b75bbb3764f6aa13e1ab821e1bf5e:stakeandrelax/snapshots/dymension/snapshot_latest.tar.lz4
+```
 
 #### STAVR
 ```bash
