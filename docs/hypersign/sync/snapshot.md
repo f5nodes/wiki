@@ -28,3 +28,13 @@ sudo systemctl restart hid-noded && sudo journalctl -u hid-noded -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### kjnodes:
+```bash
+https://snapshots.kjnodes.com/hypersign-testnet/snapshot_latest.tar.lz4
+```
+
+#### Nodeist:
+```bash
+https://t-ss.nodeist.net/hypersign/snapshot_latest.tar.lz4
+```
