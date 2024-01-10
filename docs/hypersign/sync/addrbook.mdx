@@ -1,0 +1,29 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+	    `https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Hypersign/addrbook.json`,
+        `https://anode.team/Hypersign/test/addrbook.json`,
+        `http://snapshots.autostake.com/jagrat/addrbook.json`,
+        `https://snapshots.kjnodes.com/hypersign-testnet/addrbook.json`,
+        `https://snapshots.takeshi.team/hypersign-testnet/addrbook.json`,
+        `https://t-ss.nodeist.net/hypersign/addrbook.json`,
+        `https://ss-t.hypersign.nodestake.top/addrbook.json`,
+        `https://snapshots.polkachu.com/testnet-addrbook/hypersign/addrbook.json`,
+];
+
+export let home = 'hid-node';
+
+export let binary = 'hid-noded';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
