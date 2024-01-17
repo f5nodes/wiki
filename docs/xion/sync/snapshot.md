@@ -28,3 +28,13 @@ sudo systemctl restart xiond && sudo journalctl -u xiond -f -o cat
 ```
 
 A list of Snapshots you can use:
+
+#### Xion (official):
+```bash
+https://files.xion-testnet-1.burnt.com/xion-testnet-1-latest.tar.lz4
+```
+
+#### NodeX:
+```bash
+https://snap.nodex.one/xion-testnet/xion-latest.tar.lz4
+```
