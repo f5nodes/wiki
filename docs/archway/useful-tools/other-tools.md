@@ -26,5 +26,3 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [Archway analytics](https://analytics.smartstake.io/archway) | Dashboard that displays current/avg uptime of validators, actively participates in governance, changes in stake, etc. | [Smart Stake](https://smartstake.io/) | 2023-03-07 |
 | [Reward calculator](https://analytics.smartstake.io/archway/calc) | The tool used to estimate the potential earnings or returns that can be gained by staking. | [Smart Stake](https://smartstake.io/) | 2023-03-07 |
 | [Unagii](https://app.unagii.com/stake/archway) | Staking platform empowers users to securely participate in the decentralized network, enabling them to earn rewards by staking their ARCH tokens and actively contributing to the protocol's stability and growth. | [Stakewithus](https://www.stakewith.us) | 2023-11-21 |
-
-
