@@ -7,8 +7,10 @@ description: Other-tools
 
 > This page is a repository of valuable tools and resources offered by the Celestia Community, including monitoring systems, dashboards, and versatile platforms. These resources are designed to enhance your capabilities and are backed by Celestia Community's commitment to support your needs.
 
-:::info
-The following page contains links to third-party content. Celestia does not endorse or provide support for these contributions.
+:::tip
+All the contributions are crafted by third-party members, signifying external individuals or entities unaffiliated with the Celestia Network.
+
+To contribute your own resource, simply click on **Edit this page** at the bottom, insert your resource using Markdown formatting, and then initiate a pull request for the submission to be reviewed.
 :::
 
 To contribute your own resource, simply click on **Edit this page** at the bottom, insert your resource using Markdown formatting, and then initiate a pull request for the submission to be reviewed.
