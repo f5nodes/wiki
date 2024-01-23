@@ -13,8 +13,6 @@ All the contributions are crafted by third-party members, signifying external in
 To contribute your own resource, simply click on **Edit this page** at the bottom, insert your resource using Markdown formatting, and then initiate a pull request for the submission to be reviewed.
 :::
 
-To contribute your own resource, simply click on **Edit this page** at the bottom, insert your resource using Markdown formatting, and then initiate a pull request for the submission to be reviewed.
-
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
 | [Analytics & staking dashboard](https://alphab.ai/s/m/celestia) | Monitoring with a graph, the number of signed/missed blocks, commission/stake amount, etc. | [Alphab](https://alphab.ai/s/m/celestia) | 2023-10-31 |
