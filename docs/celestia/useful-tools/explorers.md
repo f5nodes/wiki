@@ -14,6 +14,7 @@ description: Explorers
 | AmSolutions  | Cosmos | celestia | https://explorer.theamsolutions.info/celestia-main |
 | CosmosSpaces | Cosmos | celestia | https://explorer.cosmos-spaces.cloud/celestia |
 | Cosmostation | Cosmos | celestia | https://www.mintscan.io/celestia |
+| DipDup | Cosmos | celestia | https://celenium.io |
 | kjnodes | Cosmos | celestia | https://explorer.kjnodes.com/celestia |
 | Nodes.Guru | Cosmos | celestia | https://celestia.explorers.guru|
 | NodeStake | Cosmos | celestia | https://explorer.nodestake.top/celestia | 
