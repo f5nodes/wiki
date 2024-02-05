@@ -16,6 +16,4 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
-| [Analytics & staking dashboard](https://alphab.ai/s/m/dymension) | Monitoring with a graph, the number of signed/missed blocks, commission/stake amount, etc. | [Alphab](https://alphab.ai/s/m/dymension) | 2023-11-29 |
-| [RPC Scanner](https://services.kjnodes.com/testnet/dymension/public-rpc/) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2023-11-29 |
-| [Monitoring Tool](https://github.com/nodejumper-org/monitoring-tool) | A powerful and easy-to-use monitoring tool for server hardware and validator nodes with alerts via telegram bot and grafana dashboards. | [NodeJumper](https://github.com/nodejumper-org) | 2023-06-08 |
+
