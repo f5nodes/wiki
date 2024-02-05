@@ -12,5 +12,4 @@ To contribute your own resource, simply click on **Edit this** page at the botto
 
 | Name | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
-| [Proposal Bot](https://t.me/nodejumper_governance_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [NodeJumper](https://github.com/nodejumper-org) | 2023-11-29 |
-| [Proposal Bot](https://t.me/kjnodes_testnet_proposal_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [kjnodes](https://github.com/kj89) | 2023-08-11 |
+
