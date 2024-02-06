@@ -30,7 +30,11 @@ sudo systemctl restart dymd && sudo journalctl -u dymd -f -o cat
 
 A list of Snapshots you can use:
 
+#### Nodejumper:
 
+```bash
+https://snapshots.nodejumper.io/dymension/dymension_latest.tar.lz4
+```
 
 
 
