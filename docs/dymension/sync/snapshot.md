@@ -36,5 +36,8 @@ A list of Snapshots you can use:
 https://snapshots.nodejumper.io/dymension/dymension_latest.tar.lz4
 ```
 
+#### STAVR:
 
-
+```bash
+https://dymension-m.snapshot.stavr.tech/dymension-snap.tar.lz4
+```
