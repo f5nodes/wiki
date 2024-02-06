@@ -11,9 +11,13 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| kjnodes | Cosmos | froopyland_100-1 | https://explorer.kjnodes.com/dymension |
-| NodeStake | Cosmos | froopyland_100-1 | https://explorer.nodestake.org/dymension |
-| Nodes.Guru | Cosmos | froopyland_100-1 | https://dymension.explorers.guru |
-| StakeMe | Cosmos | froopyland_100-1 | https://dymension.exploreme.pro |
-| UTSA | Cosmos | froopyland_100-1 | https://exp.utsa.tech/dymension |
+| Escan (official) | Cosmos | dymension_1100-1 | https://dym.fyi |
+| kjnodes | Cosmos | dymension_1100-1 | https://explorer.kjnodes.com/dymension |
+| Kynraze | Cosmos | dymension_1100-1 | https://explorer.kynraze.com/dymension |
+| NodeStake | Cosmos | dymension_1100-1 | https://explorer.nodestake.org/dymension |
+| Nodes.Guru | Cosmos | dymension_1100-1 | https://dymension.explorers.guru |
+| StakeMe | Cosmos | dymension_1100-1 | https://dymension.exploreme.pro |
+| STAVR | Cosmos | dymension_1100-1 | https://explorer.stavr.tech/Dymension-Mainnet |
+| UTSA | Cosmos | dymension_1100-1 | https://exp.utsa.tech/dymension |
+
 
