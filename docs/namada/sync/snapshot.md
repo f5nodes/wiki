@@ -62,3 +62,8 @@ https://namada.lankou.org/snapshot/namada-latest.tar.lz4
 ```bash
 https://snapshots.lavenderfive.com/testnet-extra-db/namada/latest_db.tar.lz4
 ```
+
+**StakerHouse:**
+```bash
+https://snapshots3.stakerhouse.com/namada/namada_.tar.lz4
+```
