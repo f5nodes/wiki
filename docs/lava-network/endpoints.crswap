@@ -1,0 +1,229 @@
+---
+sidebar_position: 1
+description: Endpoints
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Endpoints — API / RPC / gRPC
+
+> In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
+
+> The RPC endpoint enables users to interact with Lava's nodes, querying the node's state and transmitting transactions within the Lava Network.
+
+> The gRPC endpoint enables user interactions with a Lava Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+
+<Tabs>
+  <TabItem value="api" label="API" default>
+
+#### Anode:
+```bash
+https://lava.api.t.anode.team
+```
+
+#### AviaOne:
+```bash
+https://api.lava-testnet-2.lava.aviaone.com
+```
+
+#### F5 Nodes:
+```bash
+https://lava-api.f5nodes.com
+```
+
+#### ITRocket:
+```bash 
+https://lava-testnet-api.itrocket.net:443
+```
+
+#### kjnodes:
+```bash 
+https://lava-testnet.api.kjnodes.com
+```
+
+#### 𝐥𝐞𝐬𝐧𝐢𝐤 | 𝐔𝐓𝐒𝐀:
+```bash 
+https://t-lava.api.utsa.tech
+```
+
+#### LiveRaveN:
+```bash 
+https://lava.api.liveraven.net
+```
+
+#### NodeJumper:
+```bash 
+https://lava-testnet.nodejumper.io:1317
+```
+
+
+#### [Noders]Team:
+```bash
+http://lava.api.nodersteam.com:13317
+```
+
+
+#### NodeStake:
+```bash 
+https://api-t.lava.nodestake.top
+```
+
+#### NodeX:
+```bash 
+https://rest.lava-t.nodexcapital.com
+```
+
+#### Polkachu:
+```bash 
+https://lava-testnet-api.polkachu.com
+```
+
+#### Stake Village:
+```bash 
+https://lava-testnet.api.stakevillage.net
+```
+
+#### STAVR:
+```bash
+https://lava.api.t.stavr.tech
+```
+
+  </TabItem>
+  <TabItem value="rpc" label="RPC">
+
+#### Anode:
+```bash
+https://lava.rpc.t.anode.team
+```
+
+#### AviaOne:
+```bash
+https://rpc.lava-testnet-2.lava.aviaone.com
+```
+
+#### F5 Nodes:
+```bash
+https://lava-rpc.f5nodes.com
+```
+
+#### ITRocket:
+```bash 
+https://lava-testnet-rpc.itrocket.net:443
+```
+
+#### kjnodes:
+```bash 
+https://lava-testnet.rpc.kjnodes.com
+```
+
+#### 𝐥𝐞𝐬𝐧𝐢𝐤 | 𝐔𝐓𝐒𝐀:
+```bash 
+https://t-lava.rpc.utsa.tech
+```
+
+#### LiveRaveN:
+```bash 
+https://lava.rpc.liveraven.net
+```
+
+#### NodeJumper:
+```bash 
+https://lava-testnet.nodejumper.io:443
+```
+
+#### [Noders]Team:
+```bash
+http://lava.rpc.nodersteam.com:13657
+```
+
+#### NodeStake:
+```bash 
+https://rpc-t.lava.nodestake.top
+```
+
+#### NodeX:
+```bash 
+https://rpc.lava-t.nodexcapital.com
+```
+
+#### Polkachu:
+```bash 
+https://lava-testnet-rpc.polkachu.com
+```
+
+#### Stake Village:
+```bash 
+https://lava-testnet.rpc.stakevillage.net:443
+```
+
+#### STAVR:
+```bash
+http://lava.rpc.t.stavr.tech:198
+```
+
+  </TabItem>
+  <TabItem value="grpc" label="gRPC">
+
+#### AviaOne:
+```bash
+grpc.lava-testnet-2.lava.aviaone.com:9096
+```
+
+#### F5 Nodes:
+```bash
+lava-grpc.f5nodes.com
+```
+
+#### ITRocket:
+```bash 
+lava-testnet-grpc.itrocket.net:20090
+```
+
+#### kjnodes:
+```bash 
+lava-testnet.grpc.kjnodes.com:443
+```
+
+#### LiveRaveN:
+```bash 
+lava.grpc.liveraven.net
+```
+
+#### NodeJumper:
+```bash 
+lava-testnet.nodejumper.io:9090
+```
+
+#### [Noders]Team:
+```bash
+http://lava.grpc.nodersteam.com:13656
+```
+
+#### NodeStake:
+```bash 
+grpc-t.lava.nodestake.top
+```
+
+#### NodeX:
+```bash 
+grpc.lava-t.nodexcapital.com
+```
+
+#### Polkachu:
+```bash 
+polkachu.com/testnet_public_grpc
+```
+
+#### Stake Village:
+```bash 
+lava-testnet.grpc.stakevillage.net:14490
+```
+
+#### STAVR:
+```bash
+http://lava.grpc.t.stavr.tech:179
+```
+
+  </TabItem>
+</Tabs>
