@@ -36,15 +36,29 @@ A list of Snapshots you can use:
 https://files.cryptosj.net/files/namadatestnet/namadatestnet.tar.gz
 ```
 
-**ITRocket:**
+**IT Rocket:**
 
 ```bash
 https://testnet-files.itrocket.net/namada/snap_namada.tar
 ```
 
+**kjnodes:**
+```bash
+https://snapshots.kjnodes.com/namada-testnet/snapshot_latest.tar.lz4
+```
+
 **KonsorTech:**
 
 ```bash
-https://snapshot.konsortech.xyz/namada/namada-snapshot.tar.lz4
+https://ss-namada.konsortech.xyz/namada/namada-snapshot.tar.gz
 ```
 
+**Lankou:**
+```bash
+https://namada.lankou.org/snapshot/namada-latest.tar.lz4
+```
+
+**Lavender.Five:**
+```bash
+https://snapshots.lavenderfive.com/testnet-extra-db/namada/latest_db.tar.lz4
+```
