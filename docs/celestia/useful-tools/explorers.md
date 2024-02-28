@@ -21,4 +21,5 @@ description: Explorers
 | Ping.pub | Cosmos | celestia | https://ping.pub/celestia |
 | Stakeflow| Cosmos | celestia | https://stakeflow.io/celestia |
 | Stakeme | Cosmos | celestia | https://celestia.exploreme.pro |
+| STAVR | Cosmos | celestia | https://explorer.stavr.tech/Celestia-Mainnet |
 | TC Network | Cosmos | celestia | https://explorer.tcnetwork.io/celestia |
