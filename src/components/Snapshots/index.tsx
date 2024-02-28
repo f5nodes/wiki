@@ -71,8 +71,8 @@ const Snapshots: React.FC<{ tip?: string; endpoint: string }> = ({ tip, endpoint
 			{fileList.length > 0 && (
 				<CodeBlock language="bash" showLineNumbers>
 					{selectedSnapshot
-						? `wget https://aleo-snapshots.f5nodes.com/${selectedSnapshot.filename}`
-						: `wget https://aleo-snapshots.f5nodes.com/${fileList[fileList.length - 1].filename}`}
+						? `wget ${endpoint}${selectedSnapshot.filename}`
+						: `wget ${endpoint}${fileList[fileList.length - 1].filename}`}
 				</CodeBlock>
 			)}
 		</div>
