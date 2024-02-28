@@ -7,6 +7,10 @@ description: Snapshot
 
 > When a new node joins a network, it can use a snapshot — a compressed backup of the chain's data — to quickly synchronize with the current state. Snapshots expedite the process, reducing the need to download and verify every transaction from the beginning.
 
+import Snapshots from '@site/src/components/Snapshot';
+
+<Snapshots tip="Click on any snapshot to paste it into the code block." endpoint="https://celestia-snapshots.f5nodes.com/"/>
+
 :::info
 Choose a snapshot from the list and run the commands below. Don't forget to change `snapshot_url`.
 :::
@@ -15,14 +19,14 @@ Choose a snapshot from the list and run the commands below. Don't forget to chan
 sudo systemctl stop celestia-appd
 
 # make a backup
-cp $HOME/.celestia-app/data/priv_validator_state.json $HOME/.celestia-app/priv_validator_state.json.backup 
+cp $HOME/.celestia-app/data/priv_validator_state.json $HOME/.celestia-app/priv_validator_state.json.backup
 
 # reset your node and download a snapshot
-celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app --keep-addr-book 
+celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app --keep-addr-book
 wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.celestia-app
 
 # replace the priv_validator_state.json you have backed up
-mv $HOME/.celestia-app/priv_validator_state.json.backup $HOME/.celestia-app/data/priv_validator_state.json 
+mv $HOME/.celestia-app/priv_validator_state.json.backup $HOME/.celestia-app/data/priv_validator_state.json
 
 sudo systemctl restart celestia-appd && sudo journalctl -u celestia-appd -f -o cat
 ```
