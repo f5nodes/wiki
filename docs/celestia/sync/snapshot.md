@@ -15,10 +15,6 @@ import Snapshots from '@site/src/components/Snapshots';
 Snapshots are taken every <i>6 hours</i>.
 :::
 
-:::info
-Choose a snapshot from the list and run the commands below. Don't forget to change `snapshot_url`.
-:::
-
 ```bash
 sudo systemctl stop celestia-appd
 
@@ -35,7 +31,12 @@ mv $HOME/.celestia-app/priv_validator_state.json.backup $HOME/.celestia-app/data
 sudo systemctl restart celestia-appd && sudo journalctl -u celestia-appd -f -o cat
 ```
 
-A list of Snapshots you can use:
+You can also use other snapshots:
+
+#### IT Rocket:
+```bash
+https://testnet-files.itrocket.net/celestia/snap_celestia.tar.lz4
+```
 
 #### kjnodes:
 
@@ -49,8 +50,3 @@ https://snapshots.kjnodes.com/celestia/snapshot_latest.tar.lz4
 https://snapshots.lavenderfive.com/snapshots/celestia/latest.tar.lz4
 ```
 
-#### Synergy Nodes:
-
-```bash
-https://s3.eu-central-1.amazonaws.com/snapshots.synergynodes.com/celestia_mainnet/celestia_36.tar.lz4
-```
