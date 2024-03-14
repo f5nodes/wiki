@@ -30,6 +30,12 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f
 
 A list of Snapshots you can use:
 
+**Bware Labs:**
+
+```bash
+ https://snapshots.bwarelabs.com/namada/testnet/namada20240312.tar.lz4
+```
+
 **CryptoSJ:**
 
 ```bash
