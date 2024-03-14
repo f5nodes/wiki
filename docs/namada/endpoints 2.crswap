@@ -537,17 +537,14 @@ https://namada-indexer.localhost-validator.pro/block/last
 https://indexer.validatorvn.com/block/last
 ```
 
-**Whisper Node:**
-
-```bash 
-https://namadexer-testnet.whispernode.com/block/last
-```
-
+Whiper Node
 **Zondax:**
 
 ```bash 
 https://api.zondax.ch/nam/data/v1/testnet/block/last
 ```
 
+
   </TabItem>
 </Tabs>
+
