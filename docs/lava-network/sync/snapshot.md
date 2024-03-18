@@ -9,7 +9,7 @@ description: Snapshot
 
 import Snapshots from '@site/src/components/Snapshots';
 
-<Snapshots tip="Click on any snapshot to paste it into the code block." endpoint="https://lava-snapshots.f5nodes.com/"/>
+<Snapshots tip="Click on any snapshot to paste it into the code block." endpoint="https://lava-testnet-snapshots.f5nodes.com/"/>
 
 :::info
 Snapshots are taken every <i>6 hours</i>.
