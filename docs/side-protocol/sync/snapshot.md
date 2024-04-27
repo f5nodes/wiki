@@ -29,7 +29,32 @@ sudo systemctl restart sided && sudo journalctl -u sided -f -o cat
 
 A list of Snapshots you can use:
 
+#### AKNodes:
+```bash
+https://snapshots.aknodes.net/snapshots/side/snapshot-side.AKNodes.lz4
+```
+
+#### IT Rocket:
+```bash
+https://testnet-files.itrocket.net/side/snap_side.tar.lz4
+```
+
 #### kjnodes:
 ```bash
 https://snapshots.kjnodes.com/side-testnet/snapshot_latest.tar.lz4
+```
+
+#### Nodeist:
+```bash
+https://t-ss.nodeist.net/side/snapshot_latest.tar.lz4
+```
+
+#### Nodejumper:
+```bash
+https://snapshots-testnet.nodejumper.io/side-testnet/side-testnet_latest.tar.lz4
+```
+
+#### Stake Town:
+```bash
+https://snapshots-testnet.stake-town.com/side/side-testnet-3_latest.tar.lz4
 ```
