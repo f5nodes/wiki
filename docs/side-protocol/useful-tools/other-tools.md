@@ -15,6 +15,8 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
-| [Chain Information Platform](https://testnet.cosmos.directory/lavatestnet2) | This platform provides information about the network, validators, public nodes, etc. | [ECO Stake](https://github.com/eco-stake) | 2024-01-31 |
-| [gRPC Spec Builder](https://github.com/milakorn69/lava/tree/main/scripts/automation_scripts) | Used for verifying the REST part of a spec, and building the grpc part from it. It uses the grpc descriptors of the endpoint you provide in order to cross validate the missing parts, and the grpc spec itself. | [milakorn69](https://github.com/milakorn69) | 2023-05-08 |
-| [RPC Scanner](https://services.kjnodes.com/mainnet/lava/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2023-11-29 |
+| [RPC Scanner](https://services.kjnodes.com/testnet/side/public-rpc/) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2024-04-27 |
+| [RPC Scanner](https://itrocket.net/services/testnet/side/public-rpc/) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [ITRocket](https://github.com/itrocket-am) | 2024-04-27 |
+| [Governance Bot](https://t.me/kjnodes_testnet_proposal_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [kjnodes](https://github.com/kj89) | 2024-04-27 |
+| [Governance Bot](https://t.me/nodejumper_governance_bot) | A telegram bot to notify users of governance proposals when they're available for voting. | [NodeJumper](https://github.com/nodejumper-org) | 2024-04-27 |
+| [Decentralization Map](https://app.nodejumper.io/decentralization-map) | The network visualizer shows a graphical view of all the nodes are distributed by country and data center on map. | [NodeJumper](https://github.com/nodejumper-org) | 2024-04-27 |
