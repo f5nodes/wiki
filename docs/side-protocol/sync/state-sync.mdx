@@ -1,0 +1,28 @@
+---
+sidebar_position: 2
+description: State Sync
+---
+
+# State Sync
+
+> State Sync allows new nodes to join a blockchain network by downloading a recent snapshot of the application state instead of processing all historical blocks. This approach is typically faster and requires less data, as the application state is usually more concise than the entire block history.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { stateSync }  from '@site/src/components/SelectPaste/stateSync.ts';
+
+export let endpoints = [
+`https://side-testnet.rpc.kjnodes.com:443`,
+`https://rpc-testnet-side.nodeist.net:443`,
+`https://rpc.side.aknodes.net:443`,
+`https://side-testnet-rpc.stake-town.com:443`,
+`https://rpc.cosmos.directory:443/side`,
+`https://side-testnet-rpc.itrocket.net:443`,
+`https://rpc-t.side.nodestake.org:443`,
+];
+
+export let home = 'side';
+
+export let binary = 'sided';
+
+<SelectPaste endpoints={endpoints} codeTemplate={stateSync} home={home} binary={binary} tip="Click on any RPC to paste it into the code block." />
