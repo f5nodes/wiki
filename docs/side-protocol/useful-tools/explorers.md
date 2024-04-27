@@ -11,7 +11,13 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| BonyNode | Cosmos | Testnet (lava-testnet-2) | https://bonynode.online/lava |
-| kjnodes | Cosmos | Testnet (lava-testnet-2) | https://explorer.kjnodes.com/lava-testnet |
-| NodeStake | Cosmos | Testnet (lava-testnet-2) | https://explorer.nodestake.top/lava-testnet |
+| IT Rocket | Cosmos | side-testnet-3 | https://testnet.itrocket.net/side |
+| kjnodes | Cosmos | side-testnet-3 | https://explorer.kjnodes.com/side-testnet |
+| Nodeist | Cosmos | side-testnet-3| https://test.explorer.ist/side |
+| NodeStake| Cosmos | side-testnet-3 | https://explorer.nodestake.org/side-testnet |
+| Nodes.Guru | Cosmos | side-testnet-3 | https://testnet.side.explorers.guru |
+| NodeStake | Cosmos | side-testnet-3 | https://explorer.nodestake.top/lava-testnet |
+| Synarge Nodes | Cosmos | side-testnet-3 | https://testnets.cosmosrun.info/side |
+| vinjian | Cosmos | side-testnet-3 | https://explorer.vinjan.xyz/side-testnet |
+
 
