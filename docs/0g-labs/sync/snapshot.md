@@ -33,3 +33,14 @@ sudo systemctl restart 0gchaind && sudo journalctl -u 0gchaind -f -o cat
 ```
 
 You can also use other snapshots:
+
+#### Validatorvn:
+```bash
+https://snapshot.validatorvn.com/og/data.tar.lz4
+```
+
+#### LivenRaven:
+```bash
+http://snapshots.liveraven.net/snapshots/testnet/zero-gravity/zgtendermint_16600-1_latest.tar.lz4
+```
+
