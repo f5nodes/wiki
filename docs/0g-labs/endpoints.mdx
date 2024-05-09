@@ -1,0 +1,47 @@
+---
+sidebar_position: 1
+description: Endpoints
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Endpoints — API / RPC / gRPC
+
+> In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
+
+> The RPC endpoint enables users to interact with Zero Gravity's nodes, querying the node's state and transmitting transactions within the 0g Labs.
+
+> The gRPC endpoint enables user interactions with a 0g Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+
+
+<Tabs>
+  <TabItem value="api" label="API" default>
+
+#### F5 Nodes:
+```bash
+https://0g-testnet-api.f5nodes.com
+```
+
+
+</TabItem>
+  <TabItem value="rpc" label="RPC">
+
+#### F5 Nodes:
+```bash
+https://0g-testnet-rpc.f5nodes.com
+```
+
+
+
+</TabItem>
+  <TabItem value="grpc" label="gRPC">
+
+#### F5 Nodes:
+```bash
+0g-testnet-rpc.f5nodes.com:9590
+```
+
+
+</TabItem>
+</Tabs>
