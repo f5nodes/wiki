@@ -16,3 +16,4 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
+| [Metrics Dashboard](https://zero-gravity-metrics.trusted-point.com) | Anyone looking for the validator creation HASH from the previous testnet  on evmos. | [Trusted Point](https://github.com/trusted-point) | 2024-05-09 |

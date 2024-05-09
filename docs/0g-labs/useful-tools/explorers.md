@@ -12,3 +12,5 @@ description: Explorers
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
 | Nodes.Guru | Cosmos | zgtendermint_16600-1 | https://testnet.0g.explorers.guru |
+| LivenRaven | Cosmos | zgtendermint_16600-1 | https://testnet.explorer.liveraven.net/zero-gravity |
+| Validatorvn | Cosmos | zgtendermint_16600-1 | https://explorer.validatorvn.com/0g-Testnet |
