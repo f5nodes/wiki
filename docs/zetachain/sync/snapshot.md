@@ -31,25 +31,16 @@ A list of Snapshots you can use:
 
 #### ITRocket:
 ```bash
-https://testnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
-```
-
-#### kjnodes:
-```bash
-https://snapshots.kjnodes.com/zetachain-testnet/snapshot_latest.tar.lz4
+https://mainnet-files.itrocket.net/zetachain/snap_zetachain.tar.lz4
 ```
 
 #### Lavender.Five:
 ```bash
-https://snapshots.lavenderfive.com/testnet-snapshots/zetachain/latest.tar.lz4
+https://snapshots.lavenderfive.com/snapshots/zetachain/zetachain_3068013.tar.lz4 
 ```
 
 #### NodeJumper:
 ```bash
-https://snapshots-testnet.nodejumper.io/zetachain-testnet
+https://snapshots.nodejumper.io/zetachain/zetachain_latest.tar.lz4 
 ```
 
-#### NodeStake:
-```bash
-https://ss-t.zeta.nodestake.top
-```
