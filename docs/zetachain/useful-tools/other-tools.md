@@ -17,8 +17,7 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
-| [Validator Monitoring System](https://www.zetachain.com/docs/reference/validators-monitoring) | Monitoring of key metrics through custom dashboard using Grafana. | [F5 Nodes](https://github.com/f5nodes) | 2023-10-09 |
-| [Network Information Script](https://github.com/f5nodes/zetachain) | This script provides information about the Zetachain network, validators, and proposals by interacting with the Zetachain RPC API. | [F5 Nodes](https://github.com/f5nodes) | 2023-10-09 |
-| [RPC Scanner](https://itrocket.net/services/testnet/zetachain/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [ITRocket](https://github.com/itrocket-am) | 2023-10-22 |
-| [RPC Scanner](https://services.kjnodes.com/testnet/zetachain/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2023-10-22 |
-| [Monitoring Tool](https://github.com/nodejumper-org/monitoring-tool) | A powerful and easy-to-use monitoring tool for server hardware and validator nodes with alerts via telegram bot and grafana dashboards. | [NodeJumper](https://github.com/nodejumper-org) | 2023-06-08 |
+| [Validator Monitoring System](https://www.zetachain.com/docs/validators/monitoring) | Monitoring of key metrics through custom dashboard using Grafana. | [F5 Nodes](https://github.com/f5nodes) | 2024-05-16 |
+| [Network Information Script](https://github.com/f5nodes/zetachain) | This script provides information about the Zetachain network, validators, and proposals by interacting with the Zetachain RPC API. | [F5 Nodes](https://github.com/f5nodes) | 2024-05-16 |
+| [RPC Scanner](https://itrocket.net/services/mainnet/zetachain/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [ITRocket](https://github.com/itrocket-am) | 2024-05-16 |
+| [Monitoring Tool](https://github.com/nodejumper-org/monitoring-tool) | A powerful and easy-to-use monitoring tool for server hardware and validator nodes with alerts via telegram bot and grafana dashboards. | [NodeJumper](https://github.com/nodejumper-org) | 2024-05-16 |
