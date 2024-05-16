@@ -11,11 +11,8 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| Blockscout | EVM | Testnet (Athens-3) | https://zetachain-athens-3.blockscout.com |
-| ITRocket | Cosmos | Testnet (Athens-3) | https://testnet.itrocket.net/zetachain |
-| kjnodes | Cosmos | Testnet (athens_7001-1) | https://explorer.kjnodes.com/zetachain-testnet |
-| NodeStake | Cosmos | Testnet (athens_7001-1) | https://explorer.nodestake.top/zeta-testnet |
-| Nodes.Guru | Cosmos | Testnet (athens_7001-1) | https://zetachain.explorers.guru |
-| NodeX | Cosmos | Testnet (athens_7001-1) | https://explorer.nodex.one/zetachain |
-| StakeMe | Cosmos | Testnet (athens_7001-1) | https://zetachain.exploreme.pro | 
-| ZetaScan (official) | EVM | Testnet (Athens-3) | https://explorer.zetachain.com |
+| Blockscout | EVM | zetachain_7000-1 | https://zetachain.blockscout.com |
+| ITRocket | Cosmos | zetachain_7000-1 | https://mainnet.itrocket.net/zetachain |
+| Nodes.Guru | Cosmos | zetachain_7000-1 | https://zetachain.explorers.guru |
+| StakeMe | Cosmos | zetachain_7000-1 | https://zetachain.exploreme.pro | 
+| ZetaScan (official) | EVM | zetachain_7000-1 | https://explorer.zetachain.com |
