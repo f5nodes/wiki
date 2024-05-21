@@ -17,29 +17,20 @@ Snapshots are taken every <i>6 hours</i>.
 
 
 ```bash
+# download a snapshot
+curl <snapshot_url> | tar -Ilz4 -xf - -C $HOME/
+
 sudo systemctl stop initiad
 
 # make a backup
 cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_state.json.backup 
 
-# reset your node and download a snapshot
-initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book 
-wget <snapshot_url> | lz4 -dc - | tar -xf - -C $HOME/.initia
+# reset your node and move a snapshot
+rm -rf $HOME/.initia/data
+mv extra/home/node_initia/.initia/data $HOME/.initia/
 
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json 
 
 sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
-```
-
-You can also use other snapshots:
-
-#### Trusted Point:
-```bash 
-https://rpc-initia-testnet.trusted-point.com/latest_snapshot.tar.lz4
-```
-
-#### kjnodes:
-```bash 
-https://snapshots.kjnodes.com/initia-testnet/snapshot_latest.tar.lz4
 ```
