@@ -18,7 +18,7 @@ Snapshots are taken every <i>6 hours</i>.
 
 ```bash
 # download a snapshot
-curl -L  <snapshot_url> | tar -Ilz4 -xf - -C $HOME/
+curl <snapshot_url> | tar -Ilz4 -xf - -C $HOME/
 
 sudo systemctl stop initiad
 
@@ -27,8 +27,7 @@ cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_sta
 
 # reset your node and move a snapshot
 rm -rf $HOME/.initia/data
-cd extra/home/node_initia/.initia
-mv data $HOME/.initia/
+mv extra/home/node_initia/.initia/data $HOME/.initia/
 
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json 
