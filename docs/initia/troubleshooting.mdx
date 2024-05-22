@@ -18,7 +18,32 @@ To share your own troubleshooting solutions, simply click "Edit this page" below
 Visit [Introduction page](/intro) for more information. 
 :::
 
-## Missed chaind-id
+---
+
+## Unvalid coin
+
+- **Error:** 
+
+    ```
+    Unvalid decimal coin expression
+    ```
+
+- **Solution:**
+
+    Check the value of denoms. The prefix u in the token denom (uinit) stands for micro (μ), equivalent to 0.000001. Therefore, 100,000,000 uinit translates to 100 INIT.
+
+    ```bash
+    balances:
+    - amount: "100000000"
+    denom: uinit
+    pagination:
+    next_key: null
+    total: "0"`
+    ```
+
+---
+
+## Missed chain-id
 
 - **Error:** 
 
@@ -39,15 +64,16 @@ Visit [Introduction page](/intro) for more information.
 ## Connection refused
 
 - **Error:** 
-   My node is running and synchronized, but I get the following error
+   
+   Your node is online and synchronized, but you get the following error:
 
-    ```
+    ```bash
     post failed: Post "http://localhost:.../": dial tcp [::1]:...: connect: connection refused
     ```
 
 - **Solution:**
 
-You have to open ufw firewall:
+    You have to open ufw firewall:
 
     ```bash
     PORT=$(grep -A 3 "\[rpc\]" $HOME/.initia/config/config.toml | egrep -o ":[0-9]+") && \
@@ -62,27 +88,27 @@ You have to open ufw firewall:
     sudo ufw reload
     ```
 
-    Fetch your IP and RPC port
+    Check status your node:
     ```bash
-    RPC="http://$(wget -qO- eth0.me)$(grep -A 3 "\[rpc\]" $HOME/.initia/config/config.toml | egrep -o ":[0-9]+")" && echo $RPC
+    curl -s localhost:$PORT/status | jq
     ```
-
-Check status your node 
-```bash
-curl -s localhost:$PORT/status | jq
-```
 
 ---
 
-## Move validator
+## Move a validator
 
-- **Problem:** Move validator on the new server
+- **Problem:** 
+
+    Move a validator on the new server.
 
 - **Solution:**
 
     - Run a new node on a new server. Set up all configurations and get full synchronization.
     - On your old server back up the `priv_validator_key.json` file located in `$HOME/.initia/config/ directory`.
-    You can save it via SFTP, or display it in the terminal using: `sudo cat ~/.initia/config/priv_validator_key.json`
+    You can save it via SFTP, or display it in the terminal: 
+    ```bash
+    sudo cat ~/.initia/config/priv_validator_key.json
+    ```
     - Stop the old node.
     ```bash
     sudo systemctl stop initiad
@@ -95,13 +121,15 @@ curl -s localhost:$PORT/status | jq
     sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
     ```
 
-
-
 ---
 
 ## Mistake in config
 
-- **Error:** `failed to merge configuration: While parsing config: toml: key enabled is already defined` 
+- **Error:** 
+
+    ```bash
+    Failed to merge configuration: While parsing config: toml: key enabled is already defined
+    ```
 
 - **Solution:**
 
@@ -111,65 +139,191 @@ curl -s localhost:$PORT/status | jq
     sudo nano $HOME/.initia/config/config.toml
     ```
     Ask for the configuration from someone in the community or copy it from another node you own.
-    And restart node.
-
-    ```bash 
-    namada client epoch 
-
-    #output: Last committed epoch: 24
-    ```
-
-    Submit unjail txn:
-
-    ```bash 
-    namadac unjail-validator --validator <address>
-    ```
-
-    :::info
-    If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
-    :::
-
-    Wait 2 epochs and your validator should be unjailed. To check it, run: 
-
-    ```bash 
-    namada client validator-state --validator <address>
-
-    #output: Validator tnam1q... is in the consensus set
-    ```
+    And restart a node.
 
 ---
----
 
-## Validator is jailed 
+## Failed database
 
-- **Error:** `validator tnam1q... is jailed` while running `namada client validator-state --validator <address>` 
+- **Error:** 
+
+    ```bash 
+    Failed to initialize database: file missing 
+    ```
 
 - **Solution:**
 
-    Get the current epoch:
+    You need to reset the database and start over.
+    - Download a snapshot.
+    - Stop a node.
+    - Make a backup.
+    - Reset your node:
 
-    ```bash 
-    namada client epoch 
+    ```bash
+    initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
+    ```
+    
+    - Move a snapshot to `$HOME/.initia/data`.
+    - Replace the `priv_validator_state.json` you have backed up and restart.
 
-    #output: Last committed epoch: 24
+---
+
+## Service does not respond
+
+- **Error:** 
+    ```bash
+    Unit ...service not found
     ```
 
-    Submit unjail txn:
+- **Solution:**
 
-    ```bash 
-    namadac unjail-validator --validator <address>
+    It looks like you are trying to start a service that does not exist. 
+    Check all your services:
+    ```bash
+    sudo ls -all /etc/systemd/system/
     ```
-
-    :::info
-    If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
-    :::
-
-    Wait 2 epochs and your validator should be unjailed. To check it, run: 
-
-    ```bash 
-    namada client validator-state --validator <address>
-
-    #output: Validator tnam1q... is in the consensus set
+    If you haven't created one yet, you can do it like this:
+    ```bash
+    sudo tee /etc/systemd/system/initiad.service > /dev/null << EOF
+    [Unit]
+    Description=Initia node service
+    After=network-online.target
+    [Service]
+    User=$USER
+    ExecStart=$(which initiad) start
+    Restart=on-failure
+    RestartSec=10
+    LimitNOFILE=65535
+    [Install]
+    WantedBy=multi-user.target
+    EOF
     ```
 
 ---
+
+## Unauthorized
+
+- **Error:** 
+
+    ```
+    Unable to verify single signer signature 
+    ```
+
+- **Solution:**
+
+    Try adding to your command a flag:
+
+    ```bash
+    --node https://initia-testnet-rpc.f5nodes.com
+    ```
+
+---
+
+## Reconnect to peer
+    
+- **Problem:** 
+
+    You get a lot of errors in your logs and your node is stuck.
+    ```
+    Failed to reconnect to peer...
+    ```
+
+- **Solution:**
+
+    - Try to wait or refresh live peers [here](https://wiki.f5nodes.com/initia/sync/peers-seeds).
+    - You can also add a seed, then a seed node will give you 100 peers that your node will try to connect.
+    - But before using the seeds, you will definitely need to remove all persistent peers.
+    > `$HOME/.initia/config/config.toml` >  `P2P Configuration Options`
+
+----
+
+## Permission to priv_validator_key
+
+- **Error:** 
+    
+    After moving the validator to another server:
+    ```bash
+    priv_validator_key.json: Permission denied 
+    ```
+
+- **Solution:**
+
+    You need to change the access rights to this file:
+
+    ```bash
+    chown <user_name>:<group> priv_validator_key.json
+    ```
+
+----
+
+## Port used
+
+- **Error:** 
+    ```bash
+    failed to listen on 127.0.0.1:...: listen tcp 127.0.0.1:...: bind: address already in use
+    ```
+
+- **Solution:**
+
+    You would need to set custom ports in configs. You can use the following commands:
+
+    ```bash
+        EXTERNAL_IP=$(wget -qO- eth0.me) \
+        PROXY_APP_PORT=26658 \
+        P2P_PORT=26656 \
+        PPROF_PORT=6060 \
+        API_PORT=1317 \
+        GRPC_PORT=9090 \
+        GRPC_WEB_PORT=9091
+
+        sed -i \
+        -e "s/\(proxy_app = \"tcp:\/\/\)\([^:]*\):\([0-9]*\).*/\1\2:$PROXY_APP_PORT\"/" \
+        -e "s/\(laddr = \"tcp:\/\/\)\([^:]*\):\([0-9]*\).*/\1\2:$RPC_PORT\"/" \
+        -e "s/\(pprof_laddr = \"\)\([^:]*\):\([0-9]*\).*/\1localhost:$PPROF_PORT\"/" \
+        -e "/\[p2p\]/,/^\[/{s/\(laddr = \"tcp:\/\/\)\([^:]*\):\([0-9]*\).*/\1\2:$P2P_PORT\"/}" \
+        -e "/\[p2p\]/,/^\[/{s/\(external_address = \"\)\([^:]*\):\([0-9]*\).*/\1${EXTERNAL_IP}:$P2P_PORT\"/; t; s/\(external_address = \"\).*/\1${EXTERNAL_IP}:$P2P_PORT\"/}" \
+        $HOME/.initia/config/config.toml
+
+        sed -i \
+        -e "/\[api\]/,/^\[/{s/\(address = \"tcp:\/\/\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$API_PORT\4/}" \
+        -e "/\[grpc\]/,/^\[/{s/\(address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$GRPC_PORT\4/}" \
+        -e "/\[grpc-web\]/,/^\[/{s/\(address = \"\)\([^:]*\):\([0-9]*\)\(\".*\)/\1\2:$GRPC_WEB_PORT\4/}" \
+        $HOME/.initia/config/app.toml
+    ```
+
+----
+
+## Failed genesis
+
+- **Error:** 
+    ```bash
+    Error: rpc error: code = Unknown desc = initia is not ready; please wait for first block: invalid height 
+    ```
+
+- **Solution:**
+
+    It looks like you haven't downloaded genesis. Try it:
+
+    ```bash
+    curl -Ls https://initia.s3.ap-southeast-1.amazonaws.com/initiation-1/genesis.json > $HOME/.initia/config/genesis.json
+    ```
+
+---
+
+## Mempool
+
+- **Error:** 
+
+    ```
+    account sequence mismatch, expected .., got ...: incorrect account sequence
+    ```
+
+- **Solution:**
+
+    Try adding to your command a flag:
+
+    ```bash
+    --node https://initia-testnet-rpc.f5nodes.com
+    ```
+
+
