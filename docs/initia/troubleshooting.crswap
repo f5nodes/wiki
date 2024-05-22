@@ -1,0 +1,186 @@
+---
+sidebar_position: 1
+description: Troubleshooting
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Troubleshooting
+
+Welcome to the Troubleshooting section of Initia Wiki 🛠
+
+This documentation is dedicated to resolving common errors, bugs, and issues that arise when interacting with the Initia network and maintaining validators. This resource is specifically designed to provide instant resolution to these common issues.
+
+:::tip
+To share your own troubleshooting solutions, simply click "Edit this page" below, add your solution using Markdown, and initiate a pull request for review. 
+
+Visit [Introduction page](/intro) for more information. 
+:::
+
+## Missed chaind-id
+
+- **Error:** 
+
+    ```
+    Chain ID required but not specified 
+    ```
+
+- **Solution:**
+
+    Try adding to your command a flag:
+
+    ```bash
+    --chain-id initiation-1
+    ```
+
+---
+
+## Connection refused
+
+- **Error:** 
+   My node is running and synchronized, but I get the following error
+
+    ```
+    post failed: Post "http://localhost:.../": dial tcp [::1]:...: connect: connection refused
+    ```
+
+- **Solution:**
+
+You have to open ufw firewall:
+
+    ```bash
+    PORT=$(grep -A 3 "\[rpc\]" $HOME/.initia/config/config.toml | egrep -o ":[0-9]+") && \
+    PORT=${PORT#:} && \
+    echo $PORT
+    ```
+
+    ```bash
+    sudo ufw allow $PORT
+    ```
+    ```bash
+    sudo ufw reload
+    ```
+
+    Fetch your IP and RPC port
+    ```bash
+    RPC="http://$(wget -qO- eth0.me)$(grep -A 3 "\[rpc\]" $HOME/.initia/config/config.toml | egrep -o ":[0-9]+")" && echo $RPC
+    ```
+
+Check status your node 
+```bash
+curl -s localhost:$PORT/status | jq
+```
+
+---
+
+## Move validator
+
+- **Problem:** Move validator on the new server
+
+- **Solution:**
+
+    - Run a new node on a new server. Set up all configurations and get full synchronization.
+    - On your old server back up the `priv_validator_key.json` file located in `$HOME/.initia/config/ directory`.
+    You can save it via SFTP, or display it in the terminal using: `sudo cat ~/.initia/config/priv_validator_key.json`
+    - Stop the old node.
+    ```bash
+    sudo systemctl stop initiad
+    ```
+    - Upload your saved `priv_validator_key.json` file to $HOME/.initia/config/ directory on new server.
+    
+    ❗ MAKE SURE YOU STOPPED YOUR VALIDATOR ON THE OLD SERVER AND DO NOT START IT AGAIN THERE❗ 
+    - Restart your node
+    ```bash
+    sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
+    ```
+
+
+
+---
+
+## Mistake in config
+
+- **Error:** `failed to merge configuration: While parsing config: toml: key enabled is already defined` 
+
+- **Solution:**
+
+    It looks like you made a mistake in `$HOME/.initia/config/config.toml`. Try updating the config.toml. 
+    ```bash
+    rm -rf $HOME/.initia/config/config.toml
+    sudo nano $HOME/.initia/config/config.toml
+    ```
+    Ask for the configuration from someone in the community or copy it from another node you own.
+    And restart node.
+
+    ```bash 
+    namada client epoch 
+
+    #output: Last committed epoch: 24
+    ```
+
+    Submit unjail txn:
+
+    ```bash 
+    namadac unjail-validator --validator <address>
+    ```
+
+    :::info
+    If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
+    :::
+
+    Wait 2 epochs and your validator should be unjailed. To check it, run: 
+
+    ```bash 
+    namada client validator-state --validator <address>
+
+    #output: Validator tnam1q... is in the consensus set
+    ```
+
+---
+---
+
+## Validator is jailed 
+
+- **Error:** `Failed to initialize database: file missing` 
+
+- **Solution:**
+
+    You need to reset the database and start over.
+    - Download a snapshot.
+    - Stop a node.
+    - Make a backup.
+    - Reset your node
+    ```bash
+    initiad tendermint unsafe-reset-all --home $HOME/.initia --keep-addr-book
+    ```
+    - Move a snapshot to `$HOME/.initia/data`
+    
+
+
+
+    ```bash 
+    namada client epoch 
+
+    #output: Last committed epoch: 24
+    ```
+
+    Submit unjail txn:
+
+    ```bash 
+    namadac unjail-validator --validator <address>
+    ```
+
+    :::info
+    If your node is not synced, add `--node <ip_address:port>` flag to use RPC.
+    :::
+
+    Wait 2 epochs and your validator should be unjailed. To check it, run: 
+
+    ```bash 
+    namada client validator-state --validator <address>
+
+    #output: Validator tnam1q... is in the consensus set
+    ```
+
+---
