@@ -27,7 +27,7 @@ cp $HOME/.initia/data/priv_validator_state.json $HOME/.initia/priv_validator_sta
 
 # reset your node and move a snapshot
 rm -rf $HOME/.initia/data
-mv extra/home/node_initia/.initia/data $HOME/.initia/
+mv home/node_initia_snapshots/.initia/data $HOME/.initia/
 
 # replace the priv_validator_state.json you have backed up
 mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json 
