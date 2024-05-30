@@ -95,28 +95,32 @@ Visit [Introduction page](/intro) for more information.
 
 ---
 
-## Move a validator
+## Move a validator to a new server
 
 - **Problem:** 
 
-    Move a validator on the new server.
+    Move a validator to a new server.
 
 - **Solution:**
 
-    - Run a new node on a new server. Set up all configurations and get full synchronization.
-    - On your old server back up the `priv_validator_key.json` file located in `$HOME/.initia/config/ directory`.
-    You can save it via SFTP, or display it in the terminal: 
+    - Run a new node on a new server and sync it with the network.
+    - On your old server back up the `priv_validator_key.json` file located in `$HOME/.initia/config/` directory.
+    You can save the file via SFTP, or view it in terminal:
     ```bash
     sudo cat ~/.initia/config/priv_validator_key.json
     ```
-    - Stop the old node.
+    - Then stop the old node and remove keys:
     ```bash
     sudo systemctl stop initiad
+    sudo rm -rf $HOME/.initia/config/priv_validator_key.json
     ```
-    - Upload your saved `priv_validator_key.json` file to $HOME/.initia/config/ directory on new server.
+    - Upload your saved `priv_validator_key.json` file to the `$HOME/.initia/config/` directory on the new server.
     
-    ❗ MAKE SURE YOU STOPPED YOUR VALIDATOR ON THE OLD SERVER AND DO NOT START IT AGAIN THERE❗ 
-    - Restart your node
+    :::danger 
+    Make sure you STOPPED your validator on the old server and do not start it again there.
+    :::
+
+    - Restart your node on the new server and check the logs:
     ```bash
     sudo systemctl restart initiad && sudo journalctl -u initiad -f -o cat
     ```
