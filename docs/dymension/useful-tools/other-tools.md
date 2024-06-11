@@ -16,12 +16,15 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
+| [RPC Gateway](https://dymension.publicnode.com) | Fastest, free-est, and privacy first RPC endpoints. | [Allnodes](https://twitter.com/allnodes) | 2024-06-11 |
 | [Chain Information Platform](https://cosmos.directory/dymension) | This platform provides information about the network, validators, public nodes, etc. | [ECO Stake](https://github.com/eco-stake) | 2024-02-06 |
 | [Restake](https://https://restake.app/dymension) | REStake allows validators to auto-compound your Dymension staking rewards. | [ECO Stake](https://github.com/eco-stake) | 2024-02-13 |
+| [Cosmos Validator Watcher](https://github.com/kilnfi/cosmos-validator-watcher) | Cosmos Validator Watcher is a Prometheus exporter to help you monitor missed blocks on any cosmos-based blockchains in real-time. | [Kiln](https://github.com/kilnfi) | 2024-06-11 |
 | [RPC Scanner](https://services.kjnodes.com/mainnet/dymension/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2024-02-13 |
 | [Slashboard](https://services.kjnodes.com/mainnet/dymension/slashboard/) | Dedicated tool designed to showcase the historical data of validator slashing incidents. | [kjnodes](https://github.com/kj89) | 2024-02-13 |
 | [Map of Zones](https://mapofzones.com/zones/dymension_1100-1/overview) | The tool scan the network on IBC volume/channels, total transactions, daily active addresses, unique delegators and more other. | [Map of Zones](https://github.com/mapofzones) | 2024-02-13 |
 | [Monitoring Tool](https://github.com/nodejumper-org/monitoring-tool) | A powerful and easy-to-use monitoring tool for server hardware and validator nodes with alerts via telegram bot and grafana dashboards. | [NodeJumper](https://github.com/nodejumper-org) | 2024-02-06 |
+| [Faucet](https://stakely.io/en/faucet/dymension-dym) | Get free $DYM for Dymension. | [Stakely](https://stakely.io) | 2024-06-11 |
 | [Dymension analytics](https://analytics.smartstake.io/dymension) | Dashboard that displays current/avg uptime of validators, actively participates in governance, changes in stake, etc. | [Smart Stake](https://smartstake.io/) | 2024-02-13 |
 | [Reward calculator](https://analytics.smartstake.io/dymension/calc) | The tool used to estimate the potential earnings or returns that can be gained by staking. | [Smart Stake](https://smartstake.io/) | 2024-02-13 |
 | [Network scan](https://polkachu.com/network_scans/dymension) | The tool periodically scan the network and uncover validator nodes with open RPC port. | [Polkachu](https://github.com/polkachu) | 2024-02-13 |

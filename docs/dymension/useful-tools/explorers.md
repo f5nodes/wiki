@@ -12,12 +12,16 @@ description: Explorers
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
 | Escan (official) | Cosmos | dymension_1100-1 | https://dym.fyi |
+| Kalia Network | Cosmos | dymension_1100-1 | https://explorer.kalia.network/dymension |
 | kjnodes | Cosmos | dymension_1100-1 | https://explorer.kjnodes.com/dymension |
 | Kynraze | Cosmos | dymension_1100-1 | https://explorer.kynraze.com/dymension |
+| Nodeist | Cosmos | dymension_1100-1 | https://explorer.ist/Dymension |
 | NodeStake | Cosmos | dymension_1100-1 | https://explorer.nodestake.org/dymension |
 | Nodes.Guru | Cosmos | dymension_1100-1 | https://dymension.explorers.guru |
 | StakeMe | Cosmos | dymension_1100-1 | https://dymension.exploreme.pro |
 | STAVR | Cosmos | dymension_1100-1 | https://explorer.stavr.tech/Dymension-Mainnet |
 | UTSA | Cosmos | dymension_1100-1 | https://exp.utsa.tech/dymension |
+
+
 
 
