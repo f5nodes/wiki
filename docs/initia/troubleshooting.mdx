@@ -30,7 +30,7 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    Check the value of denoms. The prefix u in the token denom (uinit) stands for micro (μ), equivalent to 0.000001. Therefore, 100,000,000 uinit translates to 100 INIT.
+    Check the value of denoms. The prefix (u) in the token denom (uinit) stands for micro (μ), equivalent to 0.000001. Therefore, 100,000,000 uinit translates to 100 INIT.
 
     ```bash
     balances:
@@ -73,7 +73,7 @@ Visit [Introduction page](/intro) for more information.
 
 - **Solution:**
 
-    You have to open ufw firewall:
+    You have to open the ufw firewall:
 
     ```bash
     PORT=$(grep -A 3 "\[rpc\]" $HOME/.initia/config/config.toml | egrep -o ":[0-9]+") && \
@@ -88,7 +88,7 @@ Visit [Introduction page](/intro) for more information.
     sudo ufw reload
     ```
 
-    Check status your node:
+    Check the status of your node:
     ```bash
     curl -s localhost:$PORT/status | jq
     ```
@@ -104,12 +104,12 @@ Visit [Introduction page](/intro) for more information.
 - **Solution:**
 
     - Run a new node on a new server and sync it with the network.
-    - On your old server back up the `priv_validator_key.json` file located in `$HOME/.initia/config/` directory.
-    You can save the file via SFTP, or view it in terminal:
+    - On your old server back up the `priv_validator_key.json` file located in the `$HOME/.initia/config/` directory.
+    You can save the file via SFTP, or view it in the terminal:
     ```bash
     sudo cat ~/.initia/config/priv_validator_key.json
     ```
-    - Then stop the old node and remove keys:
+    - Then stop the old node and remove the keys:
     ```bash
     sudo systemctl stop initiad
     sudo rm -rf $HOME/.initia/config/priv_validator_key.json
@@ -172,7 +172,7 @@ Visit [Introduction page](/intro) for more information.
 
 ---
 
-## Service does not respond
+## The service does not respond
 
 - **Error:** 
     ```bash
