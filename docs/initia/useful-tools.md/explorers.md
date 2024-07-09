@@ -13,3 +13,6 @@ description: Explorers
 | --- | --- | --- | --- |
 | Initia (official) | Cosmos | initiation-1 | https://scan.testnet.initia.xyz/initiation-1 |
 | kjnodes | Cosmos | initiation-1 | https://explorer.kjnodes.com/initia-testnet |
+| Coinsspor | Cosmos | initiation-1 | https://coinsspor.com/initia |
+| vercel.app | Cosmos | initiation-1 | https://pingpub.vercel.app/initia |
+
