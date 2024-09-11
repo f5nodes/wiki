@@ -1,0 +1,29 @@
+---
+sidebar_position: 4
+description: AddrBook
+---
+
+# AddrBook
+
+> Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
+
+import SelectPaste from '@site/src/components/SelectPaste';
+
+import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
+
+export let endpoints = [
+	'https://server-5.itrocket.net/testnet/story/addrbook.json',
+	'https://snapshots.kjnodes.com/story-testnet/addrbook.json',
+	'https://snapshots.lavenderfive.com/testnet-addrbooks/story/addrbook.json',
+	'https://share102.utsa.tech/story/addrbook.json',
+	'https://raw.githubusercontent.com/McDaan/general/main/story/addrbook.json',
+	'https://ss-t.story.nodestake.org/addrbook.json',
+  	'https://snapshots.polkachu.com/testnet-addrbook/story/addrbook.json',
+ 	'https://support.synergynodes.com/addrbook/story_testnet/addrbook.json',
+];
+
+export let home = 'story/story';
+
+export let binary = 'story';
+
+<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
