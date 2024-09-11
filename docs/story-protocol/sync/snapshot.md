@@ -33,7 +33,6 @@ geth_snapshot_url=$(curl -sL 'https://story-testnet-snapshots.f5nodes.com' | gre
 wget "https://story-testnet-snapshots.f5nodes.com/${story_snapshot_url}" -O - | lz4 -dc - | tar -xf - -C $HOME/.story
 wget "https://story-testnet-snapshots.f5nodes.com/${geth_snapshot_url}" -O - | lz4 -dc - | tar -xf - -C $HOME/.story/geth/iliad/geth
 
-
 # replace the priv_validator_state.json you have backed up
 cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
 
