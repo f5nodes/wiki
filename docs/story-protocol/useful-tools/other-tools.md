@@ -19,6 +19,6 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [Archive Infra and Snapshots](https://f5nodes.com) | Dedicated page that provides users with the latest Testnet archive snapshots, taken every 2 hours, as well as a public archive RPC endpoint. | [F5 Nodes](https://story.f5nodes.com) | 2024-09-11 |
 | [RPC Scanner](https://itrocket.net/services/testnet/story/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [ITRocket](https://github.com/itrocket-am) | 2024-09-11 |
 | [RPC Scanner](https://services.kjnodes.com/testnet/story/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2024-09-11 |
-
+| [Peers Scanner](https://itrocket.net/services/testnet/story/#peers-scanner) | The tool scan the network and produce a list of peers with real-time uptime verification. | [ITRocket](https://github.com/itrocket-am) | 2024-09-12 |
 
 
