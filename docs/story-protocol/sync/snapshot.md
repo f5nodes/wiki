@@ -53,8 +53,14 @@ https://snapshots.kjnodes.com/story-testnet/snapshot_latest_geth.tar.lz4 # geth 
 https://snapshots.mandragora.io/story_snapshot.lz4 # story snapshot
 https://snapshots.mandragora.io/geth_snapshot.lz4 # geth snapshot
 ```
+
 #### Coha05:
 ```bash
 https://snapshot.tech-coha05.xyz/Geth_snapshot.lz4 # geth snapshot
 https://snapshot.tech-coha05.xyz/Story_snapshot.lz4 # story snapshot
+```
+
+#### ITRocket:
+```bash
+https://itrocket.net/services/testnet/story/#snap # story and geth snapshot
 ```
