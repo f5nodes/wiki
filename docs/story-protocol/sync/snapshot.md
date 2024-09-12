@@ -54,3 +54,7 @@ https://snapshots.mandragora.io/story_snapshot.lz4 # story snapshot
 https://snapshots.mandragora.io/geth_snapshot.lz4 # geth snapshot
 ```
 
+#### ITRocket:
+```bash
+https://itrocket.net/services/testnet/story/#snap # story and geth snapshot
+```
