@@ -21,4 +21,5 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [RPC Scanner](https://services.kjnodes.com/testnet/story/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [kjnodes](https://github.com/kj89) | 2024-09-11 |
 | [Peers Scanner](https://itrocket.net/services/testnet/story/#peers-scanner) | The tool scan the network and produce a list of peers with real-time uptime verification. | [ITRocket](https://github.com/itrocket-am) | 2024-09-12 |
 | [Bash Node Manager](https://github.com/alikome/Story-protocol-node-tools) | This is a simple bash script to manage the Story node, it can (install, update, delete, apply the latest snapshot, and a lot more) in 1 click. | [Alikome](https://github.com/alikome/) | 2024-09-12 |
+| [Story Testnet Tenderduty Dashboard](https://story-testnet-tenderduty.synergynodes.com) | Modified Tenderduty dashboard monitoring of all validators' status. | [Synergy Nodes](https://github.com/SynergyNodes) | 2024-09-13 |
 
