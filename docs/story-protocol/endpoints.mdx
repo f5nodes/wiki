@@ -6,13 +6,13 @@ description: Endpoints
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Endpoints — API / RPC / gRPC
+# Endpoints — API / RPC / WebSocket
 
 > In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
 
 > The RPC endpoint enables users to interact with Story's nodes, querying the node's state and transmitting transactions within the Story Network.
 
-> The gRPC endpoint enables user interactions with a Story Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+> The Cosmos WebSocket allows real-time monitoring of transaction confirmations, block updates, and state changes on Cosmos nodes, while the EVM WebSocket provides updates on new blocks, transactions, and smart contract events for the EVM chain.
 
 <Tabs>
   <TabItem value="api" label="API" default>
@@ -86,7 +86,12 @@ https://story-testnet-cosmos-rest.crouton.digital # Cosmos REST API
 ```bash
 https://api-story.josephtran.xyz # Cosmos REST API
 ```
-
+    
+#### StraiveVN:
+```bash
+https://api-story.ongtrong.xyz # Cosmos REST API
+```
+    
 #### shachopra:
 ```bash
 https://story-testnet-api.shachopra.com # Cosmos REST API
@@ -198,15 +203,21 @@ https://story-testnet-evm-rpc.crouton.digital # EVM JSON-RPC
 #### JosephTran:
 ```bash
 https://rpc-story.josephtran.xyz # Cosmos RPC
-https://evm-rpc-story.josephtran.xyz # EVM JSON RPC
+https://evm-rpc-story.josephtran.xyz # EVM JSON-RPC
 ```
 
+#### StraiveVN:
+```bash
+https://https://rpc-story.ongtrong.xyz # Cosmos RPC
+https://evm-rpc-story.ongtrong.xyz # EVM JSON-RPC   
+```
+    
 #### shachopra:
 ```bash
 https://story-testnet-rpc.shachopra.com # Cosmos RPC
-https://story-testnet-jsonrpc.shachopra.com # EVM JSON RPC
+https://story-testnet-jsonrpc.shachopra.com # EVM JSON-RPC
 ```
-
+    
   </TabItem>
   <TabItem value="WebSocket" label="WebSocket">
 
@@ -226,6 +237,11 @@ wss://story-wss.mandragora.io # EVM WSS
 ```bash
 wss://story-testnet-rpc.blockhub.id/websocket # Cosmos WSS
 wss://story-testnet-wss.blockhub.id # EVM WSS
+```
+#### Coha05:
+```bash
+wss://story-cosmos-testnet-rpc.tech-coha05.xyz/websocket # Cosmos WSS
+wss://story-wss-evm.tech-coha05.xy # EVM WSS
 ```
 
 #### OriginStake:
@@ -251,12 +267,6 @@ wss://story-testnet-evm-ws.crouton.digital # EVM WSS
 wss://rpc-story.josephtran.xyz/websocket # Cosmos WSS
 wss://wss-story.josephtran.xyz # EVM WSS
 ```
-
-#### shachopra:
-```bash
-wss://story-testnet-rpc.shachopra.com/websocket # Cosmos WSS
-wss://story-endpoint-websocket.shachopra.com # EVM WSS
-```
     
 #### Mekong Labs:
 ```bash
@@ -270,6 +280,17 @@ ws://story-cosmos-rpc.xxxigm.xyz/websocket # Cosmos WSS
 ws://story-evm-ws.xxxigm.xyz # EVM WSS
 ```
 
+#### StraiveVN:
+```bash
+wss://rpc-story.ongtrong.xyz/websocket # Cosmos WSS
+wss://wss-story.ongtrong.xyz # EVM WSS
+```
+    
+#### shachopra:
+```bash
+wss://story-testnet-rpc.shachopra.com/websocket # Cosmos WSS
+wss://story-endpoint-websocket.shachopra.com # EVM WSS
+```
 
   </TabItem>
 </Tabs>
