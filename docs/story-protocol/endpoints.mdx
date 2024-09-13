@@ -6,13 +6,13 @@ description: Endpoints
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Endpoints — API / RPC / gRPC
+# Endpoints — API / RPC / WebSocket
 
 > In the Cosmos SDK, the gRPC-gateway translates gRPC endpoints into RESTful ones, enabling users to interact via the REST API. This adaptation is essential for clients that don't natively support gRPC or HTTP2.
 
 > The RPC endpoint enables users to interact with Story's nodes, querying the node's state and transmitting transactions within the Story Network.
 
-> The gRPC endpoint enables user interactions with a Story Node through the efficient gRPC framework. In the Cosmos SDK, this protocol is crucial for state queries and transaction broadcasts.
+> The Cosmos WebSocket allows real-time monitoring of transaction confirmations, block updates, and state changes on Cosmos nodes, while the EVM WebSocket provides updates on new blocks, transactions, and smart contract events for the EVM chain.
 
 <Tabs>
   <TabItem value="api" label="API" default>
@@ -41,7 +41,7 @@ https://story-api.mandragora.io # Cosmos REST API
 ```bash
 https://api-t.story.nodestake.org # Cosmos REST API
 ```
-
+    
 #### Polkachu:
 ```bash
 https://story-testnet-api.polkachu.com # Cosmos REST API
@@ -55,11 +55,36 @@ https://story-testnet-api.synergynodes.com # Cosmos REST API
 #### BlockHub:
 ```bash
 https://story-testnet-api.blockhub.id # Cosmos REST API
-````
+```
 
 #### Coha05:
 ```bash
 https://api-story-testnet.tech-coha05.xyz # Cosmos REST API
+```
+
+#### ITRocket: 
+```bash
+https://story-testnet-api.itrocket.net # Cosmos REST API
+```
+    
+#### OriginStake:
+```bash
+https://story-api-cosmos.originstake.com # Cosmos REST API
+```
+
+#### Grand Valley: 
+```bash
+https://lightnode-api-story.grandvalleys.com # Cosmos REST API
+```
+
+#### CroutonDigital:
+```bash
+https://story-testnet-cosmos-rest.crouton.digital # Cosmos REST API
+```
+
+#### JosephTran:
+```bash
+https://api-story.josephtran.xyz # Cosmos REST API
 ```
     
   </TabItem>
@@ -126,6 +151,7 @@ https://evmrpc-t.story.nodestake.org # EVM JSON-RPC
 
 #### OriginStake:
 ```bash
+https://story-rpc-cosmos.originstake.com # Cosmos RPC
 https://story-rpc01.originstake.com # EVM JSON-RPC
 ```
 
@@ -151,13 +177,32 @@ https://story-testnet-jsonrpc.blockhub.id # EVM JSON-RPC
 https://story-cosmos-testnet-rpc.tech-coha05.xyz # Cosmos RPC
 https://story-evm-testnet-rpc.tech-coha05.xyz # EVM JSON-RPC
 ```
+
+#### Grand Valley: 
+```bash
+https://lightnode-rpc-story.grandvalleys.com # Cosmos RPC
+https://lightnode-json-rpc-story.grandvalleys.com # EVM JSON-RPC
+```
+
+#### CroutonDigital:
+```bash
+https://story-testnet-cosmos-rpc.crouton.digital # Cosmos RPC
+https://story-testnet-evm-rpc.crouton.digital # EVM JSON-RPC
+```
     
+#### JosephTran:
+```bash
+https://rpc-story.josephtran.xyz # Cosmos RPC
+https://evm-rpc-story.josephtran.xyz # EVM JSON-RPC
+```
+
   </TabItem>
   <TabItem value="WebSocket" label="WebSocket">
 
 #### ITRocket: 
 ```bash
-https://story-testnet-rpc.itrocket.net
+wss://story-testnet-rpc.itrocket.net/websocket # Cosmos WSS
+wss://story-testnet-wss.itrocket.net # EVM WSS
 ```
 
 #### Mandragora:
@@ -175,6 +220,42 @@ wss://story-testnet-wss.blockhub.id # EVM WSS
 ```bash
 wss://story-cosmos-testnet-rpc.tech-coha05.xyz/websocket # Cosmos WSS
 wss://story-wss-evm.tech-coha05.xy # EVM WSS
+```
+
+#### OriginStake:
+```bash
+wss://story-rpc-cosmos.originstake.com/websocket # Cosmos story-wss01
+wss://story-wss01.originstake.com # EVM WSS
+```
+
+#### Grand Valley: 
+```bash
+wss://lightnode-rpc-story.grandvalleys.com/websocket # Cosmos WSS
+wss://lightnode-wss-story.grandvalleys.com # EVM WSS
+```
+
+#### CroutonDigital:
+```bash
+wss://story-testnet-cosmos-ws.crouton.digital/websocket # Cosmos WSS
+wss://story-testnet-evm-ws.crouton.digital # EVM WSS
+```
+    
+#### JosephTran:
+```bash
+wss://rpc-story.josephtran.xyz/websocket # Cosmos WSS
+wss://wss-story.josephtran.xyz # EVM WSS
+```
+    
+#### Mekong Labs:
+```bash
+wss://story-testnet-rpc.mekonglabs.tech/websocket # Cosmos WSS
+wss://story-testnet-evm-wss.mekonglabs.tech # EVM WSS
+```
+
+#### xxxigm:
+```bash
+ws://story-cosmos-rpc.xxxigm.xyz/websocket # Cosmos WSS
+ws://story-evm-ws.xxxigm.xyz # EVM WSS
 ```
 
   </TabItem>
