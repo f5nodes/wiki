@@ -64,3 +64,9 @@ https://snapshot.tech-coha05.xyz/Story_snapshot.lz4 # story snapshot
 ```bash
 https://itrocket.net/services/testnet/story/#snap # story and geth snapshot
 ```
+
+#### JosephTran:
+```bash
+https://vps7.josephtran.xyz/Story/Geth_snapshot.lz4 # geth snapshot
+https://vps7.josephtran.xyz/Story/Story_snapshot.lz4 # story snapshot
+```
