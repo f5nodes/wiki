@@ -30,7 +30,7 @@ rm -rf $HOME/.story/geth/iliad/geth/chaindata
 story_snapshot_url=$(curl -sL 'https://story-testnet-snapshots.f5nodes.com' | grep -Eo '>iliad-0_story.*\.tar\.lz4' | sed 's/^>//' | head -n1)
 geth_snapshot_url=$(curl -sL 'https://story-testnet-snapshots.f5nodes.com' | grep -Eo '>iliad-0_geth.*\.tar\.lz4' | sed 's/^>//' | head -n1)
 
-wget "https://story-testnet-snapshots.f5nodes.com/${story_snapshot_url}" -O - | lz4 -dc - | tar -xf - -C $HOME/.story
+wget "https://story-testnet-snapshots.f5nodes.com/${story_snapshot_url}" -O - | lz4 -dc - | tar -xf - -C $HOME/.story/story
 wget "https://story-testnet-snapshots.f5nodes.com/${geth_snapshot_url}" -O - | lz4 -dc - | tar -xf - -C $HOME/.story/geth/iliad/geth
 
 # replace the priv_validator_state.json you have backed up
