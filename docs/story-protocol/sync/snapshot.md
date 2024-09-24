@@ -70,3 +70,8 @@ https://itrocket.net/services/testnet/story/#snap # story and geth snapshot
 https://vps7.josephtran.xyz/Story/Geth_snapshot.lz4 # geth snapshot
 https://vps7.josephtran.xyz/Story/Story_snapshot.lz4 # story snapshot
 ```
+
+#### lesnik | UTSA:
+```bash
+https://utsa.gitbook.io/services/testnet/story-protocol/snapshot #archive story and geth snapshot
+```
