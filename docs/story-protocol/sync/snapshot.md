@@ -73,11 +73,17 @@ https://vps7.josephtran.xyz/Story/Story_snapshot.lz4 # story snapshot
 
 #### lesnik | UTSA:
 ```bash
-https://utsa.gitbook.io/services/testnet/story-protocol/snapshot #archive story and geth snapshot
+https://utsa.gitbook.io/services/testnet/story-protocol/snapshot # archive story and geth snapshot
+```
+
+#### openbitlab:
+```bash
+https://story-testnet-snapshot.openbitlab.com/geth_latest.tar.lz4 # geth snapshot
+https://story-testnet-snapshot.openbitlab.com/story_latest.tar.lz4 # story snapshot
 ```
 
 #### STAVR:
 ```bash
-https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot #pruned story and geth snapshot
-https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot #archive story and geth snapshot
+https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot # pruned story and geth snapshot
+https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot # archive story and geth snapshot
 ```
