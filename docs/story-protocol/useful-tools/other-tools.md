@@ -23,4 +23,5 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [Bash Node Manager](https://github.com/alikome/Story-protocol-node-tools) | This is a simple bash script to manage the Story node, it can (install, update, delete, apply the latest snapshot, and a lot more) in 1 click. | [Alikome](https://github.com/alikome/) | 2024-09-12 |
 | [Story Testnet Tenderduty Dashboard](https://story-testnet-tenderduty.synergynodes.com) | Modified Tenderduty dashboard monitoring of all validators' status. | [Synergy Nodes](https://github.com/SynergyNodes) | 2024-09-13 |
 | [Story Front-Chain Dashboard](https://story.frontchain.cumulo.pro/) | First modular front-end dashboard for Story nodes. | [Cumulo](https://cumulo.pro/) | 2024-09-19 |
+| [Story Node Monitor](https://github.com/openbitlab/srvcheck) | Srvcheck helps you monitor blockchain nodes | [openbitlab](https://openbitlab.com/) | 2024-10-01 |
 
