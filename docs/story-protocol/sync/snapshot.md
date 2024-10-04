@@ -75,3 +75,9 @@ https://vps7.josephtran.xyz/Story/Story_snapshot.lz4 # story snapshot
 ```bash
 https://utsa.gitbook.io/services/testnet/story-protocol/snapshot #archive story and geth snapshot
 ```
+
+#### STAVR:
+```bash
+https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot #pruned story and geth snapshot
+https://stavr-team.gitbook.io/nodes-guides/testnets/story-network/statesync-snapshot #archive story and geth snapshot
+```
