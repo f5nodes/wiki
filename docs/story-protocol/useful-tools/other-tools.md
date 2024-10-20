@@ -24,4 +24,4 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 | [Story Testnet Tenderduty Dashboard](https://story-testnet-tenderduty.synergynodes.com) | Modified Tenderduty dashboard monitoring of all validators' status. | [Synergy Nodes](https://github.com/SynergyNodes) | 2024-09-13 |
 | [Story Front-Chain Dashboard](https://story.frontchain.cumulo.pro/) | First modular front-end dashboard for Story nodes. | [Cumulo](https://cumulo.pro/) | 2024-09-19 |
 | [Story Node Monitor](https://github.com/openbitlab/srvcheck) | Srvcheck helps you monitor blockchain nodes | [openbitlab](https://openbitlab.com/) | 2024-10-01 |
-
+| [Story Node Monitoring by kjnodes](https://github.com/kjnodes/story-node-monitoring) | The monitoring solution that enables real-time data visualization and alerting for your story execution and consensus node. | [kjnodes](https://kjnodes.com) | 2024-09-19 |
