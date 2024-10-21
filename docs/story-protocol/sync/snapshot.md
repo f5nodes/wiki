@@ -9,10 +9,10 @@ description: Snapshot
 
 import Snapshots from '@site/src/components/Snapshots';
 
-<Snapshots tip="Click on any snapshot to paste it into the code block. We provide snapshots for both the execution and consensus layers." endpoint="https://story-testnet-snapshots.f5nodes.com/"/>
+<Snapshots tip="Click on any snapshot to paste it into the code block. We provide archive snapshots for both the execution and consensus layers." endpoint="https://story-testnet-snapshots.f5nodes.com/"/>
 
 :::info
-Snapshots are taken every <i>2 hours</i>.
+Snapshots are taken every <i>12 hours</i>.
 :::
 
 
