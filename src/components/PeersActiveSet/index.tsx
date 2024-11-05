@@ -5,14 +5,21 @@ interface BooleanDisplayProps {
 }
 
 const BooleanDisplay: React.FC<BooleanDisplayProps> = ({ value }) => {
+  const styles = {
+    badge: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      padding: '4px 12px',
+      borderRadius: '4px',
+      fontSize: '14px',
+      fontWeight: 500,
+      backgroundColor: value ? '#ecfdf5' : '#fef2f2',
+      color: value ? '#047857' : '#b91c1c',
+    } as React.CSSProperties
+  };
+
   return (
-    <span 
-      className={`inline-flex items-center px-3 py-1 rounded-md text-sm font-medium ${
-        value 
-          ? 'bg-green-100 text-green-800' 
-          : 'bg-red-100 text-red-800'
-      }`}
-    >
+    <span style={styles.badge}>
       {value ? 'Yes' : 'No'}
     </span>
   );
