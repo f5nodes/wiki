@@ -1,11 +1,3 @@
-import React from 'react';
-
-const Status = ({ isActive }) => (
-  <span style={{ color: isActive ? "green" : "red", fontWeight: "bold" }}>
-    {isActive ? "Yes" : "No"}
-  </span>
-);
-
 ---
 sidebar_position: 3
 description: Live Peers / Seeds
@@ -32,8 +24,7 @@ export let binary = 'story';
 ```bash
 Validator address: 
 P2P Peer: 
-Peer ID: 
-In Active Set: <Status isActive={true} />
+Peer ID:
 ```
 
 ## Seed nodes: 
@@ -50,8 +41,6 @@ Mandragora:
 ```bash
 enode://3cf3215bf1a9516fb038bf9217fa149d3a5a7dcc8e3f6b34d3964c3e631af828c6cdad1627acc397db35df8e6a1efb2c597b2c7f1820a56b20956b93a45de5a6@story-geth.mandragora.io:30303
 ```
-
-
 
 import BooleanDisplay from '@site/src/components/PeersActiveSet';
 
