@@ -11,9 +11,9 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| Story Foundation (official) | EVM | iliad-0 | https://testnet.storyscan.xyz |
+| Story Foundation (official) | EVM | odyssey | https://odyssey-testnet-explorer.storyscan.xyz |
 | Aura Network | EVM | iliad-0 | https://story.aurascan.io |
 | Hemera (SocialScan) | EVM | iliad-0 | https://story-testnet.socialscan.io |
 | Nodes.Guru | Cosmos | iliad-0 | https://testnet.story.explorers.guru |
-| STAKEME | Cosmos | iliad-0 | https://testnet.storyscan.app |
+| STAKEME | Cosmos | odyssey | https://testnet.storyscan.app |
 
