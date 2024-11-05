@@ -1,3 +1,11 @@
+import React from 'react';
+
+const Status = ({ isActive }) => (
+  <span style={{ color: isActive ? "green" : "red", fontWeight: "bold" }}>
+    {isActive ? "Yes" : "No"}
+  </span>
+);
+
 ---
 sidebar_position: 3
 description: Live Peers / Seeds
@@ -25,7 +33,7 @@ export let binary = 'story';
 Validator address: 
 P2P Peer: 
 Peer ID: 
-In Active Set: <span style={{ color: "green", fontWeight: "bold" }}>Yes</span>
+In Active Set: <Status isActive={true} />
 ```
 
 ## Seed nodes: 
