@@ -8,7 +8,7 @@ description: Live Peers / Seeds
 > When you start a node, you often need to connect to the network. This requires you to connect to one or more peers to start downloading the blockchain and receiving new blocks and transactions. Seeding nodes or bootstrap nodes help in this initial connection process.
 
 :::info
-Copy and run the commands below to add your peers into `config.toml`.
+Copy and run the commands below to add your peers into `config.toml`. These are live peers sourced from the RPC node. For validator peers, please see the next section.
 :::
 
 import LivePeers from '@site/src/components/LivePeers';
@@ -18,3 +18,32 @@ export let home = 'story/story';
 export let binary = 'story';
 
 <LivePeers rpc="https://story-testnet.rpc.kjnodes.com" home={home} binary={binary} />
+
+## Validator peers
+
+```bash
+Validator address: 
+P2P Peer: 
+Peer ID: 
+In Active Set: <span style={{ color: "green", fontWeight: "bold" }}>Yes</span>
+```
+
+## Seed nodes: 
+
+Story Team:
+```bash
+75ac7b193e93e928d6c83c273397517cb60603c0@b1.odyssey-testnet.storyrpc.io:26656
+6adbd1e974d6bb1c353aabbc7abef72c81e536f5@b2.odyssey-testnet.storyrpc.io:26656
+```
+
+## Geth enodes:
+
+Mandragora:
+```bash
+enode://3cf3215bf1a9516fb038bf9217fa149d3a5a7dcc8e3f6b34d3964c3e631af828c6cdad1627acc397db35df8e6a1efb2c597b2c7f1820a56b20956b93a45de5a6@story-geth.mandragora.io:30303
+```
+
+
+
+
+
