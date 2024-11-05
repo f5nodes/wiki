@@ -12,6 +12,7 @@ Copy and run the commands below to add your peers into `config.toml`. These are 
 :::
 
 import LivePeers from '@site/src/components/LivePeers';
+import BooleanDisplay from '@site/src/components/PeersActiveSet';
 
 export let home = 'story/story';
 
@@ -21,10 +22,12 @@ export let binary = 'story';
 
 ## Validator peers
 
+F5 Nodes:
 ```bash
-Validator address: 
-P2P Peer: 
-Peer ID:
+Validator address: storyvaloper1cu3ua6279lk9w2kxlulzr2ttyzpxd5hytyfc4y 
+P2P Peer: 448ac8686fa2448fdf7436ee0633f3bf4aecc417@story-testnet-peer.f5nodes.com:10156
+Peer ID: 448ac8686fa2448fdf7436ee0633f3bf4aecc417
+In Active Set: <BooleanDisplay value={false} />
 ```
 
 ## Seed nodes: 
@@ -41,9 +44,5 @@ Mandragora:
 ```bash
 enode://3cf3215bf1a9516fb038bf9217fa149d3a5a7dcc8e3f6b34d3964c3e631af828c6cdad1627acc397db35df8e6a1efb2c597b2c7f1820a56b20956b93a45de5a6@story-geth.mandragora.io:30303
 ```
-
-import BooleanDisplay from '@site/src/components/PeersActiveSet';
-
-<BooleanDisplay value={true} />
 
 
