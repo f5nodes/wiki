@@ -32,9 +32,36 @@ export let binary = 'story';
 import SelectPaste2 from '@site/src/components/SelectPaste2';
 
 export let items = [
-	{ name: "snapshot1", text: "This is the text for snapshot1" },
-	{ name: "snapshot2", text: "Different text for snapshot2" },
-	{ name: "snapshot3", text: "Custom content for snapshot3" }
+    { 
+        name: "snapshot1", 
+        text: `
+```bash
+cmd here 
+
+cmd here
+
+cmd here
+```
+    `	
+    },
+    { 
+        name: "snapshot2", 
+        text: `
+```bash
+cmd-1 here 
+
+cmd-2 here
+
+cmd-3 here
+```
+    `
+    },
+    { 
+        name: "snapshot3", 
+        text: "Custom content for snapshot3"
+    }
 ];
 
 <SelectPaste2 items={items} tip="Click a snapshot name to view its details" />
+
+
