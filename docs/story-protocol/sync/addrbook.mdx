@@ -29,35 +29,4 @@ export let binary = 'story';
 
 <SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
 
-import SelectPaste2 from '@site/src/components/SelectPaste2';
-
-export let items = [
-    { 
-        name: "snapshot1", 
-        text: `
-cmd here 
-
-cmd here
-
-cmd here
-    	`	
-    },
-    { 
-        name: "snapshot2", 
-        text: `
-cmd-1 here 
-
-cmd-2 here
-
-cmd-3 here
-    	`
-    },
-    { 
-        name: "snapshot3", 
-        text: "Custom content for snapshot3"
-    }
-];
-
-<SelectPaste2 items={items} tip="Click a snapshot name to view its details" />
-
 
