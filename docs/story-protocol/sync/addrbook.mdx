@@ -28,3 +28,13 @@ export let home = 'story/story';
 export let binary = 'story';
 
 <SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
+
+import SelectPaste2 from '@site/src/components/SelectPaste2';
+
+export let items = [
+	{ name: "snapshot1", text: "This is the text for snapshot1" },
+	{ name: "snapshot2", text: "Different text for snapshot2" },
+	{ name: "snapshot3", text: "Custom content for snapshot3" }
+];
+
+<SelectPaste2 items={items} tip="Click a snapshot name to view its details" />
