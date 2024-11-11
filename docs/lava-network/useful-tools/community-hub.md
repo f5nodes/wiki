@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-description: Other-tools
+description: Community Resource Hub
 ---
 
-# Other Tools
+# Community Resource Hub
 
 > This page is a repository of valuable tools and resources offered by the Lava Community, including monitoring systems, dashboards, and versatile platforms. These resources are designed to enhance your capabilities and are backed by Lava Community's commitment to support your needs.
 
