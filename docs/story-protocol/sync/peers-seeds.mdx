@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 description: Live Peers / Seeds
 ---
 
@@ -20,29 +20,31 @@ export let binary = 'story';
 
 <LivePeers rpc="https://story-testnet.rpc.kjnodes.com" home={home} binary={binary} />
 
-## Validator peers
+## Validator Peers
 
-F5 Nodes:
-```bash
-Validator address: storyvaloper1cu3ua6279lk9w2kxlulzr2ttyzpxd5hytyfc4y 
+import SelectPaste2 from '@site/src/components/SelectPaste2';
+
+export let items = [
+    { 
+        name: "F5 Nodes", 
+        text: 
+`Validator address: storyvaloper1cu3ua6279lk9w2kxlulzr2ttyzpxd5hytyfc4y 
 P2P Peer: 805ee8b13927991000ea6f235e64551dcb2c8833@story-testnet-peer.f5nodes.com:26656
-Peer ID: 805ee8b13927991000ea6f235e64551dcb2c8833
-```
+Peer ID: 805ee8b13927991000ea6f235e64551dcb2c8833`
+    },
+];
 
+<SelectPaste2 items={items} tip="Select a specific validator from the list to view detailed peer information." />
 
-## Seed nodes
+## Seed Nodes
 
-Story Team:
-```bash
-75ac7b193e93e928d6c83c273397517cb60603c0@b1.odyssey-testnet.storyrpc.io:26656
-6adbd1e974d6bb1c353aabbc7abef72c81e536f5@b2.odyssey-testnet.storyrpc.io:26656
-```
+export let seedItems = [
+    {
+        name: "Story Team",
+        text: 
+`75ac7b193e93e928d6c83c273397517cb60603c0@b1.odyssey-testnet.storyrpc.io:26656
+6abdb1e974d6bb1c353aabbc7abef72c81e536f5@b2.odyssey-testnet.storyrpc.io:26656`
+    },
+];
 
-## Geth enodes
-
-Mandragora:
-```bash
-enode://3cf3215bf1a9516fb038bf9217fa149d3a5a7dcc8e3f6b34d3964c3e631af828c6cdad1627acc397db35df8e6a1efb2c597b2c7f1820a56b20956b93a45de5a6@story-geth.mandragora.io:30303
-```
-
-
+<SelectPaste2 items={seedItems} tip="Choose a seed node from the list to view its connection information." />
