@@ -46,6 +46,63 @@ sudo systemctl start story-testnet.service story-testnet-geth.service
 sudo journalctl -fu story-testnet-geth.service -o cat
 sudo journalctl -fu story-testnet.service -o cat`
     },
+
+    { 
+        name: "Enigma: pruned snapshots, updated every 24 hours check current download link here https://doc.enigma-validator.com/docs/testnets/story/snapshot", 
+        text: 
+`# Stop the services that run
+sudo systemctl stop story-testnet.service 
+sudo systemctl stop story-testnet-geth.service\n
+# Be carreful and save your validator state 
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+# Reset the older data folders
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
+# Download the latest snapshot and recover validator state
+wget -O story_snapshot.tar.lz4 https://services.enigma-validator.com/story-testnet/story_pruned_488791.tar.lz4 --inet4-only\n
+wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
+# Decompress story snapshots
+lz4 -c -d story_snapshot.tar.lz4 | tar -x -C $HOME/.story/story
+lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
+# Restore your validator state
+sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Delete downloaded story snapshots & story-geth 
+sudo rm story_snapshot.tar.lz4\n
+sudo rm story_geth_last.tar.lz4
+# Restart the services
+sudo systemctl start story-testnet.service 
+sudo systemctl start story-testnet-geth.service\n
+
+    },
+    { 
+        name: "Enigma: pruned snapshots, updated every 24 hours, check current download link here https://doc.enigma-validator.com/docs/testnets/story/snapshot", 
+        text: 
+`# Stop the services that run
+sudo systemctl stop story-testnet.service 
+sudo systemctl stop story-testnet-geth.service\n
+# Be carreful and save your validator state 
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+# Reset the older data folders
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
+# Download the latest snapshot and recover validator state
+wget -O story_archive.tar.lz4 https://services.enigma-validator.com/story-testnet/story-archive_488827.tar.lz4 --inet4-only\n
+wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
+# Decompress story snapshots
+lz4 -c -d story_archive.tar.lz4 | tar -x -C $HOME/.story/story
+lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
+# Restore your validator state
+sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Delete downloaded story snapshots & story-geth 
+sudo rm story_archive.tar.lz4\n
+sudo rm story_geth_last.tar.lz4
+# Restart the services
+sudo systemctl start story-testnet.service 
+sudo systemctl start story-testnet-geth.service\n
+
+    },
+
+    
 	{ 
         name: "Mandragora: pruned snapshots, updated every 4 hours", 
         text: 
