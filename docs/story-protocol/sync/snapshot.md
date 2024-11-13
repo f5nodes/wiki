@@ -48,7 +48,7 @@ sudo journalctl -fu story-testnet.service -o cat`
     },
 
     { 
-        name: "Enigma: pruned snapshots, updated every 24 hours check current download link here https://doc.enigma-validator.com/docs/testnets/story/snapshot", 
+        name: "Enigma: pruned snapshots, updated every 24 hours", 
         text: 
 `# Stop the services that run
 sudo systemctl stop story-testnet.service 
@@ -59,7 +59,7 @@ cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_val
 rm -rf $HOME/.story/story/data
 rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
 # Download the latest snapshot and recover validator state
-wget -O story_snapshot.tar.lz4 https://services.enigma-validator.com/story-testnet/story_pruned_488791.tar.lz4 --inet4-only\n
+wget -O story_snapshot.tar.lz4 https://api.enigma-validator.com/story-testnet/story-pruned-latest.tar.lz4 --inet4-only\n
 wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
 # Decompress story snapshots
 lz4 -c -d story_snapshot.tar.lz4 | tar -x -C $HOME/.story/story
@@ -75,7 +75,7 @@ sudo systemctl start story-testnet-geth.service\n
 
     },
     { 
-        name: "Enigma: pruned snapshots, updated every 24 hours, check current download link here https://doc.enigma-validator.com/docs/testnets/story/snapshot", 
+        name: "Enigma: pruned snapshots, updated every 24 hours", 
         text: 
 `# Stop the services that run
 sudo systemctl stop story-testnet.service 
@@ -86,7 +86,7 @@ cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_val
 rm -rf $HOME/.story/story/data
 rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
 # Download the latest snapshot and recover validator state
-wget -O story_archive.tar.lz4 https://services.enigma-validator.com/story-testnet/story-archive_488827.tar.lz4 --inet4-only\n
+wget -O story_archive.tar.lz4 https://api.enigma-validator.com/story-testnet/story-archive-latest.tar.lz4 --inet4-only\n
 wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
 # Decompress story snapshots
 lz4 -c -d story_archive.tar.lz4 | tar -x -C $HOME/.story/story
