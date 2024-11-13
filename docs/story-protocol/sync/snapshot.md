@@ -47,7 +47,7 @@ sudo journalctl -fu story-testnet-geth.service -o cat
 sudo journalctl -fu story-testnet.service -o cat`
     },
 
-    { 
+    {
         name: "Enigma: pruned snapshots, updated every 24 hours", 
         text: 
 `# Stop the services that run
@@ -71,7 +71,7 @@ sudo rm story_snapshot.tar.lz4\n
 sudo rm story_geth_last.tar.lz4
 # Restart the services
 sudo systemctl start story-testnet.service 
-sudo systemctl start story-testnet-geth.service\n
+sudo systemctl start story-testnet-geth.service`
 
     },
     { 
@@ -98,7 +98,7 @@ sudo rm story_archive.tar.lz4\n
 sudo rm story_geth_last.tar.lz4
 # Restart the services
 sudo systemctl start story-testnet.service 
-sudo systemctl start story-testnet-geth.service\n
+sudo systemctl start story-testnet-geth.service`
 
     },
 
