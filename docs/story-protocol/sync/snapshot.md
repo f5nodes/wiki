@@ -46,7 +46,59 @@ sudo systemctl start story-testnet.service story-testnet-geth.service
 sudo journalctl -fu story-testnet-geth.service -o cat
 sudo journalctl -fu story-testnet.service -o cat`
     },
-	{ 
+    {
+        name: "Enigma: pruned snapshots, updated every 24 hours", 
+        text: 
+`# Stop the services that run
+sudo systemctl stop story-testnet.service 
+sudo systemctl stop story-testnet-geth.service\n
+# Be carreful and save your validator state 
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
+# Reset the older data folders
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
+# Download the latest snapshot and recover validator state
+wget -O story_snapshot.tar.lz4 https://api.enigma-validator.com/story-testnet/story-pruned-latest.tar.lz4 --inet4-only
+wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
+# Decompress story snapshots
+lz4 -c -d story_snapshot.tar.lz4 | tar -x -C $HOME/.story/story
+lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
+# Restore your validator state
+sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Delete downloaded story snapshots & story-geth 
+sudo rm story_snapshot.tar.lz4
+sudo rm story_geth_last.tar.lz4\n
+# Restart the services
+sudo systemctl start story-testnet.service 
+sudo systemctl start story-testnet-geth.service`
+    },
+    { 
+        name: "Enigma: archive snapshots, updated every 24 hours", 
+        text: 
+`# Stop the services that run
+sudo systemctl stop story-testnet.service 
+sudo systemctl stop story-testnet-geth.service\n
+# Be carreful and save your validator state 
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
+# Reset the older data folders
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
+# Download the latest snapshot and recover validator state
+wget -O story_archive.tar.lz4 https://api.enigma-validator.com/story-testnet/story-archive-latest.tar.lz4 --inet4-only
+wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
+# Decompress story snapshots
+lz4 -c -d story_archive.tar.lz4 | tar -x -C $HOME/.story/story
+lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
+# Restore your validator state
+sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Delete downloaded story snapshots & story-geth 
+sudo rm story_archive.tar.lz4
+sudo rm story_geth_last.tar.lz4\n
+# Restart the services
+sudo systemctl start story-testnet.service 
+sudo systemctl start story-testnet-geth.service`
+    },
+    { 
         name: "Mandragora: pruned snapshots, updated every 4 hours", 
         text: 
 `# Install required dependencies
@@ -102,7 +154,7 @@ sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/pr
 sudo systemctl start story-geth
 sudo systemctl start story` 
     },
-	{ 
+    { 
         name: "Coha05: pruned snapshots, updated every 12 hours", 
         text: 
 `# Install Required Tools
@@ -189,7 +241,7 @@ curl -s https://server-8.itrocket.net/testnet/story/.current_state.json | jq -r 
 sudo systemctl restart story story-geth
 sudo journalctl -u story-geth -u story -f` 
     },
-	{ 
+    { 
         name: "JosephTran: pruned snapshots", 
         text: 
 `# Install tool
@@ -269,7 +321,7 @@ mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/p
 systemctl restart story
 systemctl restart story-geth` 
     },
-	{ 
+    { 
         name: "lesnik | UTSA: archive snapshots, updated every 3 days", 
         text: 
 `systemctl stop story
@@ -285,7 +337,7 @@ mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/p
 systemctl restart story
 systemctl restart story-geth` 
     },
-	{ 
+    { 
         name: "STAVR: pruned snapshots, updated every 2 hours", 
         text: 
 `cd $HOME
