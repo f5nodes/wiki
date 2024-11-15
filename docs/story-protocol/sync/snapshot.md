@@ -409,6 +409,46 @@ mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/p
 sudo systemctl start story.service 
 sudo systemctl start geth.service` 
     },
+    { 
+        name: "openbitlab: pruned snapshots, updated every 24 hours", 
+        text: 
+`# Install required dependencies:
+sudo apt install lz4 -y
+# Stop the services:
+sudo systemctl stop story.service 
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://story-testnet-snapshot.openbitlab.com/geth_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://story-testnet-snapshot.openbitlab.com/story_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service` 
+    },
+    { 
+        name: "openbitlab: achive snapshots, updated every 24 hours", 
+        text: 
+`# Install required dependencies:
+sudo apt install lz4 -y
+# Stop the services:
+sudo systemctl stop story.service 
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://story-testnet-snapshot.openbitlab.com/geth_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://story-testnet-snapshot.openbitlab.com/story_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service` 
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
