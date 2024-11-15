@@ -409,6 +409,38 @@ mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/p
 sudo systemctl start story.service 
 sudo systemctl start geth.service` 
     },
+    { 
+        name: "shachopra: pruned snapshots, updated every 12 hours", 
+        text: 
+`# Install Required Tools
+sudo apt-get install wget lz4 pv -y\n
+# Stop Story & Story-Geth Node
+sudo systemctl stop story
+sudo systemctl stop story-geth\n
+# Backup priv_validator_state.json
+sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup\n
+# Remove old data
+sudo rm -rf $HOME/.story/story/data
+sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+mkdir -p $HOME/.story/geth/odyssey/geth\n
+#  Download Story & Story-Geth Snapshot
+cd $HOME
+sudo rm snapshot_story.lz4
+sudo rm geth_story.lz4
+wget -O snapshot_story.lz4 https://story-snapshot.shachopra.com:8443/downloads/snapshot_story.lz4
+wget -O geth_story.lz4 https://story-snapshot.shachopra.com:8443/downloads/geth_story.lz4\n
+# Decompress Story & Story-Geth Snapshot
+lz4 -c -d snapshot_story.lz4 | pv | sudo tar -xv -C $HOME/.story/story/
+lz4 -c -d geth_story.lz4 | pv | sudo tar -xv -C $HOME/.story/geth/odyssey/geth/\n
+# Delete snapshot files after decompression
+sudo rm snapshot_story.lz4
+sudo rm geth_story.lz4\n
+# Move priv_validator_state.json back
+sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Restart Story & Story-Geth Node
+sudo systemctl start story
+sudo systemctl start story-geth`    
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
