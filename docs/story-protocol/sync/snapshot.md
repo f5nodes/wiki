@@ -369,6 +369,46 @@ wget -O $HOME/.story/story/config/addrbook.json "https://raw.githubusercontent.c
 sudo systemctl restart story-geth
 sudo systemctl restart story && sudo journalctl -fu story -ocat` 
     },
+    { 
+        name: "OranG3cluB: pruned snapshots, updated every 3 hours", 
+        text: 
+`# Install required dependencies:
+sudo apt install curl tmux jq lz4 unzip -y
+# Stop the services:
+sudo systemctl stop story.service 
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://orang3club.tech/geth_snapshot_pruned.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://orang3club.tech/story_snapshot_pruned.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service` 
+    },
+    { 
+        name: "OranG3cluB: achive snapshots, updated every 3 hours", 
+        text: 
+`# Install required dependencies:
+sudo apt install curl tmux jq lz4 unzip -y
+# Stop the services:
+sudo systemctl stop story.service 
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://orang3club.tech/geth_snapshot_archive.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://orang3club.tech/story_snapshot_archive.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service` 
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
