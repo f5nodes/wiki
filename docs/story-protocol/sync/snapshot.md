@@ -390,7 +390,7 @@ sudo systemctl start story.service
 sudo systemctl start geth.service` 
     },
     { 
-        name: "OranG3cluB: achive snapshots, updated every 3 hours", 
+        name: "OranG3cluB: archive snapshots, updated every 3 hours", 
         text: 
 `# Install required dependencies:
 sudo apt install curl tmux jq lz4 unzip -y
@@ -408,6 +408,46 @@ mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/p
 # Restart the services:
 sudo systemctl start story.service 
 sudo systemctl start geth.service` 
+    },
+    { 
+        name: "openbitlab: pruned snapshots, updated every 24 hours", 
+        text: 
+`# Install required dependencies:
+sudo apt install lz4 -y
+# Stop the services:
+sudo systemctl stop story.service
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://story-testnet-snapshot.openbitlab.com/geth_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://story-testnet-snapshot.openbitlab.com/story_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service`
+    },
+    { 
+        name: "openbitlab: archive snapshots, updated every 24 hours",
+        text: 
+`# Install required dependencies:
+sudo apt install lz4 -y
+# Stop the services:
+sudo systemctl stop story.service 
+sudo systemctl stop geth.service
+# Backup validator state and reset data:
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+# Download the latest snapshot and recover validator state:
+curl -L https://story-testnet-snapshot.openbitlab.com/geth_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
+curl -L https://story-testnet-snapshot.openbitlab.com/story_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+# Restart the services:
+sudo systemctl start story.service 
+sudo systemctl start geth.service`
     },
     { 
         name: "shachopra: pruned snapshots, updated every 12 hours", 
@@ -439,7 +479,7 @@ sudo rm geth_story.lz4\n
 sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
 # Restart Story & Story-Geth Node
 sudo systemctl start story
-sudo systemctl start story-geth`    
+sudo systemctl start story-geth`
     },
 ];
 
