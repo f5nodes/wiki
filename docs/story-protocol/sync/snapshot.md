@@ -481,6 +481,83 @@ sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/pr
 sudo systemctl start story
 sudo systemctl start story-geth`
     },
+    { 
+        name: "Pro-Nodes75: pruned !!!Pebbledb!!! snapshots, updated every 12 hours", 
+        text: 
+`# Consensus Client snapshot
+
+# Install Required Tools
+sudo apt-get install wget lz4 pv -y\n
+
+# Build the story consensus client with pebbledb!!!:
+https://services.node75.org/papers/guide_setup_story_pebbledb
+
+# pebbledb snapshots could be found here:
+# https://snap.story.testnet.node75.org
+# Example: URL to the Pebbledb Snapshot:
+URL_comet="https://snap.story.testnet.node75.org/odyssey-0_cometbft_pebbledb_1194045_2024-12-11T14.31.06.tar.lz4" 
+
+# download the pebbledb cometbft snapshot:
+consensus_snap_name="story_cometbft_snap"
+wget -O $HOME/${consensus_snap_name}.tar.lz4 ${URL_comet} --inet4-only
+
+# stop the Story consensus client service
+sudo systemctl stop storyd; sudo systemctl status storyd
+
+# backup state
+cp "$HOME/.story/story/data/priv_validator_state.json" $HOME
+
+# check backup
+cat $HOME/priv_validator_state.json
+
+# clear the current cometbft DB
+rm -rf $HOME/.story/story/data
+
+# unpack the snapshot
+home_dir="$HOME/.story/story"  && echo ${home_dir} 
+lz4 -c -d $HOME/${consensus_snap_name}.tar.lz4  | tar -x -C ${home_dir}
+
+# if unpacking was successful, then delete the snapshot (optional)
+rm -v $HOME/${consensus_snap_name}.tar.lz4
+
+# get fresh addrbook
+wget -O $HOME/addrbook.json https://snapshots.polkachu.com/testnet-addrbook/story/addrbook.json --inet4-only
+mv $HOME/addrbook.json $HOME/.story/story/config/
+
+# restore validator' state
+cp $HOME/priv_validator_state.json "$HOME/.story/story/data/priv_validator_state.json"
+
+# check state
+cat $HOME/.story/story/data/priv_validator_state.json
+
+# restart the Story Consensus client service
+sudo systemctl restart storyd; journalctl -u storyd -f -o cat
+
+# Execution Client snapshot
+
+# Example: URL to the geth snapshot:
+URL_geth="https://snap.story.testnet.node75.org/odyssey-0_geth_1194044_2024-12-11T14.31.06.tar.lz4" 
+
+# download the geth snapshot:
+execution_snap_name="story_geth_snap"
+wget -O $HOME/${execution_snap_name}.tar.lz4 ${URL_geth} --inet4-only
+
+# stop the Story execution client service
+sudo systemctl stop story\*geth\*; sudo systemctl status story\*geth\*
+
+# clear the current geth DB
+rm -rf "$HOME/.story/geth"
+
+# unpack the snapshot
+home_dir="$HOME/.story/geth"  && echo ${home_dir} 
+lz4 -c -d $HOME/${execution_snap_name}.tar.lz4  | tar -x -C ${home_dir}
+
+# if unpacking was successful, then delete the snapshot (optional)
+rm -v $HOME/${execution_snap_name}.tar.lz4
+
+# restart the Story Geth service
+sudo systemctl restart story\*geth\*; journalctl -u story\*geth\* -f -o cat
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
