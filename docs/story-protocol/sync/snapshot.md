@@ -543,7 +543,7 @@ execution_snap_name="story_geth_snap"
 wget -O $HOME/${execution_snap_name}.tar.lz4 ${URL_geth} --inet4-only
 
 # stop the Story execution client service
-sudo systemctl stop story\*geth\*; sudo systemctl status story\*geth\*
+sudo systemctl stop \*geth\*; sudo systemctl status \*geth\*
 
 # clear the current geth DB
 rm -rf "$HOME/.story/geth"
@@ -556,8 +556,9 @@ lz4 -c -d $HOME/${execution_snap_name}.tar.lz4  | tar -x -C ${home_dir}
 rm -v $HOME/${execution_snap_name}.tar.lz4
 
 # restart the Story Geth service
-sudo systemctl restart story\*geth\*; journalctl -u story\*geth\* -f -o cat
-    },
+sudo systemctl restart \*geth\*; journalctl -u \*geth\* -f -o cat`
+
+},
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
