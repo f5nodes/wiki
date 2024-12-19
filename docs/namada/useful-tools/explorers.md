@@ -11,7 +11,10 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| Namada (official) | Cosmos | shielded-expedition.88f17d1d14 | https://namada.info |
+| Namada (official) | Cosmos | namada.5f5de2dd1b88cba30586420 | https://namada.info |
+| Pro-Nodes75 | Cosmos |namada.5f5de2dd1b88cba30586420|https://explorer75.org/namada|
+| valopers | Cosmos |namada.5f5de2dd1b88cba30586420|https://namada.valopers.com/|
+|  |  | Testnet ||
 | Beryx | Cosmos| shielded-expedition.88f17d1d14 | https://namada.beryx.io |
 | Catsmil | Cosmos| shielded-expedition.88f17d1d14 | https://namada-explorer.catsmile.tech |
 | Crazydimka| Cosmos| shielded-expedition.88f17d1d14 | https://nebb.crazydimka.xyz |
