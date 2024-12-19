@@ -15,7 +15,7 @@ description: Explorers
 | Pro-Nodes75 | Cosmos | namada.5f5de2dd1b88cba30586420 | https://explorer75.org/namada |
 | valopers | Cosmos | namada.5f5de2dd1b88cba30586420 | https://namada.valopers.com/ |
 |  |  | Live Testnet ||
-| Pro-Nodes75 | Cosmos | housefire-alpaca.cc0d3e0c033be | https://explorer75.org/namada |
+| Pro-Nodes75 | Cosmos | housefire-alpaca.cc0d3e0c033be | https://explorer75.org/namada-housefire/ |
 |  |  | Ended Testnet ||
 | Beryx | Cosmos| shielded-expedition.88f17d1d14 | https://namada.beryx.io |
 | Catsmil | Cosmos| shielded-expedition.88f17d1d14 | https://namada-explorer.catsmile.tech |
