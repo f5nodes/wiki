@@ -557,8 +557,6 @@ rm -v $HOME/${execution_snap_name}.tar.lz4
 
 # restart the Story Geth service
 sudo systemctl restart \*geth\*; journalctl -u \*geth\* -f -o cat`
-
-},
-];
+},];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
