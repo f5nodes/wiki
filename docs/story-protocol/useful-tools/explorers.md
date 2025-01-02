@@ -15,4 +15,4 @@ description: Explorers
 | Aura Network | EVM | 1516 (odyssey) | https://story.aurascan.io |
 | Nodes.Guru | Cosmos | odyssey | https://odyssey.story.explorers.guru |
 | STAKEME | Cosmos | odyssey | https://testnet.storyscan.app |
-| DTEAM | Intellectual Property | odyssey | https://graph-story.app (Demo) |
+| DTEAM | Intellectual Property | odyssey | https://graph-story.app (Demo, now using test data) |
