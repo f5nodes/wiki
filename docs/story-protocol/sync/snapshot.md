@@ -481,6 +481,68 @@ sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/pr
 sudo systemctl start story
 sudo systemctl start story-geth`
     },
+    {
+        name: "DTEAM: pruned snapshots, updated every 4 hours", 
+        text: 
+`# Install Dependencies
+sudo apt update
+sudo apt-get install snapd lz4 -y
+
+# Disable State Sync
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml
+
+# Stop Geth Node and Reset Data
+sudo systemctl stop story-geth
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+
+# Stop Consensus Node and Reset Data
+sudo systemctl stop story
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+
+# Download Pruned Geth Snapshot
+curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth
+
+# Download Pruned Consensus Snapshot
+curl -o - -L https://download.dteam.tech/story/testnet/latest-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+
+# Restart Services and Check Logs
+sudo systemctl restart story-geth
+sudo systemctl restart story
+sudo journalctl -u story-geth -u story -f -o cat`
+    },
+    {
+        name: "DTEAM: archive snapshots, updated every 24 hours", 
+        text: 
+`# Install Dependencies
+sudo apt update
+sudo apt-get install snapd lz4 -y
+
+# Disable State Sync
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml
+
+# Stop Geth Node and Reset Data
+sudo systemctl stop story-geth
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata
+
+# Stop Consensus Node and Reset Data
+sudo systemctl stop story
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
+rm -rf $HOME/.story/story/data
+
+# Download Archive Geth Snapshot
+curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth
+
+# Download Archive Consensus Snapshot
+curl -o - -L https://download.dteam.tech/story/testnet/latest-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
+
+# Restart Services and Check Logs
+sudo systemctl restart story-geth
+sudo systemctl restart story
+sudo journalctl -u story-geth -u story -f -o cat`
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
