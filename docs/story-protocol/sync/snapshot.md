@@ -486,27 +486,21 @@ sudo systemctl start story-geth`
         text: 
 `# Install Dependencies
 sudo apt update
-sudo apt-get install snapd lz4 -y
-
+sudo apt-get install snapd lz4 -y\n
 # Disable State Sync
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml
-
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml\n
 # Stop Geth Node and Reset Data
 sudo systemctl stop story-geth
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
 # Stop Consensus Node and Reset Data
 sudo systemctl stop story
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-
+rm -rf $HOME/.story/story/data\n
 # Download Pruned Geth Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth
-
+curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth\n
 # Download Pruned Consensus Snapshot
 curl -o - -L https://download.dteam.tech/story/testnet/latest-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
 # Restart Services and Check Logs
 sudo systemctl restart story-geth
 sudo systemctl restart story
@@ -517,27 +511,21 @@ sudo journalctl -u story-geth -u story -f -o cat`
         text: 
 `# Install Dependencies
 sudo apt update
-sudo apt-get install snapd lz4 -y
-
+sudo apt-get install snapd lz4 -y\n
 # Disable State Sync
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml
-
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml\n
 # Stop Geth Node and Reset Data
 sudo systemctl stop story-geth
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-
+rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
 # Stop Consensus Node and Reset Data
 sudo systemctl stop story
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-
+rm -rf $HOME/.story/story/data\n
 # Download Archive Geth Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth
-
+curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth\n
 # Download Archive Consensus Snapshot
 curl -o - -L https://download.dteam.tech/story/testnet/latest-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
 # Restart Services and Check Logs
 sudo systemctl restart story-geth
 sudo systemctl restart story
