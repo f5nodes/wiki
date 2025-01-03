@@ -488,7 +488,7 @@ sudo systemctl start story-geth`
 sudo apt update
 sudo apt-get install snapd lz4 -y\n
 # Disable State Sync
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml\n
+sed -i -e "s|^enable *=.*|enable = false|" $HOME/.story/story/config/config.toml\n
 # Stop Geth Node and Reset Data
 sudo systemctl stop story-geth
 rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
@@ -513,7 +513,7 @@ sudo journalctl -u story-geth -u story -f -o cat`
 sudo apt update
 sudo apt-get install snapd lz4 -y\n
 # Disable State Sync
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1false|" $HOME/.story/story/config/config.toml\n
+sed -i -e "s|^enable *=.*|enable = false|" $HOME/.story/story/config/config.toml\n
 # Stop Geth Node and Reset Data
 sudo systemctl stop story-geth
 rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
