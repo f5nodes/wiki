@@ -531,6 +531,54 @@ sudo systemctl restart story-geth
 sudo systemctl restart story
 sudo journalctl -u story-geth -u story -f -o cat`
     },
+    { 
+        name: "Pro-Nodes75: pruned Pebbledb snapshots, updated every 12 hours", 
+        text: 
+`Consensus Client Snapshot
+
+# Install Required Tools
+sudo apt-get install wget lz4 pv -y\n
+# Build the story consensus client with Pebbledb:
+https://services.node75.org/papers/guide_setup_story_pebbledb\n
+# pebbledb snapshots could be found here: https://snap.story.testnet.node75.org\n
+# download the pebbledb cometbft snapshot:
+wget -O $HOME/story_cometbft_snap.tar.lz4 $(curl -s https://snap.story.testnet.node75.org/ | grep -o 'odyssey-0_cometbft_pebbledb_[0-9]\+_.*\.tar\.lz4' | sort -t_ -k4 -n | tail -n1 | sed 's|^|https://snap.story.testnet.node75.org/|') --inet4-only\n
+# stop the Story consensus client service
+sudo systemctl stop storyd; sudo systemctl status storyd\n
+# backup state
+cp "$HOME/.story/story/data/priv_validator_state.json" $HOME\n
+# check backup
+cat $HOME/priv_validator_state.json\n
+# clear the current cometbft DB
+rm -rf $HOME/.story/story/data\n
+# unpack the snapshot
+lz4 -c -d $HOME/story_cometbft_snap.tar.lz4 | tar -x -C $HOME/.story/story\n
+# if unpacking was successful, then delete the snapshot (optional)
+rm -v $HOME/story_cometbft_snap.tar.lz4\n
+# get fresh addrbook
+wget -O $HOME/addrbook.json https://snapshots.polkachu.com/testnet-addrbook/story/addrbook.json --inet4-only
+mv $HOME/addrbook.json $HOME/.story/story/config/\n
+# restore validator' state
+cp $HOME/priv_validator_state.json "$HOME/.story/story/data/priv_validator_state.json"\n
+# check state
+cat $HOME/.story/story/data/priv_validator_state.json\n
+# restart the Story Consensus client service
+sudo systemctl restart storyd; journalctl -u storyd -f -o cat\n
+Execution Client snapshot\n
+# download the geth snapshot:
+wget -O $HOME/story_geth_snap.tar.lz4 $(curl -s https://snap.story.testnet.node75.org/ | grep -o 'odyssey-0_geth_[0-9]\+_.*\.tar\.lz4' | sort -t_ -k3 -n | tail -n1 | sed 's|^|https://snap.story.testnet.node75.org/|') --inet4-only\n
+# stop the Story execution client service
+sudo systemctl stop *geth*; sudo systemctl status *geth*\n
+# clear the current geth DB
+rm -rf "$HOME/.story/geth"\n
+# unpack the snapshot
+lz4 -c -d $HOME/story_geth_snap.tar.lz4 | tar -x -C $HOME/.story/geth\n
+# if unpacking was successful, then delete the snapshot (optional)
+rm -v $HOME/story_geth_snap.tar.lz4\n
+# restart the Story Geth service
+sudo systemctl restart *geth*; journalctl -u *geth* -f -o cat`
+    },
 ];
+
 
 <SelectPaste2 items={items} tip="Select a snapshot from the list to view the relevant configuration commands." />
