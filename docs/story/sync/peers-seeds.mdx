@@ -32,6 +32,13 @@ export let items = [
 P2P Peer: 805ee8b13927991000ea6f235e64551dcb2c8833@story-testnet-peer.f5nodes.com:26656
 Peer ID: 805ee8b13927991000ea6f235e64551dcb2c8833`
     },
+    { 
+        name: "Pro-Nodes75", 
+        text: 
+`Validator address: storyvaloper12vrh9n58r2ftpdjfjj7j4ghfw76sx9c4e45yxl 
+P2P Peer: 7b597e80021987209b197930b899fb7e0402717c@peer.story.testnet.node75.org:27136
+Peer ID: 7b597e80021987209b197930b899fb7e0402717c`
+    },
 ];
 
 <SelectPaste2 items={items} tip="Select a specific validator from the list to view detailed peer information." />
@@ -49,7 +56,12 @@ export let seedItems = [
         name: "DTEAM",
         text: 
 `6fc1491d5b8b859c1fafbe129fe4c0f842836a79@seed.story.testnet.dteam.tech:32656`
-    }
+    },
+    {
+        name: "Pro-Nodes75",
+        text: 
+`86bd5cb6e762f673f1706e5889e039d5406b4b90@seed.story.testnet.node75.org:35616`
+    },
 ];
 
 <SelectPaste2 items={seedItems} tip="Choose a seed node from the list to view its connection information." />
