@@ -7,24 +7,17 @@ description: AddrBook
 
 > Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
 
-import SelectPaste from '@site/src/components/SelectPaste';
-
-import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
-
-export let endpoints = [
-            `https://services.celestia.mainnet.celestia.aviaone.com/addrbook.json`,
-            `https://s3.imperator.co/mainnets-addrbook/celestia/addrbook.json`,
-            `https://snapshots.kjnodes.com/celestia/addrbook.json`,
-            `https://snapshots.lavenderfive.com/addrbooks/celestia/addrbook.json`,
-            `https://raw.githubusercontent.com/nodersteam/cosmos-adrbook/main/celestiamain/addrbook.json`,
-            `https://ss.celestia.nodestake.top/addrbook.json`,
-            `https://snapshots.polkachu.com/addrbook/celestia/addrbook.json`,
-            `https://snapshots.synergynodes.com/addrbook/celestia_mainnet/addrbook.json`,
-            `https://rpc-celestia-mainnet.testnet-pride.com/addrbook.json`,
-];
+import AddrBookSelector from '@site/src/components/AddrBookSelector';
+import { celestiaProviders } from '@site/src/components/AddrBookSelector/celestiaProviders';
+import { addrBookTemplate } from '@site/src/components/AddrBookSelector/addrBookTemplate';
 
 export let home = 'celestia-app';
-
 export let binary = 'celestia-appd';
 
-<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Click on any endpoint to paste it into the code block." />
+<AddrBookSelector 
+  providers={celestiaProviders} 
+  codeTemplate={addrBookTemplate} 
+  home={home} 
+  binary={binary} 
+  tip="Click on any provider to generate the command for downloading their address book." 
+/>
