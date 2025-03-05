@@ -11,8 +11,6 @@ description: Explorers
 
 | Name | Layer | Network | URL |
 | --- | --- | --- | --- |
-| AmSolutions  | Cosmos | celestia | https://explorer.theamsolutions.info/celestia-main |
-| CosmosSpaces | Cosmos | celestia | https://explorer.cosmos-spaces.cloud/celestia |
 | Cosmostation | Cosmos | celestia | https://www.mintscan.io/celestia |
 | DipDup | Cosmos | celestia | https://celenium.io |
 | kjnodes | Cosmos | celestia | https://explorer.kjnodes.com/celestia |
@@ -22,4 +20,3 @@ description: Explorers
 | Stakeflow| Cosmos | celestia | https://stakeflow.io/celestia |
 | Stakeme | Cosmos | celestia | https://celestia.exploreme.pro |
 | STAVR | Cosmos | celestia | https://explorer.stavr.tech/Celestia-Mainnet |
-| TC Network | Cosmos | celestia | https://explorer.tcnetwork.io/celestia |

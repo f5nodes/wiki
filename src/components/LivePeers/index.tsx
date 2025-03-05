@@ -28,7 +28,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc, home, binary }) => {
 					return `${peer.node_info.id}@${peer.remote_ip}:${port}`;
 				});
 
-				setPeers(extractedPeers.join(", "));
+				setPeers(extractedPeers.join(","));
 				setIsLoading(false);
 			} catch (error) {
 				console.error(`Failed to fetch peers info for RPC ${rpc}:`, error);
@@ -41,7 +41,7 @@ const LivePeers: React.FC<LivePeersProps> = ({ rpc, home, binary }) => {
 
 	return (
 		<>
-			{isLoading ? <h4>Loading live peers...</h4> : <h4>Live peers: {peers.split(", ").length}</h4>}
+			{isLoading ? <h3>Loading live peers...</h3> : <h3>Live peers: {peers.split(",").length}</h3>}
 			<CodeBlock language="bash">{`PEERS="${peers}"
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/.${home}/config/config.toml
 sudo systemctl restart ${binary}`}</CodeBlock>

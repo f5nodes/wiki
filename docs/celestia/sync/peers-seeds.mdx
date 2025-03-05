@@ -12,79 +12,24 @@ Copy and run the commands below to add your peers into `config.toml`.
 :::
 
 import LivePeers from '@site/src/components/LivePeers';
+import SeedsPeersSelector from "@site/src/components/SeedsPeersSelector";
+import { celestiaSeeds } from "@site/src/components/SeedsPeersSelector/celestiaSeeds";
 
 export let home = 'celestia-app';
 
 export let binary = 'celestia-appd';
 
-<LivePeers rpc="https://celestia.rpc.kjnodes.com" home={home} binary={binary} />
+<LivePeers 
+  rpc="https://celestia-rpc.publicnode.com" 
+  home={home} 
+  binary={binary} 
+/>
 
-## Seed nodes:
+### Seed Nodes:
 
-#### Allnodes:
-```bash
-8542cd7e6bf9d260fef543bc49e59be5a3fa9074@seed.publicnode.com:26656
-```
-
-#### AmSolutions:
-```bash
-3abb9ad6d7a3c728984c4b7e9c05e91731779865@seed-celestia.theamsolutions.info:23656
-```
-
-#### AutoStake:
-```bash
-ebc272824924ea1a27ea3183dd0b9ba713494f83@dymension-mainnet-seed.autostake.com:27086
-```
-
-#### F5 Nodes:
-```bash
-ec39096b831861bcda43896d098771fa9587ebce@seed.f5nodes.com:61456
-```
-
-#### FreshSTAKING:
-```bash
-b7408d0c59fc0fd0c9153365d5593c6c32870cb0@seed-celestia.freshstaking.com:34656
-```
-
-#### kjnodes:
-```bash
-400f3d9e30b69e78a7fb891f60d76fa3c73f0ecc@celestia.rpc.kjnodes.com:12059
-```
-
-#### Lavender.Five:
-```bash
-20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:16656
-```
-
-#### Lunar Oasis:
-```bash
-e6116822e1a5e283d8a85d3ec38f4d232274eaf3@consensus-full-seed-1.celestia-bootstrap.net:26656
-```
-```bash
-e6116822e1a5e283d8a85d3ec38f4d232274eaf3@consensus-full-seed-1.celestia-bootstrap.net:26656
-```
-
-#### mzonder:
-```bash
-9aa8a73ea9364aa3cf7806d4dd25b6aed88d8152@celestia.seed.mzonder.com:13156
-```
-
-#### Stakeflow:
-```bash
-24a607a217cf12be29bae5b2e8151391bde2d8c8@seed-celestia-01.stakeflow.io:15007
-```
-
-#### NodeStake:
-```bash
-11c46dbbf3e330fc718add2fb8b54680f5a35063@rpc.celestia.nodestake.org:666
-```
-
-#### ValiDAO:
-```bash
-c809ca6486cd54501ce5291714c892f5dc9cfa93@celestia.seeds.validao.xyz:36656
-```
-
-#### Validatus:
-```bash
-23b88ebcfb2177dbd2d8b2920c363a25e038e69a@seed.celestia.validatus.com:2000
-```
+<SeedsPeersSelector
+  items={celestiaSeeds}
+  type="seeds"
+  home={home}
+  binary={binary}
+/>
