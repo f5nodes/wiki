@@ -65,6 +65,7 @@ export const storyEndpointChecker = async (endpoint: Endpoint): Promise<boolean>
         
         const response = await fetch(endpoint.url, { 
           method: 'GET',
+          mode: 'no-cors',
           signal: controller.signal
         });
         
@@ -83,11 +84,11 @@ export const storyEndpointChecker = async (endpoint: Endpoint): Promise<boolean>
         
         const response = await fetch(endpoint.url, { 
           method: 'GET',
+          mode: 'no-cors',
           signal: controller.signal
         });
         
         clearTimeout(timeoutId);
-        
         return true;
       } catch (err) {
         return false;
