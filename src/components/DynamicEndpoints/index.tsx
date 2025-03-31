@@ -20,6 +20,7 @@ const DynamicEndpoints: React.FC<DynamicEndpointsProps> = ({
   const apiEndpoints = workingEndpoints.filter(endpoint => endpoint.type === 'api');
   const rpcEndpoints = workingEndpoints.filter(endpoint => endpoint.type === 'rpc');
   const grpcEndpoints = workingEndpoints.filter(endpoint => endpoint.type === 'grpc');
+  const websocketEndpoints = workingEndpoints.filter(endpoint => endpoint.type === 'websocket');
 
   if (loading) {
     return (
@@ -82,7 +83,7 @@ const DynamicEndpoints: React.FC<DynamicEndpointsProps> = ({
         </button>
       </div>
       
-      <Tabs>
+      <Tabs groupId="endpoint-types">
         <TabItem value="api" label={`API (${apiEndpoints.length})`} default>
           {apiEndpoints.length > 0 ? (
             renderEndpointList(apiEndpoints)
@@ -103,15 +104,17 @@ const DynamicEndpoints: React.FC<DynamicEndpointsProps> = ({
           )}
         </TabItem>
         
-        <TabItem value="grpc" label={`gRPC (${grpcEndpoints.length})`}>
-          {grpcEndpoints.length > 0 ? (
-            renderEndpointList(grpcEndpoints)
-          ) : (
-            <Admonition type="warning">
-              <p>No working gRPC endpoints found. Please try again later.</p>
-            </Admonition>
-          )}
-        </TabItem>
+        {grpcEndpoints.length > 0 && (
+          <TabItem value="grpc" label={`gRPC (${grpcEndpoints.length})`}>
+            {renderEndpointList(grpcEndpoints)}
+          </TabItem>
+        )}
+        
+        {websocketEndpoints.length > 0 && (
+          <TabItem value="websocket" label={`WebSocket (${websocketEndpoints.length})`}>
+            {renderEndpointList(websocketEndpoints)}
+          </TabItem>
+        )}
       </Tabs>
     </div>
   );

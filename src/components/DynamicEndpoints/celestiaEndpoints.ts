@@ -1,4 +1,4 @@
-export type EndpointType = 'api' | 'rpc' | 'grpc';
+export type EndpointType = 'api' | 'rpc' | 'grpc' | 'websocket';
 
 export type Endpoint = {
   provider: string;

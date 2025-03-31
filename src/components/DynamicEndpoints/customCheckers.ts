@@ -21,15 +21,7 @@ export const celestiaEndpointChecker = async (endpoint: Endpoint): Promise<boole
       });
       
       clearTimeout(timeoutId);
-      
-      // Additional check: verify it's a Celestia node
-      if (response.ok) {
-        const data = await response.json();
-        return data?.default_node_info?.network === 'celestia' || 
-               data?.node_info?.network === 'celestia';
-      }
-      
-      return false;
+      return response.ok;
     }
     
     // For RPC endpoints, check the status endpoint
@@ -46,14 +38,7 @@ export const celestiaEndpointChecker = async (endpoint: Endpoint): Promise<boole
       });
       
       clearTimeout(timeoutId);
-      
-      // Additional check: verify it's a Celestia node
-      if (response.ok) {
-        const data = await response.json();
-        return data?.result?.node_info?.network === 'celestia';
-      }
-      
-      return false;
+      return response.ok;
     }
     
     // For gRPC endpoints, we can't directly check from the browser
@@ -62,6 +47,81 @@ export const celestiaEndpointChecker = async (endpoint: Endpoint): Promise<boole
     return true;
   } catch (error) {
     console.error(`Error checking endpoint ${endpoint.url}:`, error);
+    return false;
+  }
+};
+
+/**
+ * Custom endpoint checker for Story network
+ * @param endpoint The endpoint to check
+ * @returns Promise that resolves to true if the endpoint is working, false otherwise
+ */
+export const storyEndpointChecker = async (endpoint: Endpoint): Promise<boolean> => {
+  try {
+    if (endpoint.type === 'api') {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(endpoint.url, { 
+          method: 'GET',
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+    
+    // For RPC endpoints, just check if the server responds
+    if (endpoint.type === 'rpc') {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch(endpoint.url, { 
+          method: 'GET',
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        
+        return true;
+      } catch (err) {
+        return false;
+      }
+    }
+    
+    // For websocket endpoints, just check if we can establish a connection
+    if (endpoint.type === 'websocket') {
+      return new Promise((resolve) => {
+        try {
+          const ws = new WebSocket(endpoint.url);
+          const timeoutId = setTimeout(() => {
+            ws.close();
+            resolve(false);
+          }, 5000);
+
+          ws.onopen = () => {
+            clearTimeout(timeoutId);
+            ws.close();
+            resolve(true);
+          };
+
+          ws.onerror = () => {
+            clearTimeout(timeoutId);
+            resolve(false);
+          };
+        } catch (error) {
+          resolve(false);
+        }
+      });
+    }
+    
+    return true;
+  } catch (error) {
     return false;
   }
 };

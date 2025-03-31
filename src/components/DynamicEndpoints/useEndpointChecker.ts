@@ -98,6 +98,33 @@ export const defaultCheckEndpoint = async (endpoint: Endpoint): Promise<boolean>
       return response.ok;
     }
     
+    // For websocket endpoints, we attempt to establish a connection
+    if (endpoint.type === 'websocket') {
+      return new Promise((resolve) => {
+        try {
+          const ws = new WebSocket(endpoint.url);
+          const timeoutId = setTimeout(() => {
+            ws.close();
+            resolve(false);
+          }, 5000); // 5 second timeout
+
+          ws.onopen = () => {
+            clearTimeout(timeoutId);
+            ws.close();
+            resolve(true);
+          };
+
+          ws.onerror = () => {
+            clearTimeout(timeoutId);
+            resolve(false);
+          };
+        } catch (error) {
+          console.error(`Error establishing WebSocket connection to ${endpoint.url}:`, error);
+          resolve(false);
+        }
+      });
+    }
+    
     // For gRPC endpoints, we can't directly check from the browser
     // We'll assume they're working for now, but in a real implementation
     // you might want to have a backend service check these
