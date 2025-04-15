@@ -9,9 +9,10 @@ description: Explorers
 
 ### There are a number of explorers that you can use for Story:
 
-| Name | Layer | Network | URL |
-| --- | --- | --- | --- |
-| Story Foundation (official) | EVM | 1516 (odyssey) | https://odyssey-testnet-explorer.storyscan.xyz |
-| Aura Network | EVM | 1516 (odyssey) | https://story.aurascan.io |
-| Nodes.Guru | Cosmos | odyssey | https://odyssey.story.explorers.guru |
-| STAKEME | Cosmos | odyssey | https://testnet.storyscan.app |
+| Name | Layer | Network | Chain ID | URL |
+| --- | --- | --- | --- | --- |
+| BlockScout (official) | EVM | mainnet | 1514 | https://www.storyscan.io |
+| IP Explorer (official) | EVM (only for IP-related actions like licensing, minting licenses, etc) | mainnet | 1514 | https://explorer.story.foundation |
+| OKX Explorer | EVM | mainnet | 1514 | https://web3.okx.com/ua/explorer/story |
+| Nodes.Guru | Cosmos | mainnet | story-1 | https://story.explorers.guru |
+| STAKEME | Cosmos | mainnet | story-1 | https://storyscan.app |

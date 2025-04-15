@@ -11,94 +11,6 @@ import SelectPaste2 from '@site/src/components/SelectPaste2';
 
 export let items = [
     { 
-        name: "kjnodes: pruned snapshots, updated every hour", 
-        text: 
-`# Stop the service
-sudo systemctl stop story-testnet.service story-testnet-geth.service\n
-# Reset the data and save validator state
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# Download the latest snapshot and recover validator state
-curl -L https://snapshots.kjnodes.com/story-testnet/snapshot_latest_geth.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://snapshots.kjnodes.com/story-testnet/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Restart the service and check the log
-sudo systemctl start story-testnet.service story-testnet-geth.service
-sudo journalctl -fu story-testnet-geth.service -o cat
-sudo journalctl -fu story-testnet.service -o cat`
-    },
-    { 
-        name: "kjnodes: archive snapshots, updated every 24 hours", 
-        text: 
-`# Stop the service
-sudo systemctl stop story-testnet.service story-testnet-geth.service\n
-# Reset the data and save validator state
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# Download the latest snapshot and recover validator state
-curl -L https://snapshots.kjnodes.com/story-testnet-archive/snapshot_latest_geth.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://snapshots.kjnodes.com/story-testnet-archive/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Restart the service and check the log
-sudo systemctl start story-testnet.service story-testnet-geth.service
-sudo journalctl -fu story-testnet-geth.service -o cat
-sudo journalctl -fu story-testnet.service -o cat`
-    },
-    {
-        name: "Enigma: pruned snapshots, updated every 24 hours", 
-        text: 
-`# Stop the services that run
-sudo systemctl stop story-testnet.service 
-sudo systemctl stop story-testnet-geth.service\n
-# Be carreful and save your validator state 
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-# Reset the older data folders
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# Download the latest snapshot and recover validator state
-wget -O story_snapshot.tar.lz4 https://api.enigma-validator.com/story-testnet/story-pruned-latest.tar.lz4 --inet4-only
-wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
-# Decompress story snapshots
-lz4 -c -d story_snapshot.tar.lz4 | tar -x -C $HOME/.story/story
-lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
-# Restore your validator state
-sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Delete downloaded story snapshots & story-geth 
-sudo rm story_snapshot.tar.lz4
-sudo rm story_geth_last.tar.lz4\n
-# Restart the services
-sudo systemctl start story-testnet.service 
-sudo systemctl start story-testnet-geth.service`
-    },
-    { 
-        name: "Enigma: archive snapshots, updated every 24 hours", 
-        text: 
-`# Stop the services that run
-sudo systemctl stop story-testnet.service 
-sudo systemctl stop story-testnet-geth.service\n
-# Be carreful and save your validator state 
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-# Reset the older data folders
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# Download the latest snapshot and recover validator state
-wget -O story_archive.tar.lz4 https://api.enigma-validator.com/story-testnet/story-archive-latest.tar.lz4 --inet4-only
-wget -O story_geth_last.tar.lz4 https://services.enigma-validator.com/story-testnet/story_geth_last.tar.lz4 --inet4-only\n
-# Decompress story snapshots
-lz4 -c -d story_archive.tar.lz4 | tar -x -C $HOME/.story/story
-lz4 -c -d story_geth_last.tar.lz4 | tar -x -C $HOME/.story/geth/odyssey/geth\n
-# Restore your validator state
-sudo cp $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Delete downloaded story snapshots & story-geth 
-sudo rm story_archive.tar.lz4
-sudo rm story_geth_last.tar.lz4\n
-# Restart the services
-sudo systemctl start story-testnet.service 
-sudo systemctl start story-testnet-geth.service`
-    },
-    { 
         name: "Mandragora: pruned snapshots, updated every 4 hours", 
         text: 
 `# Install required dependencies
@@ -127,7 +39,7 @@ sudo systemctl start story-geth
 sudo systemctl start story` 
     },
     { 
-        name: "Mandragora: archive snapshots, updated every 24 hours", 
+        name: "Mandragora: archive snapshots, updated every 3 hours", 
         text: 
 `# Install required dependencies
 sudo apt-get install wget lz4 -y\n
@@ -155,7 +67,7 @@ sudo systemctl start story-geth
 sudo systemctl start story` 
     },
     { 
-        name: "Coha05: pruned snapshots, updated every 12 hours", 
+        name: "Coha05: pruned snapshots, updated every 24 hours", 
         text: 
 `# Install Required Tools
 sudo apt-get install wget lz4 aria2 pv -y\n
@@ -188,60 +100,6 @@ sudo rm -rf Story_snapshot.lz4
 sudo rm -rf Geth_snapshot.lz4`    
     },
     { 
-        name: "ITRocket: pruned snapshots, updated every 4 hours", 
-        text: 
-`# install dependencies, and disable statesync to avoid sync issues
-sudo apt install curl tmux jq lz4 unzip -y
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*|\\1false|" $HOME/.story/story/config/config.toml\n
-# stop node and backup priv_validator_state.json
-sudo systemctl stop story story-geth
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-# remove old data and unpack Story snapshot
-rm -rf $HOME/.story/story/data\n
-# ⚠️ please use only ONE of the following commands, this will determine which server the snapshot will be downloaded from
-curl -s https://server-1.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_name' | xargs -I {} curl https://server-1.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story
-OR
-curl -s https://server-3.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_name' | xargs -I {} curl https://server-3.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story\n
-# restore priv_validator_state.json
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# delete geth data and unpack Geth snapshot
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# ⚠️ please use only ONE of the following commands, this will determine which server the snapshot will be downloaded from
-curl -s https://server-1.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_geth_name' | xargs -I {} curl https://server-1.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story
-OR
-curl -s https://server-3.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_geth_name' | xargs -I {} curl https://server-3.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story\n
-# restart node and check logs
-sudo systemctl restart story story-geth
-sudo journalctl -u story-geth -u story -f` 
-    },
-    { 
-        name: "ITRocket: archive snapshots, updated every 4 hours", 
-        text: 
-`# install dependencies, and disable statesync to avoid sync issues
-sudo apt install curl tmux jq lz4 unzip -y
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*|\\1false|" $HOME/.story/story/config/config.toml\n
-# stop node and backup priv_validator_state.json
-sudo systemctl stop story story-geth
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-# remove old data and unpack Story snapshot
-rm -rf $HOME/.story/story/data\n
-# ⚠️ please use only ONE of the following commands, this will determine which server the snapshot will be downloaded from
-curl -s https://server-5.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_name' | xargs -I {} curl https://server-5.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story
-OR
-curl -s https://server-8.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_name' | xargs -I {} curl https://server-8.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story\n
-# restore priv_validator_state.json
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# delete geth data and unpack Geth snapshot
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# ⚠️ please use only ONE of the following commands, this will determine which server the snapshot will be downloaded from
-curl -s https://server-5.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_geth_name' | xargs -I {} curl https://server-5.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story
-OR
-curl -s https://server-8.itrocket.net/testnet/story/.current_state.json | jq -r '.snapshot_geth_name' | xargs -I {} curl https://server-8.itrocket.net/testnet/story/{} | lz4 -dc - | tar -xf - -C $HOME/.story/story\n
-# restart node and check logs
-sudo systemctl restart story story-geth
-sudo journalctl -u story-geth -u story -f` 
-    },
-    { 
         name: "JosephTran: pruned snapshots", 
         text: 
 `# Install tool
@@ -253,10 +111,10 @@ sudo systemctl stop story-geth\n
 # pruning = "default", indexer = "null", disables state snapshots, app-db-backend = "goleveldb"
 cd $HOME
 rm -f Story_snapshot.lz4
-aria2c -x 16 -s 16 -k 1M https://story.josephtran.co/Story_snapshot.lz4\n
+aria2c -x 16 -s 16 -k 1M https://story.j-node.net/mainnet/Story_snapshot.lz4\n
 cd $HOME
 rm -f Geth_snapshot.lz4
-aria2c -x 16 -s 16 -k 1M https://story.josephtran.co/Geth_snapshot.lz4\n
+aria2c -x 16 -s 16 -k 1M https://story.j-node.net/mainnet/Geth_snapshot.lz4\n
 # Backup priv_validator_state.json
 cp ~/.story/story/data/priv_validator_state.json ~/.story/priv_validator_state.json.backup\n
 # Remove old data
@@ -285,10 +143,10 @@ sudo systemctl stop story-geth\n
 # pruning = "nothing", indexer = "kv"
 cd $HOME
 rm -f Story_snapshot.lz4
-aria2c -x 16 -s 16 -k 1M https://story.josephtran.co/archive_Story_snapshot.lz4\n
+aria2c -x 16 -s 16 -k 1M https://story.j-node.net/mainnet/archive_Story_snapshot.lz4\n
 cd $HOME
 rm -f Geth_snapshot.lz4
-aria2c -x 16 -s 16 -k 1M https://story.josephtran.co/archive_Geth_snapshot.lz4\n
+aria2c -x 16 -s 16 -k 1M https://story.j-node.net/mainnet/archive_Geth_snapshot.lz4\n
 # Backup priv_validator_state.json
 cp ~/.story/story/data/priv_validator_state.json ~/.story/priv_validator_state.json.backup\n
 # Remove old data
@@ -304,182 +162,6 @@ cp ~/.story/priv_validator_state.json.backup ~/.story/story/data/priv_validator_
 # Restart node
 sudo systemctl start story
 sudo systemctl start story-geth` 
-    },
-    { 
-        name: "lesnik | UTSA: pruned snapshots, updated every 3 hours", 
-        text: 
-`systemctl stop story
-systemctl stop story-geth\n
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# story
-curl -o - -L https://share106-7.utsa.tech/story/story_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/story/\n
-# story_geth
-curl -o - -L https://share106-7.utsa.tech/story/story_geth_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth/\n
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-systemctl restart story
-systemctl restart story-geth` 
-    },
-    { 
-        name: "lesnik | UTSA: archive snapshots, updated every 3 days", 
-        text: 
-`systemctl stop story
-systemctl stop story-geth\n
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# story
-curl -o - -L https://share102.utsa.tech/story/story_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/story/\n
-# story_geth
-curl -o - -L https://share102.utsa.tech/story/story_geth_testnet.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth/\n
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-systemctl restart story
-systemctl restart story-geth` 
-    },
-    { 
-        name: "STAVR: pruned snapshots, updated every 2 hours", 
-        text: 
-`cd $HOME
-snap install lz4
-sudo systemctl stop story story-geth
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-curl -o - -L https://story.snapshot.stavr.tech/story-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/story/
-curl -o - -L https://story.snapshot.stavr.tech/story_geth-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth/
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-wget -O $HOME/.story/story/config/addrbook.json "https://raw.githubusercontent.com/111STAVR111/props/main/Story/addrbook.json"
-sudo systemctl restart story-geth
-sudo systemctl restart story && sudo journalctl -fu story -ocat` 
-    },
-    { 
-        name: "STAVR: archive snapshots, updated every 2 days", 
-        text: 
-`cd $HOME
-snap install lz4
-sudo systemctl stop story story-geth
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-curl -o - -L https://story-archive.snapshot.stavr.tech/story-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/story/
-curl -o - -L https://story-archive.snapshot.stavr.tech/story_geth-snap.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth/
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-wget -O $HOME/.story/story/config/addrbook.json "https://raw.githubusercontent.com/111STAVR111/props/main/Story/addrbook.json"
-sudo systemctl restart story-geth
-sudo systemctl restart story && sudo journalctl -fu story -ocat` 
-    },
-    { 
-        name: "OranG3cluB: pruned snapshots, updated every 3 hours", 
-        text: 
-`# Install required dependencies:
-sudo apt install curl tmux jq lz4 unzip -y
-# Stop the services:
-sudo systemctl stop story.service 
-sudo systemctl stop geth.service
-# Backup validator state and reset data:
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-# Download the latest snapshot and recover validator state:
-curl -L https://orang3club.tech/geth_snapshot_pruned.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://orang3club.tech/story_snapshot_pruned.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-# Restart the services:
-sudo systemctl start story.service 
-sudo systemctl start geth.service` 
-    },
-    { 
-        name: "OranG3cluB: archive snapshots, updated every 3 hours", 
-        text: 
-`# Install required dependencies:
-sudo apt install curl tmux jq lz4 unzip -y
-# Stop the services:
-sudo systemctl stop story.service 
-sudo systemctl stop geth.service
-# Backup validator state and reset data:
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-# Download the latest snapshot and recover validator state:
-curl -L https://orang3club.tech/geth_snapshot_archive.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://orang3club.tech/story_snapshot_archive.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-# Restart the services:
-sudo systemctl start story.service 
-sudo systemctl start geth.service` 
-    },
-    { 
-        name: "openbitlab: pruned snapshots, updated every 24 hours", 
-        text: 
-`# Install required dependencies:
-sudo apt install lz4 -y
-# Stop the services:
-sudo systemctl stop story.service
-sudo systemctl stop geth.service
-# Backup validator state and reset data:
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-# Download the latest snapshot and recover validator state:
-curl -L https://story-testnet-snapshot.openbitlab.com/geth_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://story-testnet-snapshot.openbitlab.com/story_pruned_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-# Restart the services:
-sudo systemctl start story.service 
-sudo systemctl start geth.service`
-    },
-    { 
-        name: "openbitlab: archive snapshots, updated every 24 hours",
-        text: 
-`# Install required dependencies:
-sudo apt install lz4 -y
-# Stop the services:
-sudo systemctl stop story.service 
-sudo systemctl stop geth.service
-# Backup validator state and reset data:
-cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
-rm -rf $HOME/.story/story/data
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-# Download the latest snapshot and recover validator state:
-curl -L https://story-testnet-snapshot.openbitlab.com/geth_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/geth
-curl -L https://story-testnet-snapshot.openbitlab.com/story_archive_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json
-# Restart the services:
-sudo systemctl start story.service 
-sudo systemctl start geth.service`
-    },
-    { 
-        name: "shachopra: pruned snapshots, updated every 12 hours", 
-        text: 
-`# Install Required Tools
-sudo apt-get install wget lz4 pv -y\n
-# Stop Story & Story-Geth Node
-sudo systemctl stop story
-sudo systemctl stop story-geth\n
-# Backup priv_validator_state.json
-sudo cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/priv_validator_state.json.backup\n
-# Remove old data
-sudo rm -rf $HOME/.story/story/data
-sudo rm -rf $HOME/.story/geth/odyssey/geth/chaindata
-mkdir -p $HOME/.story/geth/odyssey/geth\n
-#  Download Story & Story-Geth Snapshot
-cd $HOME
-sudo rm snapshot_story.lz4
-sudo rm geth_story.lz4
-wget -O snapshot_story.lz4 https://story-snapshot.shachopra.com:8443/downloads/snapshot_story.lz4
-wget -O geth_story.lz4 https://story-snapshot.shachopra.com:8443/downloads/geth_story.lz4\n
-# Decompress Story & Story-Geth Snapshot
-lz4 -c -d snapshot_story.lz4 | pv | sudo tar -xv -C $HOME/.story/story/
-lz4 -c -d geth_story.lz4 | pv | sudo tar -xv -C $HOME/.story/geth/odyssey/geth/\n
-# Delete snapshot files after decompression
-sudo rm snapshot_story.lz4
-sudo rm geth_story.lz4\n
-# Move priv_validator_state.json back
-sudo cp $HOME/.story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Restart Story & Story-Geth Node
-sudo systemctl start story
-sudo systemctl start story-geth`
     },
     {
         name: "DTEAM: pruned snapshots, updated every 4 hours", 
@@ -497,86 +179,111 @@ sudo systemctl stop story
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
 rm -rf $HOME/.story/story/data\n
 # Download Pruned Geth Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth\n
+curl -o - -L https://download.dteam.tech/story/testnet/pruned/latest-geth-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth\n
 # Download Pruned Consensus Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
+curl -o - -L https://download.dteam.tech/story/testnet/pruned/latest-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
 mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Restart Services and Check Logs
+# Restart Geth Node and Check Logs
 sudo systemctl restart story-geth
+sudo journalctl -u story-geth -f -o cat\n
+# Restart Consensus Node and Check Logs
 sudo systemctl restart story
-sudo journalctl -u story-geth -u story -f -o cat`
+sudo journalctl -u story -f -o cat`
     },
     {
-        name: "DTEAM: archive snapshots, updated every 24 hours", 
+        name: "NodeStake: pruned snapshots, updated every 12 hours", 
         text: 
-`# Install Dependencies
+`# Install lz4
 sudo apt update
 sudo apt-get install snapd lz4 -y\n
-# Disable State Sync
-sed -i -e "s|^enable *=.*|enable = false|" $HOME/.story/story/config/config.toml\n
-# Stop Geth Node and Reset Data
-sudo systemctl stop story-geth
-rm -rf $HOME/.story/geth/odyssey/geth/chaindata\n
-# Stop Consensus Node and Reset Data
+# Stop Node and Reset Date
+sudo systemctl stop geth
+rm -rf $HOME/.story/geth/story/geth/chaindata
 sudo systemctl stop story
 cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
 rm -rf $HOME/.story/story/data\n
-# Download Archive Geth Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-geth-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/geth/odyssey/geth\n
-# Download Archive Consensus Snapshot
-curl -o - -L https://download.dteam.tech/story/testnet/latest-archive-snapshot  | lz4 -c -d - | tar -x -C $HOME/.story/story
-mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
-# Restart Services and Check Logs
-sudo systemctl restart story-geth
+# Download Snapshot
+curl -s https://ss.story.nodestake.org/ | grep -o ">20[^<]*\.tar\.lz4" | tr -d ">" | xargs -I{} curl -o - -L https://ss.story.nodestake.org/{} | lz4 -c -d - | tar -x -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json 2>/dev/null || true
+curl -o - -L https://ss.story.nodestake.org/geth.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/story/geth/\n
+# Restart Node
+sudo systemctl restart geth
 sudo systemctl restart story
-sudo journalctl -u story-geth -u story -f -o cat`
+journalctl -u story -f`
     },
-    { 
-        name: "Pro-Nodes75: pruned Pebbledb snapshots, updated every 12 hours", 
+    {
+        name: "NodeStake: archive snapshots, updated every week", 
         text: 
-`Consensus Client Snapshot
-
-# Install Required Tools
-sudo apt-get install wget lz4 pv -y\n
-# Build the story consensus client with Pebbledb:
-https://services.node75.org/papers/guide_setup_story_pebbledb\n
-# pebbledb snapshots could be found here: https://snap.story.testnet.node75.org\n
-# download the pebbledb cometbft snapshot:
-wget -O $HOME/story_cometbft_snap.tar.lz4 $(curl -s https://snap.story.testnet.node75.org/ | grep -o 'odyssey-0_cometbft_pebbledb_[0-9]\+_.*\.tar\.lz4' | sort -t_ -k4 -n | tail -n1 | sed 's|^|https://snap.story.testnet.node75.org/|') --inet4-only\n
-# stop the Story consensus client service
-sudo systemctl stop storyd; sudo systemctl status storyd\n
-# backup state
-cp "$HOME/.story/story/data/priv_validator_state.json" $HOME\n
-# check backup
-cat $HOME/priv_validator_state.json\n
-# clear the current cometbft DB
+`# Install lz4
+sudo apt update
+sudo apt-get install snapd lz4 -y\n
+# Stop Node and Reset Date
+sudo systemctl stop geth
+rm -rf $HOME/.story/geth/story/geth/chaindata
+sudo systemctl stop story
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup
 rm -rf $HOME/.story/story/data\n
-# unpack the snapshot
-lz4 -c -d $HOME/story_cometbft_snap.tar.lz4 | tar -x -C $HOME/.story/story\n
-# if unpacking was successful, then delete the snapshot (optional)
-rm -v $HOME/story_cometbft_snap.tar.lz4\n
-# get fresh addrbook
-wget -O $HOME/addrbook.json https://snapshots.polkachu.com/testnet-addrbook/story/addrbook.json --inet4-only
-mv $HOME/addrbook.json $HOME/.story/story/config/\n
-# restore validator' state
-cp $HOME/priv_validator_state.json "$HOME/.story/story/data/priv_validator_state.json"\n
-# check state
-cat $HOME/.story/story/data/priv_validator_state.json\n
-# restart the Story Consensus client service
-sudo systemctl restart storyd; journalctl -u storyd -f -o cat\n
-Execution Client snapshot\n
-# download the geth snapshot:
-wget -O $HOME/story_geth_snap.tar.lz4 $(curl -s https://snap.story.testnet.node75.org/ | grep -o 'odyssey-0_geth_[0-9]\+_.*\.tar\.lz4' | sort -t_ -k3 -n | tail -n1 | sed 's|^|https://snap.story.testnet.node75.org/|') --inet4-only\n
-# stop the Story execution client service
-sudo systemctl stop *geth*; sudo systemctl status *geth*\n
-# clear the current geth DB
-rm -rf "$HOME/.story/geth"\n
-# unpack the snapshot
-lz4 -c -d $HOME/story_geth_snap.tar.lz4 | tar -x -C $HOME/.story/geth\n
-# if unpacking was successful, then delete the snapshot (optional)
-rm -v $HOME/story_geth_snap.tar.lz4\n
-# restart the Story Geth service
-sudo systemctl restart *geth*; journalctl -u *geth* -f -o cat`
+# Download Snapshot
+curl -s https://ss.archive.story.nodestake.org/ | egrep -o ">20.*\.tar.lz4" | tr -d ">" | xargs -I{} curl -o - -L https://ss.archive.story.nodestake.org/{} | lz4 -c -d - | tar -x -C $HOME/.story/story
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json 2>/dev/null || true
+curl -o - -L https://ss.archive.story.nodestake.org/geth.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.story/geth/story/geth/\n
+# Restart Node
+sudo systemctl restart geth
+sudo systemctl restart story
+journalctl -u story -f`
+    },
+    {
+        name: "Polkachu: pruned snapshots, updated every 24 hours", 
+        text: 
+`# Install lz4 if needed
+sudo apt install lz4\n
+# Download the snapshot
+curl -s https://snapshots.polkachu.com/snapshots/?prefix=story/ | grep -o '<Key>story/[^<]*</Key>' | sed 's/<Key>//g' | sed 's/<\/Key>//g' | sort -t_ -k2 -n | tail -1 | xargs -I{} wget -O story_latest.tar.lz4 "https://snapshots.polkachu.com/snapshots/{}" --inet4-only\n
+# Stop your node
+sudo service story stop
+sudo service story_geth stop\n
+# Reset cometbft data
+cp ~/.story/story/data/priv_validator_state.json  ~/.story/story/priv_validator_state.json
+rm ~/.story/story/data -rf
+cp ~/.story/story/priv_validator_state.json  ~/.story/story/data/priv_validator_state.json\n
+# Reset geth data
+rm ~/.story/geth/story/geth/chaindata -rf\n
+# Decompress the snapshot to your database root location
+lz4 -c -d story_latest.tar.lz4  | tar -x -C ~/.story\n
+# Restart your node
+sudo service story start
+sudo service story_geth start\n
+# Remove downloaded snapshot to free up space
+rm -v story_latest.tar.lz4\n
+# Make sure that your node is running
+sudo service story status
+sudo service story_geth status
+sudo journalctl -u story -f
+sudo journalctl -u story_geth -f`
+    },
+    {
+        name: "TTT VN: pruned snapshots, updated every 12 hours", 
+        text: 
+`# Install lz4 if needed
+sudo apt update
+sudo apt install lz4\n
+# Stop your node
+sudo systemctl stop story\n
+# Back up priv_validator_state.json if needed
+cp $HOME/.story/story/data/priv_validator_state.json $HOME/.story/story/priv_validator_state.json.backup\n
+# Reset tendermint chain
+story tendermint unsafe-reset-all --home $HOME/.story/story --keep-addr-book\n
+# Download the Story snapshot
+wget -O story_latest.tar.lz4 https://snapshots.tienthuattoan.com/mainnet/story/story_latest.tar.lz4\n
+# Decompress the Story snapshot
+lz4 -c -d story_latest.tar.lz4 | tar -x -C $HOME/.story/story\n
+# Replace with the backed-up priv_validator_state.json
+mv $HOME/.story/story/priv_validator_state.json.backup $HOME/.story/story/data/priv_validator_state.json\n
+# Restart the service and check the log
+sudo systemctl restart story
+sudo journalctl -u story -f\n
+# Remove downloaded snapshot to free up space
+rm story_latest.tar.lz4`
     },
 ];
 

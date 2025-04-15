@@ -7,27 +7,17 @@ description: AddrBook
 
 > Address book refers to a local database or record that a node maintains of all the peers it has come into contact with or learned about. This helps in the peer discovery process.
 
-import SelectPaste from '@site/src/components/SelectPaste';
-
-import { addrBook }  from '@site/src/components/SelectPaste/addrBook.ts';
-
-export let endpoints = [
-	'https://server-5.itrocket.net/testnet/story/addrbook.json',
-	'https://services.enigma-validator.com/story-testnet/addrbook.json',
-	'https://snapshots.kjnodes.com/story-testnet/addrbook.json',
-	'https://snapshots.lavenderfive.com/testnet-addrbooks/story/addrbook.json',
-	'https://share102.utsa.tech/story/addrbook.json',
-	'https://raw.githubusercontent.com/McDaan/general/main/story/addrbook.json',
-	'https://ss-t.story.nodestake.org/addrbook.json',
-  	'https://snapshots.polkachu.com/testnet-addrbook/story/addrbook.json',
- 	'https://support.synergynodes.com/addrbook/story_testnet/addrbook.json',
- 	'https://story-testnet-snapshot.openbitlab.com/addrbook.json',
-        'https://orang3club.tech/addrbook.json',
-	'https://download.dteam.tech/story/testnet/addrbook',
-];
+import AddrBookSelector from '@site/src/components/AddrBookSelector';
+import { storyProviders } from '@site/src/components/AddrBookSelector/storyProviders';
+import { addrBookTemplate } from '@site/src/components/AddrBookSelector/addrBookTemplate';
 
 export let home = 'story/story';
-
 export let binary = 'story';
 
-<SelectPaste endpoints={endpoints} codeTemplate={addrBook} home={home} binary={binary} tip="Select an endpoint from the list below to automatically paste its URL into the command for updating your local AddrBook." />
+<AddrBookSelector 
+  providers={storyProviders} 
+  codeTemplate={addrBookTemplate} 
+  home={home} 
+  binary={binary} 
+  tip="Click on any provider to generate the command for downloading their address book." 
+/>

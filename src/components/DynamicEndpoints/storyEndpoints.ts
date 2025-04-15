@@ -11,6 +11,7 @@ export const storyEndpoints: Endpoint[] = [
   { provider: "Nodes.Guru", url: "https://api-1.story.nodes.guru", type: "api" },
   { provider: "Polkachu", url: "https://story-api.polkachu.com", type: "api" },
   { provider: "Silent", url: "https://api.story.silentvalidator.com", type: "api" },
+  { provider: "TTT VN", url: "https://story-api.tienthuattoan.com", type: "api" },
   
   { provider: "BlockHub", url: "https://story-mainnet-rpc.blockhub.id", type: "rpc" },
   { provider: "Cumulo", url: "https://rpc.story.cumulo.me", type: "rpc" },
@@ -22,6 +23,7 @@ export const storyEndpoints: Endpoint[] = [
   { provider: "Nodes.Guru", url: "https://rpc-1.story.nodes.guru", type: "rpc" },
   { provider: "Polkachu", url: "https://story-rpc.polkachu.com", type: "rpc" },
   { provider: "Silent", url: "https://rpc.story.silentvalidator.com", type: "rpc" },
+  { provider: "TTT VN", url: "https://story-rpc.tienthuattoan.com", type: "rpc" },
   
   { provider: "BlockHub", url: "wss://story-mainnet-rpc.blockhub.id/websocket", type: "websocket" },
   { provider: "Cumulo", url: "wss://rpc.story.cumulo.me/websocket", type: "websocket" },
