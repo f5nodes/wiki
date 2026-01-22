@@ -15,6 +15,7 @@ To contribute your own resource, simply click on **Edit this page** at the botto
 
 | Contribution | Description | Author | Date added/updated |
 | --- | --- | --- | --- |
+| [Story Endpoints Ninja](https://story.endpoints.ninja) | Story Endpoints Ninja designed to simplify the monitoring and discovery of proven RPC endpoints across the Story network. It provides both real-time and historical insights like uptime, latency, available interfaces, reachability, downtime logs, error tracking, and more. You’ll always know which RPCs are performing best, based on the variety of checks and metrics. The platform also manages a large amount of archive data, including historical uptime, endpoint reachability, and upgrade timelines. | [F5 Nodes](https://f5nodes.com) | 2026-01-22 |
 | [Real-time Validator Performance](https://tenderdutory.bharvest.io) | Modified Tenderduty dashboard, allowing real-time monitoring of all validators' status. | [B-Harvest](https://github.com/b-harvest) | 2024-09-11 |
 | [Archive Infra and Snapshots](https://story.f5nodes.com) | Dedicated page that provides users with the latest Testnet archive snapshots, taken every 2 hours, as well as a public archive RPC endpoint. | [F5 Nodes](https://f5nodes.com) | 2024-09-11 |
 | [RPC Scanner](https://itrocket.net/services/testnet/story/public-rpc) | The tool scan the network and produce a list of nodes that publish their RPC endpoints. | [ITRocket](https://github.com/itrocket-am) | 2024-09-11 |
