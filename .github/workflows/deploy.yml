@@ -26,7 +26,7 @@ jobs:
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
-          password: ${{ secrets.DEPLOY_PASSWORD }}
+          key: ${{ secrets.DEPLOY_KEY }}
           source: 'build/'
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 1
